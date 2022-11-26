@@ -14,7 +14,7 @@ export default function Index() {
   const divAnimation6 = useAnimation();
 
   useEffect(() => {
-    const DivSequence = async (number: any) => {
+    const DivSequence = async (number: number) => {
       let currentAnimation = divAnimation1;
 
       switch (number) {
@@ -37,12 +37,10 @@ export default function Index() {
           currentAnimation = divAnimation6;
           break;
       }
-
+      // start of animation sequence
       await currentAnimation.start({ scale: 0 });
       await currentAnimation.start({ scale: 2 });
       await currentAnimation.start({ scale: 1 });
-
-      // move away in a random direction but not too far and
       await currentAnimation.start({
         x: (Math.random() * 50 - 60) * (Math.random() > 0.5 ? 1 : -1),
         y: (Math.random() * 100 - 50) * (Math.random() > 0.5 ? 1 : -1),
@@ -52,7 +50,6 @@ export default function Index() {
           ease: "easeInOut",
         },
       });
-
       await currentAnimation.start({
         x: (Math.random() * 50 - 60) * (Math.random() > 0.5 ? 1 : -1),
         y: (Math.random() * 100 - 50) * (Math.random() > 0.5 ? 1 : -1),
@@ -62,7 +59,6 @@ export default function Index() {
           ease: "easeInOut",
         },
       });
-      //test
       await currentAnimation.start({
         x:
           number === 1
@@ -83,7 +79,6 @@ export default function Index() {
           ease: "easeInOut",
         },
       });
-      // explode and spin out while fading out
       await currentAnimation.start({
         scale: 60,
         rotate: 180,
@@ -94,12 +89,16 @@ export default function Index() {
         },
       });
     };
+
+    // run the above sequence for the 6 divs eahch with it's own unique animation
     DivSequence(1);
     DivSequence(2);
     DivSequence(3);
     DivSequence(4);
     DivSequence(5);
     DivSequence(6);
+
+    // hide the overlay after the animation is done
     setTimeout(() => {
       setActive(false);
     }, 4000);
@@ -254,22 +253,6 @@ export const LogoContainer = styled(motion.div)`
 
   width: 100px;
   height: 100px;
-
-  &:nth-child(1) {
-    z-index: 4;
-  }
-
-  &:nth-child(2) {
-    z-index: 3;
-  }
-
-  &:nth-child(3) {
-    z-index: 2;
-  }
-
-  &:nth-child(4) {
-    z-index: 1;
-  }
 `;
 
 export const Logo = styled(motion.svg)`
