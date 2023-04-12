@@ -23,6 +23,10 @@ p {
 	color: var(--off-white);
 }
 
+svg:hover {
+	color: var(--secondary-color) !important;
+}
+
 html {
 	scroll-behavior: smooth !important;
 }
@@ -47,6 +51,5 @@ a:hover {
 	--secondary-color: #43c396;
 	--secondary-color-dark: hsl(162, 55%, 29%);
 	--off-white: #f5f5f5;
-	--gray-background: rgb(35, 35, 35);
 	--black: rgb(20, 22, 26);
 }

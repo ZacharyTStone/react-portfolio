@@ -155,7 +155,27 @@ const ProjectCard = styled(Card)`
 		cursor: url(${Dot}), 4, 4 pointer !important;
 	}
 
-	/* mobile only */
+	#MUI-Card:hover {
+		transform: scale(1);
+	}
+
+	.MUI-icon {
+		font-size: 3rem;
+		margin-bottom: -25px;
+	}
+
+	@media (max-width: 455px) {
+		#MUI-Card {
+			width: 340px !important;
+		}
+	}
+
+	@media (max-width: 800px) {
+		.project-icons {
+			display: none !important;
+		}
+	}
+
 	@media (max-width: 1300px) {
 		.project-flag-div {
 			display: none !important;
@@ -203,22 +223,7 @@ const ProjectCard = styled(Card)`
 		}
 	}
 
-	#MUI-Card:hover {
-		transform: scale(1);
-	}
-
-	.MUI-icon {
-		font-size: 3rem;
-		margin-bottom: -25px;
-	}
-
-	@media (max-width: 455px) {
-		#MUI-Card {
-			width: 340px !important;
-		}
-	}
-
-	@media (min-width: 1300px) {
+	@media (min-width: 1301px) {
 		.darken-on-hover:hover {
 			opacity: 0.3 !important;
 		}
@@ -307,12 +312,6 @@ const ProjectCard = styled(Card)`
 
 	.ReactModal__Overlay {
 		background-color: var(--black) !important;
-	}
-
-	@media (max-width: 800px) {
-		.project-icons {
-			display: none !important;
-		}
 	}
 
 	@media (min-width: 1300px) {

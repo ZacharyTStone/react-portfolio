@@ -105,7 +105,7 @@ function ProjectModal({ project }) {
 									hover: "none",
 									cursor: "url(../../images/cursor-pointer.png), auto",
 								}}
-							></iframe>
+							/>
 						) : (
 							<CardMedia
 								component={"img"}

@@ -1,11 +1,11 @@
-import quote from "../../images/projects/quote.webp";
-import blog from "../../images/projects/blog.webp";
-import prefecture from "../../images/projects/prefecture.webp";
-import anime from "../../images/projects/anime.webp";
-import haku from "../../images/projects/haku.webp";
+import quote from "../../../images/projects/quote.webp";
+import blog from "../../../images/projects/blog.webp";
+import prefecture from "../../../images/projects/prefecture.webp";
+import anime from "../../../images/projects/anime.webp";
+import haku from "../../../images/projects/haku.webp";
 import { AnimationOnScroll } from "react-animation-on-scroll";
-import niceRiff from "../../images/projects/niceRiff.jpeg";
-import ProjectModal from "../UI/ProjectModal/ProjectModal";
+import niceRiff from "../../../images/projects/niceRiff.jpeg";
+import ProjectModal from "../../UI/ProjectModal/ProjectModal";
 import styled from "styled-components";
 import "./Projects.css";
 import { useTranslation } from "react-i18next";

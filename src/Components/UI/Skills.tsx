@@ -399,6 +399,14 @@ const SkillTypeButton = styled.button`
 `;
 
 const SkillsDiv = styled.div`
+	.ContributionCalendar-label {
+		fill: var(--secondary-color) !important;
+	}
+
+	.contributions-header {
+		margin-bottom: 20px !important;
+	}
+
 	.Skills {
 		margin: auto;
 		height: auto;

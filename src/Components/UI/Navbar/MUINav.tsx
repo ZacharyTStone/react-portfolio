@@ -7,11 +7,11 @@ import Menu from "@mui/material/Menu";
 import { AiOutlineMenu as MenuIcon } from "react-icons/ai";
 import Button from "@mui/material/Button";
 import MenuItem from "@mui/material/MenuItem";
-import america from "../../images/america-big.png";
-import japan from "../../images/japan-big.png";
+import america from "../../../images/america-big.png";
+import japan from "../../../images/japan-big.png";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import Dot from "../../images/ring-pointer.png";
+import Dot from "../../../images/ring-pointer.png";
 
 const MUINav = () => {
 	const { i18n, t } = useTranslation();

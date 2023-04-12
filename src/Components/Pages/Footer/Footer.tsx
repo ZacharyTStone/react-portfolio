@@ -1,4 +1,4 @@
-import SocialLinks from "../UI/SocialLinks";
+import SocialLinks from "../../UI/SocialLinks";
 import styled from "styled-components";
 const Footer = () => {
 	return (

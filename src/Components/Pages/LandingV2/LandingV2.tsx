@@ -1,8 +1,8 @@
-import SocialLinksVertical from "../UI/SocialLinksVertical";
+import SocialLinksVertical from "../../UI/SocialLinksVertical";
 import "animate.css";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
-import MUINav from "../Navbar/MUINav";
+import MUINav from "../../UI/Navbar/MUINav";
 
 const LandingV2 = () => {
 	const { t, i18n } = useTranslation();
