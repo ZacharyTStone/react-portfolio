@@ -187,6 +187,10 @@ const Nav = styled(AppBar)`
 		cursor: url(${Dot}), 4, 4 pointer !important;
 	}
 
+	.full-flag-div {
+		position: fixed;
+		right: 16px;
+	}
 	.flag-div {
 		display: flex;
 		justify-content: center;

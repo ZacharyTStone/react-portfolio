@@ -22,8 +22,8 @@
 		"react-router-dom": "^6.0.2",
 		"react-router-hash-link": "^2.4.3",
 		"react-scripts": "5.0.1",
-		"react-simply-carousel": "^8.3.2",
 		"styled-components": "^5.3.6",
+		"swiper": "^9.2.0",
 		"tsparticles": "^2.9.3"
 	},
 	"scripts": {

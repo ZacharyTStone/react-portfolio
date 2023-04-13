@@ -8,14 +8,22 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 import { BLOG_CONTENT } from "../../../utils/constants";
+// import Swiper bundle with all modules installed
+// Import Swiper React components
+// import Swiper core and required modules
+import { Navigation, Scrollbar, A11y, EffectCoverflow } from "swiper";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+// Import Swiper styles
+import "swiper/css";
+import "swiper/css/navigation";
 
 const Blog = () => {
 	const { i18n } = useTranslation();
 	const [activeSlide, setActiveSlide] = useState(0);
 
-	const isDesktopOrLaptop = useMediaQuery({
-		query: "(min-width: 1224px)",
-	});
+	const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
 
 	let content = BLOG_CONTENT;
 
@@ -25,81 +33,34 @@ const Blog = () => {
 
 	const DesktopBlogCarousel = ({ content, activeSlide, setActiveSlide }) => {
 		return (
-			<div
-				style={{
-					display: "flex",
-					flexDirection: "row",
-					justifyContent: "center",
-				}}
+			<Swiper
+				// install Swiper modules
+				modules={[Navigation, Scrollbar, A11y, EffectCoverflow]}
+				effect="coverflow"
+				spaceBetween={40}
+				slidesPerView={isMobile ? 1 : 3}
+				navigation
+				scrollbar={{ draggable: true }}
+				onSwiper={(swiper) => console.log(swiper)}
+				onSlideChange={() => console.log("slide change")}
+				loop
 			>
-				<Carousel
-					updateOnItemClick
-					containerProps={{
-						style: {
-							width: "100%",
-							maxWidth: "2000px",
-							justifyContent: "space-evenly",
-						},
-					}}
-					className="Carousel"
-					activeSlideIndex={activeSlide}
-					onRequestChange={(index) => setActiveSlide(index)}
-					activeSlideProps={{
-						style: {
-							border: "40px solid black",
-						},
-					}}
-					forwardBtnProps={{
-						children: (
-							<FaArrowCircleRight size={50} className="direction-icon" />
-						),
-						className: "direction-btn",
-						style: {
-							alignSelf: "center",
-							display: "flex",
-							justifyContent: "center",
-							alignItems: "center",
-							justifySelf: "center",
-							color: "white",
-							marginLeft: "10px",
-							marginRight: "10px",
-						},
-					}}
-					backwardBtnProps={{
-						children: (
-							<FaArrowCircleLeft
-								size={50}
-								color="white"
-								className="direction-icon"
-							/>
-						),
-						className: "direction-btn",
-						style: {
-							display: "flex",
-							alignSelf: "center",
-							justifySelf: "center",
-							justifyContent: "center",
-							alignItems: "center",
-							marginLeft: "10px",
-							marginRight: "10px",
-						},
-					}}
-					itemsToShow={0}
-					speed={300}
-				>
-					{content.posts.map((post, index) => (
+				{content.posts.map((post, index) => (
+					<SwiperSlide>
+						{" "}
 						<BlogCard
 							key={index}
 							title={post.title}
 							image={post.image}
 							link={post.link}
 						/>
-					))}
-				</Carousel>
-			</div>
+					</SwiperSlide>
+				))}
+			</Swiper>
 		);
 	};
 
+	// not used anymore
 	const MobileBlogList = ({ content }) => {
 		return (
 			<div id="BlogList">
@@ -122,15 +83,12 @@ const Blog = () => {
 			<Main>
 				<div id="Blog">
 					<Title>{content.mainTitle}</Title>
-					{isDesktopOrLaptop ? (
-						<DesktopBlogCarousel
-							content={content}
-							activeSlide={activeSlide}
-							setActiveSlide={setActiveSlide}
-						/>
-					) : (
-						<MobileBlogList content={content} />
-					)}
+
+					<DesktopBlogCarousel
+						content={content}
+						activeSlide={activeSlide}
+						setActiveSlide={setActiveSlide}
+					/>
 				</div>
 			</Main>
 		</AnimationOnScroll>
@@ -139,11 +97,18 @@ const Blog = () => {
 
 const Title = styled.h1`
 	margin-top: 0px;
-	margin-bottom: 50px;
+	margin-bottom: 75px;
 `;
 
 const Main = styled.div`
 	background-color: var(--black);
+	padding-bottom: 50px;
+
+	.swiper-button-prev,
+	.swiper-button-next {
+		color: var(--secondary-color);
+		transform: scale(1.5);
+	}
 
 	.projects-container {
 		display: flex;
