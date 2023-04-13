@@ -45,9 +45,10 @@ const Main = styled.footer`
 		justify-content: center;
 		align-items: center;
 		color: white;
-		margin-left: 8px;
+		margin-left: 16px;
 		user-select: none;
 	}
+
 	@media (max-width: 455px) {
 		.footer-text {
 			display: none;
