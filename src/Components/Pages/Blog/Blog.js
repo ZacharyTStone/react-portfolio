@@ -95,12 +95,17 @@ const Blog = () => {
 const Title = styled.h1`
 	margin-top: 0px;
 	margin-bottom: 75px;
+	text-decoration-line: underline;
+	text-decoration-color: var(--secondary-color);
+	text-decoration-thickness: 5px;
+	text-underline-offset: 12px;
 `;
 
 const Main = styled.div`
 	background-color: var(--black);
 	padding-bottom: 50px;
 
+	// carousel styling
 	.swiper-button-prev,
 	.swiper-button-next {
 		color: var(--secondary-color);
