@@ -1,8 +1,5 @@
 import React, { useState } from "react";
 import BlogCard from "../../UI/BlogCard/BlogCard";
-import Carousel from "react-simply-carousel";
-import { FaArrowCircleLeft } from "react-icons/fa";
-import { FaArrowCircleRight } from "react-icons/fa";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
