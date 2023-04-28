@@ -58,19 +58,6 @@ const Blog = () => {
 		);
 	};
 
-	// not used anymore
-	const MobileBlogList = ({ content }) => {
-		return (
-			<div id="BlogList">
-				<h1 className="blog-post-list-heading">Blog Posts</h1>
-				{content.posts.map((post, index) => (
-					<a href={post.link} target="_blank" rel="noreferrer" key={post.link}>
-						<h3 className="blog-post-list-title">{post.title}</h3>
-					</a>
-				))}
-			</div>
-		);
-	};
 	return (
 		<AnimationOnScroll
 			animateIn="animate__fadeIn"
@@ -78,7 +65,7 @@ const Blog = () => {
 			animateOnce={true}
 			speed={4}
 		>
-			<Main>
+			<Main isMobile={isMobile}>
 				<div id="Blog">
 					<Title>{content.mainTitle}</Title>
 
@@ -102,7 +89,9 @@ const Title = styled.h1`
 	text-underline-offset: 12px;
 `;
 
-const Main = styled.div`
+const Main = styled.div.attrs((props) => ({
+	isMobile: props.isMobile,
+}))`
 	background-color: transparent;
 	padding-bottom: 50px;
 
@@ -147,7 +136,7 @@ const Main = styled.div`
 
 	#Blog {
 		text-align: center;
-		padding-bottom: 120px;
+		padding-bottom: ${(props) => (props.isMobile ? "30px" : "120x")};
 	}
 
 	.direction-btn {
