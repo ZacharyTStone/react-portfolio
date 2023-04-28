@@ -86,7 +86,7 @@ const Wrapper = styled.div`
 		width: 75px;
 		height: fit-content;
 		border-radius: 20px;
-		z-index: 0;
+		z-index: 100;
 	}
 
 	.social-links-vertical a {

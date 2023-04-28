@@ -29,6 +29,10 @@
 			"japaneseResume": "履歴書(日本語)",
 			"japaneseWorkHistory": "職務経歴書(日本語)",
 			"certifications": "資格"
+		},
+		"footer": {
+			"thanks": "ウェブサイトをご覧いただきありがとうございます。",
+			"contact": "ぜひ繋がりましょう！"
 		}
 	}
 }

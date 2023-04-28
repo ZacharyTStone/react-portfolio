@@ -28,6 +28,10 @@
 			"resume": "Resume",
 			"japaneseResume": "Japanese Resume",
 			"certifications": "Certifications"
+		},
+		"footer": {
+			"thanks": "Thanks for visiting!",
+			"contact": "Let's connect!"
 		}
 	}
 }

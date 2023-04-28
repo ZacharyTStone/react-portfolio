@@ -41,6 +41,7 @@ const Blog = () => {
 				onSwiper={(swiper) => console.log(swiper)}
 				onSlideChange={() => console.log("slide change")}
 				loop
+				style={{ maxWidth: "2000px" }}
 			>
 				{content.posts.map((post, index) => (
 					<SwiperSlide>
@@ -102,7 +103,7 @@ const Title = styled.h1`
 `;
 
 const Main = styled.div`
-	background-color: var(--black);
+	background-color: transparent;
 	padding-bottom: 50px;
 
 	// carousel styling
@@ -146,7 +147,7 @@ const Main = styled.div`
 
 	#Blog {
 		text-align: center;
-		padding-bottom: 50px;
+		padding-bottom: 120px;
 	}
 
 	.direction-btn {
