@@ -63,14 +63,14 @@ const Footer = () => {
 
 const Main = styled.footer`
 	footer {
-		background-color: transparent
+		background-color: transparent;
 		display: flex;
 		justify-content: space-between;
 		z-index: 10;
 		position: absolute;
 		width: 100%;
 		height: 75px;
-		padding-bottom: 2px;
+		padding-bottom: 5px;
 	}
 
 	span {
