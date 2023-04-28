@@ -71,7 +71,7 @@ export default function MUIProjectCard(props) {
 						loading="lazy"
 						object-fit="contain"
 						style={{
-							filter: "brightness(0.85)",
+							filter: "brightness(0.80)",
 
 							borderRadius: "20px",
 						}}
