@@ -4,6 +4,7 @@ import React, { Suspense, useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import ParticlesBackground from "./Components/UI/Particles";
 import { Overlay } from "./Components/index";
+import { inject } from "@vercel/analytics";
 
 // kicks off immediately when the current file is imported
 const LandingComponentPromise = import(
@@ -21,6 +22,8 @@ const About = React.lazy(() => AboutComponentPromise);
 const Projects = React.lazy(() => ProjectsComponentPromise);
 const Blog = React.lazy(() => BlogComponentPromise);
 const Footer = React.lazy(() => FooterComponentPromise);
+
+inject();
 
 function App() {
 	console.log(
