@@ -68,17 +68,23 @@ const Landing = styled.div`
 	}
 
 	.word {
-		font-size: clamp(1.3rem, 6vw, 5rem);
+		font-size: clamp(1.3rem, 7vw, 5rem);
+
 		font-family: "Rubik", sans-serif;
 		font-weight: 400;
 		margin: 0rem;
 		text-transform: uppercase;
 		transition: opacity 250ms ease;
-		opacity: 0.2;
+		opacity: 0.5;
+		text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+			1px 1px 0 white;
+		color: black;
 	}
 
 	#special-1 {
 		opacity: 1 !important;
+		text-shadow: none !important;
+		color: var(--white) !important;
 	}
 
 	#special-2 {
