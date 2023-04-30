@@ -23,23 +23,6 @@ const SocialLinksVertical = () => {
 						className="social-link"
 					>
 						<a
-							href="https://www.linkedin.com/in/ZacharyStone42"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<BsLinkedin className="social-link-img" />
-							<div className="social-link-text">
-								<span className="social-link-text-span">LinkedIn</span>
-							</div>
-						</a>
-					</div>
-					<div
-						style={{
-							position: "relative",
-						}}
-						className="social-link"
-					>
-						<a
 							href="https://github.com/ZacharyTStone"
 							target="_blank"
 							rel="noopener noreferrer"
@@ -65,6 +48,23 @@ const SocialLinksVertical = () => {
 							<AiTwotoneMail className="social-link-img" />
 							<div className="social-link-text">
 								<span className="social-link-text-span">Email</span>
+							</div>
+						</a>
+					</div>
+					<div
+						style={{
+							position: "relative",
+						}}
+						className="social-link"
+					>
+						<a
+							href="https://www.linkedin.com/in/ZacharyStone42"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<BsLinkedin className="social-link-img" />
+							<div className="social-link-text">
+								<span className="social-link-text-span">LinkedIn</span>
 							</div>
 						</a>
 					</div>
