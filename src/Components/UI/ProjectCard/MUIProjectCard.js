@@ -107,6 +107,7 @@ export default function MUIProjectCard(props) {
 }
 
 const ProjectCard = styled(Card)`
+	box-shadow: none !important;
 	.ReactModal__Overlay {
 		overflow: auto !important;
 		/* padding-top: 200px !important; */

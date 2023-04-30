@@ -175,6 +175,7 @@ const Nav = styled(AppBar)`
 	z-index: 100 !important;
 	background-color: var(--black) !important;
 	overflow: hidden;
+	box-shadow: none !important;
 	width: 100% !important;
 
 	.nav-menu-item:hover {
