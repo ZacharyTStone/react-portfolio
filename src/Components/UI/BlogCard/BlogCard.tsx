@@ -18,13 +18,14 @@ export default function BlogCard({
 			sx={{
 				backgroundColor: "transparent",
 				color: "white",
-				width: "100%",
-				minWidth: "300px",
+
+				minWidth: "250px",
 				height: "fit-content",
 				margin: "10px",
 				borderRadius: "20px",
 				opacity: 0.9,
 				backgroundImage: "linear-gradient(to bottom, #00000080, #00000040)",
+				border: "1px solid var(--secondary-color)",
 			}}
 		>
 			<CardActionArea href={link} target="_blank">

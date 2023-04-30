@@ -41,7 +41,7 @@ const Blog = () => {
 				onSwiper={(swiper) => console.log(swiper)}
 				onSlideChange={() => console.log("slide change")}
 				loop
-				style={{ maxWidth: "2000px" }}
+				style={{ maxWidth: "2000px", overflow: "visible" }}
 			>
 				{content.posts.map((post, index) => (
 					<SwiperSlide>
@@ -96,6 +96,10 @@ const Main = styled.div.attrs((props) => ({
 	padding-bottom: 50px;
 
 	// carousel styling
+
+	.swiper {
+		overflow: visible;
+	}
 	.swiper-button-prev,
 	.swiper-button-next {
 		color: var(--secondary-color);
@@ -109,7 +113,7 @@ const Main = styled.div.attrs((props) => ({
 		align-items: center;
 		width: 100%;
 		height: 100%;
-		overflow: hidden;
+		overflow: show;
 	}
 
 	.ReactModal__Overlay {
