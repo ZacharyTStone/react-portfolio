@@ -18,7 +18,6 @@ export default function BlogCard({
 			sx={{
 				backgroundColor: "transparent",
 				color: "white",
-
 				minWidth: "250px",
 				height: "fit-content",
 				margin: "10px",

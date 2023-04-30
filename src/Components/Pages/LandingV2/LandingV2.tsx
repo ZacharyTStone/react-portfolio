@@ -68,7 +68,7 @@ const Landing = styled.div`
 	}
 
 	.word {
-		font-size: clamp(1.3rem, 7vw, 5rem);
+		font-size: clamp(1.3rem, 6.5vw, 5rem);
 
 		font-family: "Rubik", sans-serif;
 		font-weight: 400;
@@ -79,6 +79,13 @@ const Landing = styled.div`
 		text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
 			1px 1px 0 white;
 		color: black;
+	}
+
+	@media (max-width: 768px) {
+		.word {
+			color: var(--white);
+			text-shadow: none;
+		}
 	}
 
 	#special-1 {
@@ -97,7 +104,7 @@ const Landing = styled.div`
 	align-items: center;
 	width: 100%;
 	height: 100vh;
-	height: 100svh;
+	/* height: 100svh; */
 
 	@media (max-width: 768px) {
 		height: calc(100vh -56px);
