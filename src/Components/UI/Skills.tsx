@@ -39,7 +39,7 @@ const Skills = () => {
 	const { t } = useTranslation();
 
 	const FRAMEWORKS = [
-		[<FaReact />, "React", "https://reactjs.org/"],
+		[<FaReact />, "React (CRA)", "https://reactjs.org/"],
 		[<RiGatsbyFill />, "Gatsby", "https://www.gatsbyjs.org/"],
 		[<RiVuejsFill />, "Vue", "https://vuejs.org/"],
 		[<TbBrandNextjs />, "Next.js", "https://nextjs.org/"],
