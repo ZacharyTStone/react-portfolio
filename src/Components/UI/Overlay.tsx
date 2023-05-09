@@ -86,6 +86,16 @@ export default function Index() {
 		divSequence(4);
 	}, []);
 
+	useEffect(() => {
+		// Lock scroll when the component is mounted
+		document.body.style.overflow = "hidden";
+
+		// Unlock scroll when the component is unmounted
+		return () => {
+			document.body.style.overflow = "auto";
+		};
+	}, []);
+
 	return (
 		<Container>
 			{divAnimations.map((animation, index) => (

@@ -5,6 +5,7 @@ import { useMediaQuery } from "react-responsive";
 import ParticlesBackground from "./Components/UI/Particles";
 import { Overlay } from "./Components/index";
 import { inject } from "@vercel/analytics";
+import styled from "styled-components";
 
 // kicks off immediately when the current file is imported
 const LandingComponentPromise = import(
@@ -45,22 +46,31 @@ function App() {
 
 	return (
 		<div className="App">
-			{!showApp ? (
-				<Overlay />
-			) : (
-				<>
-					{isDesktopOrLaptop && <ParticlesBackground />}
-					<Suspense fallback={<h1>Loading...</h1>}>
-						<LandingV2 />
-						<About />
-						<Projects />
-						<Blog />
-						<Footer />
-					</Suspense>
-				</>
-			)}
+			{!showApp && <Overlay />}
+			<Main showApp={showApp}>
+				{isDesktopOrLaptop && <ParticlesBackground />}
+				<Suspense fallback={<h1>Loading...</h1>}>
+					<LandingV2 />
+					<About />
+					<Projects />
+					<Blog />
+					<Footer />
+				</Suspense>
+			</Main>
 		</div>
 	);
 }
+
+const Main = styled.div<{ showApp: boolean }>`
+	opacity: 0;
+	transition: opacity 0.5s linear;
+
+	${(props) =>
+		props.showApp &&
+		`
+		opacity: 1;
+		visibility: visible;
+	`}
+`;
 
 export default App;
