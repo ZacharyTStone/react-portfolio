@@ -292,7 +292,7 @@ const ProjectCard = styled(Card)`
 			}
 
 			#card-media {
-				width: 1200px !important;
+				width: 1000px !important;
 				max-width: 100% !important;
 				cursor: url(${Dot}), 4, 4 pointer !important;
 			}

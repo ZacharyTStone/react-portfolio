@@ -140,7 +140,7 @@ const Main = styled.div.attrs((props) => ({
 
 	#Blog {
 		text-align: center;
-		padding-bottom: ${(props) => (props.isMobile ? "30px" : "120x")};
+		padding-bottom: ${(props) => (props.isMobile ? "30px" : "100px")};
 	}
 
 	.direction-btn {

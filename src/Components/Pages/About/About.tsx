@@ -64,6 +64,11 @@ const AboutDiv = styled.div`
 	overflow: hidden;
 	user-select: none;
 
+	.contributions_chart {
+		display: flex;
+		justify-content: center;
+	}
+
 	@media (max-width: 1000px) {
 		width: 90%;
 		padding: 10px;

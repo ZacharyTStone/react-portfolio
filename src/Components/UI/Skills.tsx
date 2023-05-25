@@ -407,6 +407,11 @@ const SkillsDiv = styled.div`
 		margin-bottom: 20px !important;
 	}
 
+	.contributions-chart {
+		display: flex;
+		justify-content: center;
+	}
+
 	.Skills {
 		margin: auto;
 		height: auto;
