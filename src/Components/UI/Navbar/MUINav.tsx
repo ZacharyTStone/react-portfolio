@@ -173,13 +173,13 @@ const MUINav = () => {
 
 const Nav = styled(AppBar)`
 	z-index: 100 !important;
-	background-color: var(--black) !important;
+	background-color: transparent !important;
 	overflow: hidden;
 	box-shadow: none !important;
 	width: 100% !important;
 
 	.nav-menu-item:hover {
-		background-color: var(--black) !important;
+		background-color: transparent !important;
 		color: var(--secondary-color) !important;
 		cursor: url(${Dot}), 4, 4 pointer !important;
 	}
