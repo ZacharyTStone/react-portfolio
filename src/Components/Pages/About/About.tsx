@@ -1,8 +1,8 @@
 import React from "react";
-import Skills from "../../UI/Skills";
 import { AnimationOnScroll } from "react-animation-on-scroll";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
+import Skills from "../../UI/Skills";
 
 const About = () => {
 	const { t } = useTranslation();
@@ -52,7 +52,6 @@ const About = () => {
 
 const AboutDiv = styled.div`
 	width: 85vw;
-
 	margin: auto;
 	border-radius: 10px;
 	display: flex;

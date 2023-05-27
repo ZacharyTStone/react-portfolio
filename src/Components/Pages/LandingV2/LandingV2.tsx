@@ -1,8 +1,9 @@
-import SocialLinksVertical from "../../UI/SocialLinksVertical";
-import "animate.css";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import MUINav from "../../UI/Navbar/MUINav";
+import SocialLinksVertical from "../../UI/SocialLinksVertical";
+import "animate.css";
 
 const LandingV2 = () => {
 	const { t, i18n } = useTranslation();
@@ -20,33 +21,19 @@ const LandingV2 = () => {
 	return (
 		<Landing>
 			<MUINav />
-			<div
-				style={{
-					height: "100%",
-					justifyContent: "center",
-					display: "flex",
-					flexDirection: "column",
-					alignItems: "center",
-				}}
-			>
+			<div className="content">
 				<LandingTile className="animate__animated animate__fadeIn">
-					<div
-						id="text"
-						style={{
-							pointerEvents: "none",
-						}}
-					>
+					<div id="text">
 						<div className="line">
 							<p className="word">
-								{`${currGreeting}`}, {i18n.language === "en" ? " I'm " : " "}
+								{`${currGreeting}${i18n.language === "en" ? " I'm " : " "}`}
 							</p>
 						</div>
 						<div className="line">
-							<p className="word " id="special-1">
+							<p className="word" id="special-1">
 								{t("landing.name")}
 							</p>
 						</div>
-
 						<div className="line">
 							<p className="word">{t("landing.description1")}</p>
 						</div>
@@ -62,6 +49,14 @@ const LandingV2 = () => {
 };
 
 const Landing = styled.div`
+	.content {
+		height: 100%;
+		justify-content: center;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
 	.line {
 		display: flex;
 		justify-content: space-between;
@@ -69,7 +64,6 @@ const Landing = styled.div`
 
 	.word {
 		font-size: clamp(1.3rem, 6.5vw, 5rem);
-
 		font-family: "Rubik", sans-serif;
 		font-weight: 400;
 		margin: 0rem;
@@ -104,11 +98,9 @@ const Landing = styled.div`
 	align-items: center;
 	width: 100%;
 	height: 100vh;
-	/* height: 100svh; */
 
 	@media (max-width: 768px) {
-		height: calc(100vh -56px);
-		height: calc(100svh -56px);
+		height: calc(100vh - 56px);
 	}
 `;
 
@@ -120,7 +112,6 @@ const LandingTile = styled.h1`
 	height: max-content;
 	text-align: center;
 	user-select: none;
-
 	margin: 50px;
 	font-size: 3rem;
 	padding-bottom: 61px;

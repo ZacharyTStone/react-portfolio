@@ -1,8 +1,9 @@
-import SocialLinks from "../../UI/SocialLinks";
+import React from "react";
+import { BsArrowLeft } from "react-icons/bs";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
-import { BsArrowLeft } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
+import SocialLinks from "../../UI/SocialLinks";
 
 const Footer = () => {
 	const { t } = useTranslation();
@@ -13,23 +14,17 @@ const Footer = () => {
 			<footer>
 				<div className="footer-text">
 					<span>
-						{isTabletOrMobile && (
+						{isTabletOrMobile ? (
 							<>
 								<span>Thank for looking at my portfolio.</span>
-								<span
-									style={{
-										color: "var(--secondary-color)",
-									}}
-								>
+								<span style={{ color: "var(--secondary-color)" }}>
 									Let's connect!
 								</span>
 							</>
-						)}
-						{!isTabletOrMobile && (
+						) : (
 							<div
 								style={{
 									marginLeft: "74px",
-
 									display: "flex",
 									alignItems: "center",
 								}}
@@ -37,17 +32,11 @@ const Footer = () => {
 								<BsArrowLeft
 									color="var(--secondary-color)"
 									size="1.5rem"
-									style={{
-										marginRight: "16px",
-									}}
+									style={{ marginRight: "16px" }}
 								/>
 								<span>
 									{t("footer.thanks")}&nbsp;
-									<span
-										style={{
-											color: "var(--secondary-color)",
-										}}
-									>
+									<span style={{ color: "var(--secondary-color)" }}>
 										{t("footer.contact")}
 									</span>
 								</span>
