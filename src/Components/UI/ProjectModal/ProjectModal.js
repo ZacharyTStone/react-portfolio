@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { CardMedia } from "@mui/material";
 import Card from "@mui/material/Card";
 import Modal from "react-modal";
@@ -38,6 +38,11 @@ const customStyles = {
 Modal.setAppElement(document.getElementById("root"));
 
 function ProjectModal({ project }) {
+	const [isLoading, setIsLoading] = useState(true);
+
+	const handleOnLoad = () => {
+		setIsLoading(false);
+	};
 	const TagButton = styled(Button)(({ theme }) => ({
 		color: "var(--secondary-color)",
 		backgroundColor: "white",
@@ -92,20 +97,35 @@ function ProjectModal({ project }) {
 						}}
 					>
 						{project.youtube ? (
-							<iframe
-								id="card-media"
-								width="100%"
-								height="fit-content"
-								src={project.youtube}
-								title="YouTube video player"
-								frameborder="0"
-								allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-								allowfullscreen
-								style={{
-									hover: "none",
-									cursor: "url(../../images/cursor-pointer.png), auto",
-								}}
-							/>
+							<div>
+								{isLoading && (
+									<div
+										style={{
+											display: "flex",
+											width: "1000px",
+											height: "fit-content",
+										}}
+									/>
+								)}
+								{project.youtube && (
+									<iframe
+										id="card-media"
+										width="100%"
+										height="fit-content"
+										src={project.youtube}
+										title="YouTube video player"
+										frameBorder="0"
+										allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+										allowFullScreen
+										style={{
+											hover: "none",
+											cursor: "url(../../images/cursor-pointer.png), auto",
+											display: isLoading ? "none" : "block",
+										}}
+										onLoad={handleOnLoad}
+									/>
+								)}
+							</div>
 						) : (
 							<CardMedia
 								component={"img"}
