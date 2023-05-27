@@ -103,7 +103,7 @@ function ProjectModal({ project }) {
 										style={{
 											display: "flex",
 											width: "1000px",
-											height: "fit-content",
+											height: "225px",
 										}}
 									/>
 								)}
