@@ -5,33 +5,30 @@ import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
 import { BLOG_CONTENT } from "../../../utils/constants";
-// import Swiper bundle with all modules installed
-// Import Swiper React components
-// import Swiper core and required modules
-import { Navigation, Scrollbar, A11y, EffectCoverflow } from "swiper";
-
 import { Swiper, SwiperSlide } from "swiper/react";
-
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/navigation";
+import { Navigation, Scrollbar, A11y, EffectCoverflow } from "swiper";
 
-const Blog = () => {
+const Blog: React.FC = () => {
 	const { i18n } = useTranslation();
-	const [activeSlide, setActiveSlide] = useState(0);
+	const [activeSlide, setActiveSlide] = useState<number>(0);
 
-	const isMobile = useMediaQuery({ query: "(max-width: 768px)" });
+	const isMobile: boolean = useMediaQuery({ query: "(max-width: 768px)" });
 
-	let content = BLOG_CONTENT;
+	let content: any = BLOG_CONTENT;
 
 	i18n.language === "en"
 		? (content = content.English)
 		: (content = content.Japanese);
 
-	const DesktopBlogCarousel = ({ content, activeSlide, setActiveSlide }) => {
+	const DesktopBlogCarousel: React.FC<{
+		content: any;
+		activeSlide: number;
+		setActiveSlide: React.Dispatch<React.SetStateAction<number>>;
+	}> = ({ content, activeSlide, setActiveSlide }) => {
 		return (
 			<Swiper
-				// install Swiper modules
 				modules={[Navigation, Scrollbar, A11y, EffectCoverflow]}
 				effect="coverflow"
 				spaceBetween={40}
@@ -43,15 +40,9 @@ const Blog = () => {
 				loop
 				style={{ maxWidth: "2000px", overflow: "visible" }}
 			>
-				{content.posts.map((post, index) => (
-					<SwiperSlide>
-						{" "}
-						<BlogCard
-							key={index}
-							title={post.title}
-							image={post.image}
-							link={post.link}
-						/>
+				{content.posts.map((post: any, index: number) => (
+					<SwiperSlide key={index}>
+						<BlogCard title={post.title} image={post.image} link={post.link} />
 					</SwiperSlide>
 				))}
 			</Swiper>
@@ -63,7 +54,6 @@ const Blog = () => {
 			animateIn="animate__fadeIn"
 			animateOut="animate__fadeOut"
 			animateOnce={true}
-			speed={4}
 		>
 			<Main isMobile={isMobile}>
 				<div id="Blog">
@@ -89,13 +79,9 @@ const Title = styled.h1`
 	text-underline-offset: 12px;
 `;
 
-const Main = styled.div.attrs((props) => ({
-	isMobile: props.isMobile,
-}))`
+const Main = styled.div<{ isMobile: boolean }>`
 	background-color: transparent;
 	padding-bottom: 50px;
-
-	// carousel styling
 
 	.swiper {
 		overflow: visible;
