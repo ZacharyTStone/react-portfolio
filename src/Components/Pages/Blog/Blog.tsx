@@ -9,6 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Scrollbar, A11y, EffectCoverflow } from "swiper";
+import Dot from "../../../images/ring-pointer.png";
 
 const Blog: React.FC = () => {
 	const { i18n } = useTranslation();
@@ -90,6 +91,7 @@ const Main = styled.div<{ isMobile: boolean }>`
 	.swiper-button-next {
 		color: var(--secondary-color);
 		transform: scale(1.5);
+		cursor: url(${Dot}) 4 4, pointer;
 	}
 
 	.projects-container {
