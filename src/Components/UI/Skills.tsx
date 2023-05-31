@@ -169,7 +169,7 @@ const Skills = () => {
 							</>
 							<>
 								<a
-									href="https://docs.google.com/document/d/11O216h5jTIj0ln6_Gx0yDqBL9GHCv-rJ/edit?usp=sharing&ouid=110021340560949770286&rtpof=true&sd=true"
+									href="https://docs.google.com/document/d/1SFRXMNP7yeWrZRcPUAJX-_R28WVdn3w3V7w7fxJnn0w/edit?usp=sharing"
 									target="_blank"
 									rel="noopener noreferrer"
 									id="resume-link"
