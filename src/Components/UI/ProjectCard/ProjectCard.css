@@ -7,7 +7,7 @@
 
 .icon-button-text {
 	font-size: 1.2rem;
-	color: white;
+	color: var(--off-white);
 	text-decoration: none;
 	text-align: center;
 }
@@ -38,7 +38,7 @@
 	}
 	.icon-button-text {
 		font-size: 1rem;
-		color: white;
+		color: var(--off-white);
 		text-decoration: none;
 		text-align: center;
 	}

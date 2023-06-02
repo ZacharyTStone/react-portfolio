@@ -45,7 +45,7 @@ function ProjectModal({ project }) {
 	};
 	const TagButton = styled(Button)(({ theme }) => ({
 		color: "var(--secondary-color)",
-		backgroundColor: "white",
+		backgroundColor: "var(--off-white)",
 		disabled: true,
 		":hover": {},
 	}));
@@ -158,7 +158,7 @@ function ProjectModal({ project }) {
 											<AiFillGithub
 												className="MUI-icon"
 												style={{
-													color: "white",
+													color: "var(--off-white)",
 												}}
 											/>
 										</a>
@@ -171,7 +171,7 @@ function ProjectModal({ project }) {
 											<RiComputerLine
 												className="MUI-icon"
 												style={{
-													color: "white",
+													color: "var(--off-white)",
 												}}
 											/>
 										</a>

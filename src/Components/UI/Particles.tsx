@@ -3,7 +3,7 @@ import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
 
-const ParticlesBackground = () => {
+const ParticlesBackground = ({ lightMode }: { lightMode: boolean }) => {
 	const particlesInit = useCallback(async (engine: Engine) => {
 		console.log(engine);
 
@@ -17,6 +17,8 @@ const ParticlesBackground = () => {
 		},
 		[]
 	);
+
+	if (lightMode) return null;
 
 	return (
 		<Particles

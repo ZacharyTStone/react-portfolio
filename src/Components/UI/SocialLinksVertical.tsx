@@ -30,7 +30,7 @@ const SocialLinksVertical = () => {
 	return (
 		<IconContext.Provider
 			value={{
-				color: "white",
+				color: "var(--off-white)",
 				className: "global-class-name",
 				size: "30px",
 			}}

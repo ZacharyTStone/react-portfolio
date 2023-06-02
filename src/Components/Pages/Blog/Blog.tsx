@@ -136,7 +136,7 @@ const Main = styled.div<{ isMobile: boolean }>`
 		width: 60px;
 		height: 60px;
 		min-width: 60px;
-		background-color: black;
+		background-color: var(--black);
 		border-radius: 50%;
 		justify-content: center;
 	}

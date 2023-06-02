@@ -72,7 +72,7 @@ const Main = styled.footer`
 		flex-direction: row;
 		justify-content: center;
 		align-items: center;
-		color: white;
+		color: var(--off-white);
 		margin-left: 16px;
 		user-select: none;
 	}

@@ -5,7 +5,13 @@ import MUINav from "../../UI/Navbar/MUINav";
 import SocialLinksVertical from "../../UI/SocialLinksVertical";
 import "animate.css";
 
-const LandingV2 = () => {
+const LandingV2 = ({
+	lightMode,
+	setLightMode,
+}: {
+	lightMode: boolean;
+	setLightMode: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
 	const { t, i18n } = useTranslation();
 	const time = new Date().getHours();
 
@@ -20,7 +26,7 @@ const LandingV2 = () => {
 
 	return (
 		<Landing>
-			<MUINav />
+			<MUINav lightMode={lightMode} setLightMode={setLightMode} />
 			<div className="content">
 				<LandingTile className="animate__animated animate__fadeIn">
 					<div id="text">
@@ -71,13 +77,13 @@ const Landing = styled.div`
 		transition: opacity 250ms ease;
 		opacity: 0.5;
 		text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-			1px 1px 0 white;
+			1px 1px 0 var(--off-white);
 		color: black;
 	}
 
 	@media (max-width: 768px) {
 		.word {
-			color: var(--white);
+			color: var(--off-white);
 			text-shadow: none;
 		}
 	}
@@ -85,7 +91,7 @@ const Landing = styled.div`
 	#special-1 {
 		opacity: 1 !important;
 		text-shadow: none !important;
-		color: var(--white) !important;
+		color: var(--off-white) !important;
 	}
 
 	#special-2 {

@@ -115,7 +115,7 @@ const Skills = () => {
 		<>
 			<IconContext.Provider
 				value={{
-					color: "white",
+					color: "var(--off-white)",
 					className: "global-class-name sill-img",
 					size: "40px",
 				}}
@@ -160,7 +160,7 @@ const Skills = () => {
 										className="about-description resume-link-text"
 										style={{
 											marginLeft: "10px",
-											color: "white",
+											color: "var(--off-white)",
 										}}
 									>
 										{t("skills.resume")}
@@ -188,7 +188,7 @@ const Skills = () => {
 										className="about-description resume-link-text"
 										style={{
 											marginLeft: "10px",
-											color: "white",
+											color: "var(--off-white)",
 										}}
 									>
 										{t("skills.japaneseResume")}
@@ -203,7 +203,7 @@ const Skills = () => {
 									id="resume-link"
 									style={{
 										textDecoration: "none",
-										color: "white",
+										color: "var(--off-white)",
 										marginTop: "20px",
 										marginBottom: "20px",
 										display: "flex",
@@ -214,7 +214,7 @@ const Skills = () => {
 										className="about-description resume-link-text"
 										style={{
 											marginLeft: "0.5rem",
-											color: "white",
+											color: "var(--off-white)",
 										}}
 									>
 										{t("skills.certifications")}
@@ -224,7 +224,7 @@ const Skills = () => {
 						</div>
 					</div>
 					<div className="github">
-						<GithubContributions username="ZacharyTStone" />
+						{/* <GithubContributions username="ZacharyTStone" />  */}
 					</div>
 					<div className="skills-container">
 						<ButtonContainer>

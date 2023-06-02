@@ -12,8 +12,16 @@ import japan from "../../../images/japan-big.png";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import Dot from "../../../images/ring-pointer.png";
+import { MdDarkMode as DarkModeIcon } from "react-icons/md";
+import { MdLightMode as LightModeIcon } from "react-icons/md";
 
-const MUINav = () => {
+const MUINav = ({
+	lightMode,
+	setLightMode,
+}: {
+	lightMode: boolean;
+	setLightMode: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
 	const { i18n, t } = useTranslation();
 
 	const links = [
@@ -124,7 +132,7 @@ const MUINav = () => {
 								<Button
 									color="inherit"
 									onClick={handleCloseNavMenu}
-									sx={{ my: 1, color: "white", display: "block" }}
+									sx={{ my: 1, color: "var(--off-white)", display: "block" }}
 									style={{
 										fontSize: "1.2rem",
 										marginLeft: "10px",
@@ -139,6 +147,21 @@ const MUINav = () => {
 					</Box>
 
 					<Box sx={{ flexGrow: 0 }} className="full-flag-div">
+						<div onClick={() => setLightMode(!lightMode)}>
+							{lightMode ? (
+								<div className="flag-div">
+									<div className="flag-div-holder">
+										<DarkModeIcon className="flag" />
+									</div>
+								</div>
+							) : (
+								<div className="jp">
+									<div className="flag-div-holder">
+										<LightModeIcon className="flag" />
+									</div>
+								</div>
+							)}
+						</div>
 						<div className="flag-div nav-button">
 							{i18n.language === "en" ? (
 								<div className="flag-div">
@@ -191,6 +214,8 @@ const Nav = styled(AppBar)`
 	.full-flag-div {
 		position: fixed;
 		right: 16px;
+		display: flex;
+		gap: 8px;
 	}
 	.flag-div {
 		display: flex;

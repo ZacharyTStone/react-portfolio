@@ -37,6 +37,7 @@ function App() {
 	});
 
 	const [showApp, setShowApp] = useState(false);
+	const [lightMode, setLightMode] = useState(true);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -44,13 +45,19 @@ function App() {
 		}, 5000);
 	});
 
+	useEffect(() => {
+		const rootElement = document.documentElement;
+		if (!lightMode) rootElement.classList.remove("light-mode");
+		else rootElement.classList.add("light-mode");
+	}, [lightMode]);
+
 	return (
-		<div className="App">
+		<div className={`App ${lightMode ? "light-mode" : ""}`}>
 			{!showApp && <Overlay />}
 			<Main showApp={showApp}>
-				{isDesktopOrLaptop && <ParticlesBackground />}
+				{isDesktopOrLaptop && <ParticlesBackground lightMode={lightMode} />}
 				<Suspense fallback={<h1>Loading...</h1>}>
-					<LandingV2 />
+					<LandingV2 lightMode={lightMode} setLightMode={setLightMode} />
 					<About />
 					<Projects />
 					<Blog />

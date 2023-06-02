@@ -42,7 +42,7 @@ export default function MUIProjectCard(props) {
 						<h1
 							className="card-title"
 							style={{
-								color: "white",
+								color: "var(--off-white)",
 								fontSize: "4.7rem",
 								fontWeight: "bold",
 								textAlign: "left",
@@ -126,7 +126,7 @@ const ProjectCard = styled(Card)`
 
 	.icon-button-text {
 		font-size: 1.2rem;
-		color: white;
+		color: var(--off-white);
 		text-decoration: none;
 		text-align: center;
 	}
@@ -183,7 +183,7 @@ const ProjectCard = styled(Card)`
 		}
 		.icon-button-text {
 			font-size: 1rem;
-			color: white;
+			color: var(--off-white);
 			text-decoration: none;
 			text-align: center;
 		}
