@@ -43,13 +43,24 @@ function App() {
 		setTimeout(() => {
 			setShowApp(true);
 		}, 5000);
-	});
+	}, []);
 
 	useEffect(() => {
 		const rootElement = document.documentElement;
 		if (!lightMode) rootElement.classList.remove("light-mode");
 		else rootElement.classList.add("light-mode");
+		// Save the theme choice in local storage
+		localStorage.setItem("theme", lightMode ? "light" : "dark");
 	}, [lightMode]);
+
+	useEffect(() => {
+		// Retrieve the theme choice from local storage
+		const savedTheme = localStorage.getItem("theme");
+		if (savedTheme) {
+			// Set the lightMode state based on the stored theme value
+			setLightMode(savedTheme === "light");
+		}
+	}, []);
 
 	return (
 		<div className={`App ${lightMode ? "light-mode" : ""}`}>
