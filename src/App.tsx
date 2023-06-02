@@ -37,7 +37,7 @@ function App() {
 	});
 
 	const [showApp, setShowApp] = useState(false);
-	const [lightMode, setLightMode] = useState(true);
+	const [lightMode, setLightMode] = useState(false);
 
 	useEffect(() => {
 		setTimeout(() => {
