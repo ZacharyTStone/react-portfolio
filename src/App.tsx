@@ -37,7 +37,9 @@ function App() {
 	});
 
 	const [showApp, setShowApp] = useState(false);
-	const [lightMode, setLightMode] = useState(false);
+	const [lightMode, setLightMode] = useState(
+		localStorage.getItem("theme") === "light" ? true : false
+	);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -52,15 +54,6 @@ function App() {
 		// Save the theme choice in local storage
 		localStorage.setItem("theme", lightMode ? "light" : "dark");
 	}, [lightMode]);
-
-	useEffect(() => {
-		// Retrieve the theme choice from local storage
-		const savedTheme = localStorage.getItem("theme");
-		if (savedTheme) {
-			// Set the lightMode state based on the stored theme value
-			setLightMode(savedTheme === "light");
-		}
-	}, []);
 
 	return (
 		<div className={`App ${lightMode ? "light-mode" : ""}`}>
