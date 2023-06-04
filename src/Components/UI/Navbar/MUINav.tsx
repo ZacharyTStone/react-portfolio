@@ -144,7 +144,7 @@ const MUINav = () => {
 					</Box>
 
 					<Box sx={{ flexGrow: 0 }} className="full-flag-div">
-						<div
+						{/* <div
 							onClick={() => {
 								setAudioPreference(!useAudio);
 							}}
@@ -154,7 +154,7 @@ const MUINav = () => {
 							) : (
 								<MdPlayCircleFilled className="flag" />
 							)}
-						</div>
+						</div> */}
 						{/* <div onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
 							{theme === "light" ? (
 								<div className="flag-div">
