@@ -167,16 +167,16 @@ export const Container = styled(motion.div)`
 	}
 
 	.word-small {
-		font-size: clamp(0.5rem, 6.5vw, 2.5rem);
+		font-size: clamp(0.25rem, 6.5vw, 1.25rem);
 		font-family: "Rubik", sans-serif;
 		font-weight: 400;
 		margin: 0rem;
 		text-transform: uppercase;
 		transition: opacity 250ms ease;
 		opacity: 0.5;
-		text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-			1px 1px 0 var(--off-white);
-		color: black;
+		/* text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
+			1px 1px 0 var(--off-white); */
+		color: var(--off-white);
 	}
 
 	#special-1 {
