@@ -31,9 +31,10 @@ const About = () => {
 							</AboutLink>
 							{t("about.description3b")}
 						</AboutDescription>
-						<AboutDescription style={{ wordBreak: "break-all" }}>
+						<AboutDescription style={{ wordBreak: "break-word" }}>
 							{t("about.description4")}
 						</AboutDescription>
+						<AboutDescription>{t("about.description5")}</AboutDescription>
 					</AboutDescriptionWrapper>
 				</AnimationOnScroll>
 

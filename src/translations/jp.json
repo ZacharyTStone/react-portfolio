@@ -16,12 +16,13 @@
 		},
 		"about": {
 			"title": "自己紹介",
-			"description1": "独学のウェブ開発者であり、独学の日本語学習者であり、大学で訓練を受けたミュージシャンでもあります。",
-			"description2": "日本で英語を教えていた頃、コーディングが大好きになりました。 HTML、CSS、Javascriptから始めました。スキルを向上させるために一生懸命に勉強し、今ではReact、Vue、Gatsby、NextJSなどのフレームワークを使用して複雑なフルスタックアプリケーションを作成しています。",
+			"description1": "フロントエンド開発のプロフェッショナルとしての経験を持つソフトウェアエンジニアです。",
+			"description2": "私の主なスキルセットには、React.js、Node.js、TypeScript、およびGraphQLが含まれています。ただし、VueやGatsby JSなど、他の技術にも経験があります。",
 			"description3a": "現在、",
-			"description3b": "でソフトウェアエンジニアとして働いています。",
+			"description3b": "でフロントエンドソフトウェアエンジニアとして働いています。",
 			"currentCompany": "Rapptr Labs",
-			"description4": "ご連絡はZach.Stone.Developer@gmail.comまでメールでお問い合わせください。"
+			"description4": "コーディング以外の時間には、日本語の勉強を楽しんでおり、JLPT N2および漢字検定10級の試験に合格しました。",
+			"description5": "お問い合わせはZach.Stone.Developer@gmail.comまでお願いします。"
 		},
 		"skills": {
 			"title": "スキル",

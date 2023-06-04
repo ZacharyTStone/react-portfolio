@@ -16,12 +16,13 @@
 		},
 		"about": {
 			"title": "My Advantage",
-			"description1": "I'm a self-taught web developer, a self-taught Japanese speaker, and a professionally trained musician.",
-			"description2": "I fell in love with coding while I was an English teacher in Japan. Starting with HTML, CSS, and Javascript, I worked hard to improve my skills and now make complex full-stack applications with technologies such as React, Vue, Gatsby, and Next JS.",
-			"description3a": "I am currently working as a front-end software engineer at ",
+			"description1": "I'm a software engineer with professional experience in front-end development and a passion for learning.",
+			"description2": "My primary skill set includes React.js, Node.js, TypeScript, and GraphQL. However, I do have experience with other technologies such as Vue and Gatsby JS.",
+			"description3a": "I'm currently working as a front-end software engineer at ",
 			"description3b": ".",
 			"currentCompany": "Rapptr Labs",
-			"description4": "You can reach me at Zach.Stone.Developer@gmail.com"
+			"description4": "When I am not coding I enjoy studying Japanese and have passed both the JLPT N2 and Kanji Kentei Level 10 exams.",
+			"description5": "You can reach me at Zach.Stone.Developer@gmail.com"
 		},
 		"skills": {
 			"title": "Skills",
