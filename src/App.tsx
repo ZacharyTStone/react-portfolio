@@ -6,6 +6,7 @@ import ParticlesBackground from "./Components/UI/Particles";
 import { Overlay } from "./Components/index";
 import { inject } from "@vercel/analytics";
 import styled from "styled-components";
+import { useAppContext } from "./context/appContext";
 
 // kicks off immediately when the current file is imported
 const LandingComponentPromise = import(
@@ -37,9 +38,6 @@ function App() {
 	});
 
 	const [showApp, setShowApp] = useState(false);
-	const [lightMode, setLightMode] = useState(
-		localStorage.getItem("theme") === "light" ? true : false
-	);
 
 	useEffect(() => {
 		setTimeout(() => {
@@ -47,23 +45,17 @@ function App() {
 		}, 5000);
 	}, []);
 
-	useEffect(() => {
-		const rootElement = document.documentElement;
-		if (!lightMode) rootElement.classList.remove("light-mode");
-		else rootElement.classList.add("light-mode");
-		// Save the theme choice in local storage
-		localStorage.setItem("theme", lightMode ? "light" : "dark");
-	}, [lightMode]);
+	const { theme } = useAppContext();
 
 	return (
-		<div className={`App ${lightMode ? "light-mode" : ""}`}>
+		<div className={`App ${theme === "light" ? "light-mode" : ""}`}>
 			{!showApp && <Overlay />}
 			<Main showApp={showApp}>
-				{isDesktopOrLaptop && <ParticlesBackground lightMode={lightMode} />}
+				{isDesktopOrLaptop && <ParticlesBackground />}
 				<Suspense fallback={<h1>Loading...</h1>}>
-					<LandingV2 lightMode={lightMode} setLightMode={setLightMode} />
+					<LandingV2 />
 					<About />
-					<Projects lightMode={lightMode} />
+					<Projects />
 					<Blog />
 					<Footer />
 				</Suspense>

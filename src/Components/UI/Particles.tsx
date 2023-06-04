@@ -2,8 +2,9 @@ import React, { useCallback } from "react";
 import Particles from "react-particles";
 import type { Container, Engine } from "tsparticles-engine";
 import { loadFull } from "tsparticles";
+import { useAppContext } from "../../context/appContext";
 
-const ParticlesBackground = ({ lightMode }: { lightMode: boolean }) => {
+const ParticlesBackground = () => {
 	const particlesInit = useCallback(async (engine: Engine) => {
 		console.log(engine);
 
@@ -18,7 +19,8 @@ const ParticlesBackground = ({ lightMode }: { lightMode: boolean }) => {
 		[]
 	);
 
-	if (lightMode) return null;
+	const { theme } = useAppContext();
+	if (theme === "light") return null;
 
 	return (
 		<Particles

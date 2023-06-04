@@ -14,14 +14,10 @@ import styled from "styled-components";
 import Dot from "../../../images/ring-pointer.png";
 import { MdDarkMode as DarkModeIcon } from "react-icons/md";
 import { MdLightMode as LightModeIcon } from "react-icons/md";
+import { useAppContext } from "../../../context/appContext";
+const MUINav = () => {
+	const { theme, setTheme } = useAppContext();
 
-const MUINav = ({
-	lightMode,
-	setLightMode,
-}: {
-	lightMode: boolean;
-	setLightMode: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
 	const { i18n, t } = useTranslation();
 
 	const links = [
@@ -147,8 +143,8 @@ const MUINav = ({
 					</Box>
 
 					<Box sx={{ flexGrow: 0 }} className="full-flag-div">
-						<div onClick={() => setLightMode(!lightMode)}>
-							{lightMode ? (
+						<div onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+							{theme === "light" ? (
 								<div className="flag-div">
 									<div className="flag-div-holder">
 										<DarkModeIcon className="flag" />

@@ -12,8 +12,10 @@ import { RiGatsbyFill } from "react-icons/ri";
 import { RiVuejsFill } from "react-icons/ri";
 import styled from "styled-components";
 import Dot from "../../../images/cursor-ring.png";
+import { useAppContext } from "../../../context/appContext";
 
 export default function MUIProjectCard(props) {
+	const { theme } = useAppContext();
 	return (
 		<ProjectCard
 			id="MUI-Card"
@@ -67,7 +69,7 @@ export default function MUIProjectCard(props) {
 						component={"img"}
 						id="card-media"
 						className={`darken-on-hover ${
-							props.lightMode ? "light-mode" : "dark-mode"
+							theme === "light" ? "light-mode" : "dark-mode"
 						}`}
 						image={props.image}
 						alt={props.title}

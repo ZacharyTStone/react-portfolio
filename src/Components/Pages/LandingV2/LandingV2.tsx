@@ -5,13 +5,7 @@ import MUINav from "../../UI/Navbar/MUINav";
 import SocialLinksVertical from "../../UI/SocialLinksVertical";
 import "animate.css";
 
-const LandingV2 = ({
-	lightMode,
-	setLightMode,
-}: {
-	lightMode: boolean;
-	setLightMode: React.Dispatch<React.SetStateAction<boolean>>;
-}) => {
+const LandingV2 = () => {
 	const { t, i18n } = useTranslation();
 	const time = new Date().getHours();
 
@@ -26,7 +20,7 @@ const LandingV2 = ({
 
 	return (
 		<Landing>
-			<MUINav lightMode={lightMode} setLightMode={setLightMode} />
+			<MUINav />
 			<div className="content">
 				<LandingTile className="animate__animated animate__fadeIn">
 					<div id="text">

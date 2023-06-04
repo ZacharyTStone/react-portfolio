@@ -52,7 +52,7 @@ const Footer = () => {
 
 const Main = styled.footer`
 	footer {
-		background-color: transparent;
+		background-color: var(--black);
 		display: flex;
 		justify-content: space-between;
 		z-index: 10;
