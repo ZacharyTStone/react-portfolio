@@ -155,7 +155,7 @@ const MUINav = () => {
 								<MdPlayCircleFilled className="flag" />
 							)}
 						</div>
-						<div onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
+						{/* <div onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
 							{theme === "light" ? (
 								<div className="flag-div">
 									<div className="flag-div-holder">
@@ -169,7 +169,7 @@ const MUINav = () => {
 									</div>
 								</div>
 							)}
-						</div>
+						</div> */}
 						<div className="flag-div nav-button">
 							{i18n.language === "en" ? (
 								<div className="flag-div">

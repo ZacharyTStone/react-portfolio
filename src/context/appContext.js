@@ -5,7 +5,8 @@ import { SET_AUDIO_PREFERENCE, SET_THEME } from "./actions";
 const initialState = {
 	theme:
 		// look at local storage for theme
-		localStorage.getItem("theme") || "dark",
+		// localStorage.getItem("theme") || "dark",
+		"dark",
 	useAudio: false,
 };
 
