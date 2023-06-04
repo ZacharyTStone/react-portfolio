@@ -1,3 +1,5 @@
 export const SET_THEME = "SET_THEME";
 
 export const SET_AUDIO_PREFERENCE = "SET_AUDIO_PREFERENCE";
+
+export const SET_ACCEPT_APP = "SET_ACCEPT_APP";

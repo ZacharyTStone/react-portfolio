@@ -8,6 +8,8 @@ import { inject } from "@vercel/analytics";
 import styled from "styled-components";
 import { useAppContext } from "./context/appContext";
 import BackgroundAudio from "./audio/BackgroundAudio";
+import Intro from "./Components/UI/Intro";
+import AudioOnClick from "./audio/AudioOnClick";
 
 // kicks off immediately when the current file is imported
 const LandingComponentPromise = import(
@@ -40,28 +42,36 @@ function App() {
 
 	const [showApp, setShowApp] = useState(false);
 
+	const { acceptApp } = useAppContext();
+
 	useEffect(() => {
+		if (!acceptApp) return;
 		setTimeout(() => {
 			setShowApp(true);
-		}, 5000);
-	}, []);
+		}, 4750);
+	}, [acceptApp]);
 
 	const { theme } = useAppContext();
 
 	return (
 		<div className={`App ${theme === "light" ? "light-mode" : ""}`}>
-			{!showApp && <Overlay />}
-			<Main showApp={showApp}>
-				{isDesktopOrLaptop && <ParticlesBackground />}
-				{showApp && <BackgroundAudio />}
-				<Suspense fallback={<h1>Loading...</h1>}>
-					<LandingV2 />
-					<About />
-					<Projects />
-					<Blog />
-					<Footer />
-				</Suspense>
-			</Main>
+			{!acceptApp && <Intro />}
+			<>
+				{acceptApp && !showApp && <Overlay />}
+				<Main showApp={showApp}>
+					{/* {isDesktopOrLaptop && <ParticlesBackground />} */}
+					<ParticlesBackground />
+					{showApp && <BackgroundAudio />}
+					{showApp && <AudioOnClick />}
+					<Suspense fallback={<h1>Loading...</h1>}>
+						<LandingV2 />
+						<About />
+						<Projects />
+						<Blog />
+						<Footer />
+					</Suspense>
+				</Main>
+			</>
 		</div>
 	);
 }

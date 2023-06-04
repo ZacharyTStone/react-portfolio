@@ -1,4 +1,4 @@
-import { SET_THEME, SET_AUDIO_PREFERENCE } from "./actions";
+import { SET_THEME, SET_AUDIO_PREFERENCE, SET_ACCEPT_APP } from "./actions";
 
 import { initialState } from "./appContext";
 
@@ -26,6 +26,12 @@ const reducer = (
 
 		return { ...state, useAudio: action.payload };
 	}
+
+	if (action.type === SET_ACCEPT_APP) {
+		// only update state
+		return { ...state, acceptApp: action.payload };
+	}
+
 	throw new Error(`No Matching "${action.type}" - action type`);
 };
 

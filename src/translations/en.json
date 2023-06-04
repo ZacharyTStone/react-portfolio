@@ -32,6 +32,11 @@
 		"footer": {
 			"thanks": "Thanks for visiting!",
 			"contact": "Let's connect!"
+		},
+		"intro": {
+			"enableAudio": "Enable Audio",
+			"accept": "Enter",
+			"header": "Welcome to my website"
 		}
 	}
 }
