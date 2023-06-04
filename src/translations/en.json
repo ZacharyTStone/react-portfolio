@@ -16,12 +16,12 @@
 		},
 		"about": {
 			"title": "About Me",
-			"description1": "I'm a software engineer with professional experience in front-end web development .",
-			"description2": "My primary skill set includes React.js, Node.js, TypeScript, and GraphQL. However, I do have experience with other technologies such as Vue and Gatsby JS.",
+			"description1": "I'm a software engineer with professional experience in front-end web development.",
+			"description2": "My primary skill set includes React.js, Node.js, TypeScript, and GraphQL. I also have experience with other technologies like Vue and Gatsby JS.",
 			"description3a": "I'm currently working as a front-end software engineer at ",
 			"description3b": ".",
 			"currentCompany": "Rapptr Labs",
-			"description4": "When I am not coding, I enjoy studying Japanese and have passed both the JLPT N2 and Kanji Kentei Level 10 exams.",
+			"description4": "When I am not coding, I enjoy studying Japanese and have passed the JLPT N2 and Kanji Kentei Level 10 exams.",
 			"description5": "You can reach me at Zach.Stone.Developer@gmail.com"
 		},
 		"skills": {
