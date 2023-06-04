@@ -5,7 +5,7 @@ import "./Projects.css";
 import { useTranslation } from "react-i18next";
 import { PROJECTS } from "../../../utils/constants";
 
-const Projects = () => {
+const Projects = ({ lightMode }: { lightMode: boolean }) => {
 	const { i18n } = useTranslation();
 
 	let content = PROJECTS as any;
@@ -25,7 +25,7 @@ const Projects = () => {
 
 				<div className="projects-container">
 					{content.projects.map((project: any) => (
-						<ProjectModal project={project} />
+						<ProjectModal project={project} lightMode={lightMode} />
 					))}
 				</div>
 			</Main>

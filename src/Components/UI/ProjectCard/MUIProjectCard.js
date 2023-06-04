@@ -62,16 +62,19 @@ export default function MUIProjectCard(props) {
 							{props.title}
 						</h1>
 					</div>
+
 					<CardMedia
 						component={"img"}
 						id="card-media"
-						className="darken-on-hover"
+						className={`darken-on-hover ${
+							props.lightMode ? "light-mode" : "dark-mode"
+						}`}
 						image={props.image}
 						alt={props.title}
 						loading="lazy"
 						object-fit="contain"
 						style={{
-							filter: "brightness(0.80)",
+							// filter: "brightness(0.80)",
 
 							borderRadius: "20px",
 						}}
@@ -115,6 +118,14 @@ const ProjectCard = styled(Card)`
 
 	.cardMediaTag {
 		cursor: url(${Dot}), 4, 4 pointer !important;
+	}
+
+	.light-mode {
+		filter: brightness(1) !important;
+	}
+
+	.dark-mode {
+		filter: brightness(0.8) !important;
 	}
 
 	#MUI-description {

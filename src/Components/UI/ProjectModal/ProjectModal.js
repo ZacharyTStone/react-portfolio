@@ -37,7 +37,7 @@ const customStyles = {
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement(document.getElementById("root"));
 
-function ProjectModal({ project }) {
+function ProjectModal({ project, lightMode }) {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const handleOnLoad = () => {
@@ -79,6 +79,7 @@ function ProjectModal({ project }) {
 					tags={project?.tags}
 					english={project?.english}
 					japanese={project?.japanese}
+					lightMode={lightMode}
 				/>
 			</div>
 

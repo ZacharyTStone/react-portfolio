@@ -63,7 +63,7 @@ function App() {
 				<Suspense fallback={<h1>Loading...</h1>}>
 					<LandingV2 lightMode={lightMode} setLightMode={setLightMode} />
 					<About />
-					<Projects />
+					<Projects lightMode={lightMode} />
 					<Blog />
 					<Footer />
 				</Suspense>
