@@ -7,6 +7,7 @@ import { Overlay } from "./Components/index";
 import { inject } from "@vercel/analytics";
 import styled from "styled-components";
 import { useAppContext } from "./context/appContext";
+import BackgroundAudio from "./audio/BackgroundAudio";
 
 // kicks off immediately when the current file is imported
 const LandingComponentPromise = import(
@@ -52,6 +53,7 @@ function App() {
 			{!showApp && <Overlay />}
 			<Main showApp={showApp}>
 				{isDesktopOrLaptop && <ParticlesBackground />}
+				{showApp && <BackgroundAudio />}
 				<Suspense fallback={<h1>Loading...</h1>}>
 					<LandingV2 />
 					<About />

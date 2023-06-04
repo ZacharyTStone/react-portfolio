@@ -1,11 +1,12 @@
 import React, { useReducer, useContext, useRef } from "react";
 import reducer from "./reducer";
-import { SET_THEME } from "./actions";
+import { SET_AUDIO_PREFERENCE, SET_THEME } from "./actions";
 
 const initialState = {
 	theme:
 		// look at local storage for theme
 		localStorage.getItem("theme") || "dark",
+	useAudio: false,
 };
 
 const AppContext = React.createContext();
@@ -17,11 +18,16 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: SET_THEME, payload: theme });
 	};
 
+	const setAudioPreference = (useAudio) => {
+		dispatch({ type: SET_AUDIO_PREFERENCE, payload: useAudio });
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
 				...state,
 				setTheme,
+				setAudioPreference,
 			}}
 		>
 			{children}

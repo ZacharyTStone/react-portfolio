@@ -14,9 +14,10 @@ import styled from "styled-components";
 import Dot from "../../../images/ring-pointer.png";
 import { MdDarkMode as DarkModeIcon } from "react-icons/md";
 import { MdLightMode as LightModeIcon } from "react-icons/md";
+import { MdPlayCircleFilled, MdPauseCircleFilled } from "react-icons/md";
 import { useAppContext } from "../../../context/appContext";
 const MUINav = () => {
-	const { theme, setTheme } = useAppContext();
+	const { theme, setTheme, useAudio, setAudioPreference } = useAppContext();
 
 	const { i18n, t } = useTranslation();
 
@@ -143,6 +144,17 @@ const MUINav = () => {
 					</Box>
 
 					<Box sx={{ flexGrow: 0 }} className="full-flag-div">
+						<div
+							onClick={() => {
+								setAudioPreference(!useAudio);
+							}}
+						>
+							{useAudio ? (
+								<MdPauseCircleFilled className="flag" />
+							) : (
+								<MdPlayCircleFilled className="flag" />
+							)}
+						</div>
 						<div onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
 							{theme === "light" ? (
 								<div className="flag-div">

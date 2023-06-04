@@ -1,4 +1,4 @@
-import { SET_THEME } from "./actions";
+import { SET_THEME, SET_AUDIO_PREFERENCE } from "./actions";
 
 import { initialState } from "./appContext";
 
@@ -16,6 +16,15 @@ const reducer = (
 		// update the theme in the state
 
 		return { ...state, theme: action.payload };
+	}
+
+	if (action.type === SET_AUDIO_PREFERENCE) {
+		// update the audio preference in local storage
+		localStorage.setItem("audioPreference", action.payload);
+
+		// update the audio preference in the state
+
+		return { ...state, useAudio: action.payload };
 	}
 	throw new Error(`No Matching "${action.type}" - action type`);
 };
