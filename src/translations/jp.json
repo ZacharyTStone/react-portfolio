@@ -1,12 +1,12 @@
 {
 	"translation": {
 		"landing": {
-			"morning": "おはようございます",
-			"afternoon": "こんにちは",
-			"evening": "こんばんは",
-			"name": "ザック•ストーン",
+			"morning": "おはようございます。",
+			"afternoon": "こんにちは。",
+			"evening": "こんばんは。",
+			"name": "ザッカリー•ストーン",
 			"description1": "と申します。",
-			"description2": "ウェブ開発者です。"
+			"description2": "ソフトエンジニアです。"
 		},
 		"nav": {
 			"home": "ホーム",
