@@ -64,7 +64,7 @@ function App() {
 				<Main showApp={showApp}>
 					{/* {isDesktopOrLaptop && <ParticlesBackground />} */}
 					<ParticlesBackground />
-					{<BackgroundAudio />}
+					{showApp && <BackgroundAudio />}
 					{<AudioOnClick />}
 					<Suspense fallback={<h1>Loading...</h1>}>
 						<LandingV2 />
