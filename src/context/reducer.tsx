@@ -1,4 +1,9 @@
-import { SET_THEME, SET_AUDIO_PREFERENCE, SET_ACCEPT_APP } from "./actions";
+import {
+	SET_THEME,
+	SET_AUDIO_PREFERENCE,
+	SET_ACCEPT_APP,
+	SET_SHOW_APP,
+} from "./actions";
 
 import { initialState } from "./appContext";
 
@@ -30,6 +35,10 @@ const reducer = (
 	if (action.type === SET_ACCEPT_APP) {
 		// only update state
 		return { ...state, acceptApp: action.payload };
+	}
+
+	if (action.type === SET_SHOW_APP) {
+		return { ...state, showApp: action.payload };
 	}
 
 	throw new Error(`No Matching "${action.type}" - action type`);

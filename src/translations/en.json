@@ -38,6 +38,9 @@
 			"enableAudio": "Enable Audio",
 			"accept": "Enter",
 			"header": "Welcome to my website"
+		},
+		"toast": {
+			"info": "try clicking on the background for a surprise 🎉"
 		}
 	}
 }

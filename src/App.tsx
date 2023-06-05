@@ -11,6 +11,9 @@ import BackgroundAudio from "./audio/BackgroundAudio";
 import Intro from "./Components/UI/Intro";
 import AudioOnClick from "./audio/AudioOnClick";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
 // kicks off immediately when the current file is imported
 const LandingComponentPromise = import(
 	"./Components/Pages/LandingV2/LandingV2"
@@ -40,9 +43,7 @@ function App() {
 		query: "(min-width: 1224px)",
 	});
 
-	const [showApp, setShowApp] = useState(false);
-
-	const { acceptApp } = useAppContext();
+	const { acceptApp, showApp, setShowApp } = useAppContext();
 
 	useEffect(() => {
 		if (!acceptApp) return;
@@ -58,11 +59,13 @@ function App() {
 			{!acceptApp && <Intro />}
 			<>
 				{acceptApp && !showApp && <Overlay />}
+				<ToastContainer />
+
 				<Main showApp={showApp}>
 					{/* {isDesktopOrLaptop && <ParticlesBackground />} */}
 					<ParticlesBackground />
-					{showApp && <BackgroundAudio />}
-					{showApp && <AudioOnClick />}
+					{<BackgroundAudio />}
+					{<AudioOnClick />}
 					<Suspense fallback={<h1>Loading...</h1>}>
 						<LandingV2 />
 						<About />

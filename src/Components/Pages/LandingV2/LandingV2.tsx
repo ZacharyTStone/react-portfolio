@@ -1,14 +1,18 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import MUINav from "../../UI/Navbar/MUINav";
 import SocialLinksVertical from "../../UI/SocialLinksVertical";
 import "animate.css";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { useAppContext } from "../../../context/appContext";
 
 const LandingV2 = () => {
 	const { t, i18n } = useTranslation();
 	const time = new Date().getHours();
 
+	const { acceptApp, showApp } = useAppContext();
 	let currGreeting = "";
 	if (time < 12) {
 		currGreeting = t("landing.morning");
@@ -18,8 +22,22 @@ const LandingV2 = () => {
 		currGreeting = t("landing.evening");
 	}
 
+	useEffect(() => {
+		if (showApp && acceptApp) {
+			toast.dark(t("toast.info"), {
+				progress: undefined,
+				autoClose: 5000,
+				hideProgressBar: false,
+				closeOnClick: true,
+				pauseOnHover: true,
+				position: "bottom-right",
+			});
+		}
+	}, [showApp, acceptApp, t]);
+
 	return (
 		<Landing>
+			<ToastContainer />
 			<MUINav />
 			<div className="content">
 				<LandingTile className="animate__animated animate__fadeIn">

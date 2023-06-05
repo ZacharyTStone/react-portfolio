@@ -1,14 +1,20 @@
 import React, { useReducer, useContext, useRef } from "react";
 import reducer from "./reducer";
-import { SET_AUDIO_PREFERENCE, SET_THEME, SET_ACCEPT_APP } from "./actions";
+import {
+	SET_AUDIO_PREFERENCE,
+	SET_THEME,
+	SET_ACCEPT_APP,
+	SET_SHOW_APP,
+} from "./actions";
 
 const initialState = {
 	theme:
 		// look at local storage for theme
 		// localStorage.getItem("theme") || "dark",
 		"dark",
-	useAudio: true,
+	useAudio: false,
 	acceptApp: false,
+	showApp: false,
 };
 
 const AppContext = React.createContext();
@@ -28,6 +34,10 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: SET_ACCEPT_APP, payload: acceptApp });
 	};
 
+	const setShowApp = (showApp) => {
+		dispatch({ type: SET_SHOW_APP, payload: showApp });
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -35,6 +45,7 @@ const AppProvider = ({ children }) => {
 				setTheme,
 				setAudioPreference,
 				setAcceptApp,
+				setShowApp,
 			}}
 		>
 			{children}

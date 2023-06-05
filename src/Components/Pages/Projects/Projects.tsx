@@ -4,7 +4,8 @@ import styled from "styled-components";
 import "./Projects.css";
 import { useTranslation } from "react-i18next";
 import { PROJECTS } from "../../../utils/constants";
-
+import RunningImg from "../../UI/RunningImg";
+import Naruto from "../../../images/UI/narutoRun.gif";
 const Projects = () => {
 	const { i18n } = useTranslation();
 
@@ -17,6 +18,7 @@ const Projects = () => {
 		<>
 			<Main className="Projects" id="Projects">
 				<Title>{content.mainTitle}</Title>
+				<RunningImg src={Naruto} alt="naruto" />
 				<AnimationOnScroll
 					animateIn="animate__fadeIn"
 					animateOut="animate__fadeOut"

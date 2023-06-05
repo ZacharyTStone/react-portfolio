@@ -19,7 +19,7 @@ h4,
 h5,
 h6,
 p {
-	/* user-select: none; */
+	user-select: none;
 	color: var(--off-white);
 }
 

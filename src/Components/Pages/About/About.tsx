@@ -62,7 +62,7 @@ const AboutDiv = styled.div`
 	flex-wrap: wrap;
 	color: var(--off-white);
 	overflow: hidden;
-	/* user-select: none; */
+	user-select: none;
 
 	.contributions_chart {
 		display: flex;

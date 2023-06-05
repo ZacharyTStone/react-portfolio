@@ -27,7 +27,7 @@
 		"skills": {
 			"title": "スキル",
 			"resume": "履歴書(英語)",
-			"japaneseResume": "履歴書(日本語)",
+			"japaneseResume": "職務経歴書(日本語)",
 			"japaneseWorkHistory": "職務経歴書(日本語)",
 			"certifications": "資格"
 		},
@@ -39,6 +39,9 @@
 			"enableAudio": "音声を有効にする",
 			"accept": "進む",
 			"header": "私のサイトへようこそ"
+		},
+		"toast": {
+			"info": "背景をクリックしてみてください"
 		}
 	}
 }
