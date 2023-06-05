@@ -37,7 +37,7 @@
 		},
 		"intro": {
 			"enableAudio": "音声を有効にする",
-			"accept": "受け入れる",
+			"accept": "進む",
 			"header": "私のサイトへようこそ"
 		}
 	}
