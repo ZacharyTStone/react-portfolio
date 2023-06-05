@@ -224,7 +224,7 @@ const Skills = () => {
 						</div>
 					</div>
 					<div className="github">
-						{/* <GithubContributions username="ZacharyTStone" />  */}
+						<GithubContributions username="ZacharyTStone" />
 					</div>
 					<div className="skills-container">
 						<ButtonContainer>

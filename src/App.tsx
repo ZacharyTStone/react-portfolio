@@ -10,6 +10,7 @@ import { useAppContext } from "./context/appContext";
 import BackgroundAudio from "./audio/BackgroundAudio";
 import Intro from "./Components/UI/Intro";
 import AudioOnClick from "./audio/AudioOnClick";
+import AudioOnHover from "./audio/AudioOnHover";
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
@@ -66,6 +67,7 @@ function App() {
 					<ParticlesBackground />
 					{showApp && <BackgroundAudio />}
 					{<AudioOnClick />}
+					{<AudioOnHover />}
 					<Suspense fallback={<h1>Loading...</h1>}>
 						<LandingV2 />
 						<About />

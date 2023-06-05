@@ -27,17 +27,16 @@ const LandingV2 = () => {
 			toast.dark(t("toast.info"), {
 				progress: undefined,
 				autoClose: 5000,
-				hideProgressBar: false,
+				hideProgressBar: true,
 				closeOnClick: true,
-				pauseOnHover: true,
 				position: "bottom-right",
+				toastId: "toast.info",
 			});
 		}
-	}, [showApp, acceptApp, t]);
+	}, [showApp, t]);
 
 	return (
 		<Landing>
-			<ToastContainer />
 			<MUINav />
 			<div className="content">
 				<LandingTile className="animate__animated animate__fadeIn">

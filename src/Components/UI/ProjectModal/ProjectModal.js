@@ -41,7 +41,7 @@ Modal.setAppElement(document.getElementById("root"));
 function ProjectModal({ project }) {
 	const [isLoading, setIsLoading] = useState(true);
 
-	const { useAudio, setUseAudio } = useAppContext();
+	const { useAudio, setAudioPreference } = useAppContext();
 	const handleOnLoad = () => {
 		setIsLoading(false);
 	};
@@ -171,7 +171,7 @@ function ProjectModal({ project }) {
 									<IconButton
 										aria-label="live-demo"
 										onClick={() => {
-											setUseAudio(false);
+											setAudioPreference(false);
 										}}
 									>
 										<a href={project.link} target="_blank" rel="noreferrer">
