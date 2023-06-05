@@ -14,6 +14,7 @@ import { AiFillCloseCircle } from "react-icons/ai";
 import america from "../../../images/america-big.png";
 import japan from "../../../images/japan-big.png";
 import styled from "styled-components";
+import { useAppContext } from "../../../context/appContext";
 
 const customStyles = {
 	overflowX: "auto",
@@ -40,6 +41,7 @@ Modal.setAppElement(document.getElementById("root"));
 function ProjectModal({ project }) {
 	const [isLoading, setIsLoading] = useState(true);
 
+	const { useAudio, setUseAudio } = useAppContext();
 	const handleOnLoad = () => {
 		setIsLoading(false);
 	};
@@ -166,7 +168,12 @@ function ProjectModal({ project }) {
 									<h5 className="icon-button-text">Code</h5>
 								</div>
 								<div>
-									<IconButton aria-label="live-demo">
+									<IconButton
+										aria-label="live-demo"
+										onClick={() => {
+											setUseAudio(false);
+										}}
+									>
 										<a href={project.link} target="_blank" rel="noreferrer">
 											<RiComputerLine
 												className="MUI-icon"
