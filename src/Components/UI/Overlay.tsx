@@ -192,7 +192,7 @@ export default function Index() {
 				// get smaller and smaller until it's gone into the center of the screen
 				scale: 0,
 				transition: {
-					duration: 0.5,
+					duration: 0.5 + Math.random() * 0.5,
 					ease: "easeInOut",
 				},
 			});
