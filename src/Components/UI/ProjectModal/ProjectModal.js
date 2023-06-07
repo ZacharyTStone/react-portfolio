@@ -271,20 +271,16 @@ function ProjectModal({ project }) {
 }
 
 const IconButtonText = styled.h5`
-	.icon-button-text {
-		font-size: 1.2rem;
+	font-size: 1.2rem;
+	color: var(--off-white);
+	text-decoration: none;
+	text-align: center !important;
+
+	@media (max-width: 1300px) {
+		font-size: 1rem;
 		color: var(--off-white);
 		text-decoration: none;
 		text-align: center !important;
-	}
-
-	@media (max-width: 1300px) {
-		.icon-button-text {
-			font-size: 1rem;
-			color: var(--off-white);
-			text-decoration: none;
-			text-align: center !important;
-		}
 	}
 `;
 
