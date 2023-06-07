@@ -6,8 +6,6 @@ import App from "./App";
 import "./translations/i18n.js";
 import { inject } from "@vercel/analytics";
 import { AppProvider } from "./context/appContext";
-import { useAppContext } from "./context/appContext";
-
 inject();
 
 ReactDOM.render(

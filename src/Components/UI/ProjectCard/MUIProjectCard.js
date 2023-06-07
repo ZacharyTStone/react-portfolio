@@ -130,20 +130,6 @@ const ProjectCard = styled(Card)`
 		filter: brightness(0.8) !important;
 	}
 
-	#MUI-description {
-		margin-top: 20px;
-		min-height: 100px;
-		font-size: 1.2rem;
-		text-align: left;
-	}
-
-	.icon-button-text {
-		font-size: 1.2rem;
-		color: var(--off-white);
-		text-decoration: none;
-		text-align: center;
-	}
-
 	#MUI-Card {
 		width: 100%;
 		min-width: 325;
@@ -194,16 +180,7 @@ const ProjectCard = styled(Card)`
 		.project-flag-div {
 			display: none !important;
 		}
-		.icon-button-text {
-			font-size: 1rem;
-			color: var(--off-white);
-			text-decoration: none;
-			text-align: center;
-		}
-		#MUI-description {
-			margin-top: 10px;
-			min-height: fit-content;
-		}
+
 		.card-title-div {
 			font-size: 1rem !important;
 			display: block !important;

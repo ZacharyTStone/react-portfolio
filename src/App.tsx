@@ -2,7 +2,6 @@ import "./App.css";
 import "animate.css/animate.min.css";
 import React, { Suspense, useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
-import ParticlesBackground from "./Components/UI/Particles";
 import { Overlay } from "./Components/index";
 import { inject } from "@vercel/analytics";
 import styled from "styled-components";
@@ -11,11 +10,11 @@ import BackgroundAudio from "./audio/BackgroundAudio";
 import Intro from "./Components/UI/Intro";
 import AudioOnClick from "./audio/AudioOnClick";
 import AudioOnHover from "./audio/AudioOnHover";
-
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import ParticlesBackground from "./Components/UI/Particles";
 
-// kicks off immediately when the current file is imported
+// Components
 const LandingComponentPromise = import(
 	"./Components/Pages/LandingV2/LandingV2"
 );
@@ -24,14 +23,14 @@ const ProjectsComponentPromise = import("./Components/Pages/Projects/Projects");
 const BlogComponentPromise = import("./Components/Pages/Blog/Blog");
 const FooterComponentPromise = import("./Components/Pages/Footer/Footer");
 
-// by the time this gets rendered, your component is probably already loaded
-// Suspense still works exactly the same with this.
+// Lazy-loaded components
 const LandingV2 = React.lazy(() => LandingComponentPromise);
 const About = React.lazy(() => AboutComponentPromise);
 const Projects = React.lazy(() => ProjectsComponentPromise);
 const Blog = React.lazy(() => BlogComponentPromise);
 const Footer = React.lazy(() => FooterComponentPromise);
 
+// Inject analytics
 inject();
 
 function App() {
@@ -44,7 +43,7 @@ function App() {
 		query: "(min-width: 1224px)",
 	});
 
-	const { acceptApp, showApp, setShowApp } = useAppContext();
+	const { acceptApp, showApp, setShowApp, theme } = useAppContext();
 
 	useEffect(() => {
 		if (!acceptApp) return;
@@ -52,8 +51,6 @@ function App() {
 			setShowApp(true);
 		}, 4750);
 	}, [acceptApp]);
-
-	const { theme } = useAppContext();
 
 	return (
 		<div className={`App ${theme === "light" ? "light-mode" : ""}`}>
@@ -67,7 +64,7 @@ function App() {
 					<ParticlesBackground />
 					{showApp && <BackgroundAudio />}
 					{<AudioOnClick />}
-					{<AudioOnHover />}
+					{/* {<AudioOnHover />} */}
 					<Suspense fallback={<h1>Loading...</h1>}>
 						<LandingV2 />
 						<About />
@@ -88,9 +85,9 @@ const Main = styled.div<{ showApp: boolean }>`
 	${(props) =>
 		props.showApp &&
 		`
-		opacity: 1;
-		visibility: visible;
-	`}
+    opacity: 1;
+    visibility: visible;
+  `}
 `;
 
 export default App;

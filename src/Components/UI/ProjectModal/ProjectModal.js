@@ -144,11 +144,7 @@ function ProjectModal({ project }) {
 						)}
 
 						<CardContent className="card-content-text">
-							<Typography
-								variant="body2"
-								color="var(--off-white)"
-								id="MUI-description"
-							>
+							<Typography variant="body2" color="var(--off-white)">
 								<span className="project-description">
 									{project.description}
 								</span>
@@ -165,7 +161,7 @@ function ProjectModal({ project }) {
 											/>
 										</a>
 									</IconButton>
-									<h5 className="icon-button-text">Code</h5>
+									<IconButtonText>Code</IconButtonText>
 								</div>
 								<div>
 									<IconButton
@@ -183,7 +179,7 @@ function ProjectModal({ project }) {
 											/>
 										</a>
 									</IconButton>
-									<h5 className="icon-button-text">Site</h5>
+									<IconButtonText>Site</IconButtonText>
 								</div>
 							</CardActions>
 							<Typography paragraph align="left" minHeight="90px">
@@ -273,5 +269,23 @@ function ProjectModal({ project }) {
 		</div>
 	);
 }
+
+const IconButtonText = styled.h5`
+	.icon-button-text {
+		font-size: 1.2rem;
+		color: var(--off-white);
+		text-decoration: none;
+		text-align: center !important;
+	}
+
+	@media (max-width: 1300px) {
+		.icon-button-text {
+			font-size: 1rem;
+			color: var(--off-white);
+			text-decoration: none;
+			text-align: center !important;
+		}
+	}
+`;
 
 export default ProjectModal;

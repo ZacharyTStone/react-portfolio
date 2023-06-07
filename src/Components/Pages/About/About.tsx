@@ -105,6 +105,8 @@ const AboutDescription = styled.p`
 	@media (max-width: 1000px) {
 		font-size: 1rem;
 	}
+
+	text-align: left;
 `;
 
 const AboutLink = styled.a`

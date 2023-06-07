@@ -3,7 +3,7 @@ import ProjectModal from "../../UI/ProjectModal/ProjectModal";
 import styled from "styled-components";
 import "./Projects.css";
 import { useTranslation } from "react-i18next";
-import { PROJECTS } from "../../../utils/constants";
+import { PROJECTS } from "../../../utils/vars";
 import RunningImg from "../../UI/RunningImg";
 import Naruto from "../../../images/UI/narutoRun.gif";
 const Projects = () => {
