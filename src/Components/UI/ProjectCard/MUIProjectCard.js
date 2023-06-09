@@ -13,6 +13,7 @@ import { RiVuejsFill } from "react-icons/ri";
 import styled from "styled-components";
 import Dot from "../../../images/cursor-ring.png";
 import { useAppContext } from "../../../context/appContext";
+import { Parallax, Background } from "react-parallax";
 
 export default function MUIProjectCard(props) {
 	const { theme } = useAppContext();
@@ -64,23 +65,17 @@ export default function MUIProjectCard(props) {
 							{props.title}
 						</h1>
 					</div>
-
-					<CardMedia
-						component={"img"}
-						id="card-media"
+					<Parallax
+						blur={{ min: -5, max: 5 }}
+						bgImage={props.image}
+						bgImageAlt="the dog"
+						strength={75}
 						className={`darken-on-hover ${
 							theme === "light" ? "light-mode" : "dark-mode"
 						}`}
-						image={props.image}
-						alt={props.title}
-						loading="lazy"
-						object-fit="contain"
-						style={{
-							// filter: "brightness(0.80)",
-
-							borderRadius: "20px",
-						}}
-					/>
+					>
+						<div id="card-media" />
+					</Parallax>
 
 					<div
 						style={{
@@ -150,9 +145,13 @@ const ProjectCard = styled(Card)`
 	}
 
 	#card-media {
-		width: 100%;
+		width: 400px;
+		max-width: 95vw;
 		height: 250px;
 		cursor: url(${Dot}), 4, 4 pointer !important;
+		border-radius: 4px;
+		// contain image
+		background-size: contain !important;
 	}
 
 	#MUI-Card:hover {
