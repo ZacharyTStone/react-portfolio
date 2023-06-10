@@ -367,11 +367,12 @@ const ButtonContainer = styled.div`
 `;
 
 const SkillIconsDiv = styled.div`
-	min-height: 150px;
-	display: flex;
-	width: 100%;
-	justify-content: space-around;
-	flex-wrap: wrap;
+	min-height: 175px;
+	display: grid;
+	grid-template-columns: repeat(5, 125px);
+	grid-template-rows: repeat(3, 1fr);
+	grid-gap: 15px;
+	width: fit-content;
 `;
 
 const SkillTypeButton = styled.button`
@@ -435,11 +436,11 @@ const SkillsDiv = styled.div`
 		flex-direction: row;
 		width: 100%;
 		height: auto;
-		justify-content: space-around;
 		flex-wrap: wrap;
 		flex-flow: row wrap;
 		margin-top: 20px;
 		margin-bottom: 10px;
+		justify-content: center;
 	}
 
 	@media (max-width: 768px) {
