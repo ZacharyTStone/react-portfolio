@@ -62,10 +62,13 @@ function App() {
 
 				<Main showApp={showApp}>
 					{/* {isDesktopOrLaptop && <ParticlesBackground />} */}
-					<canvas id="bg"></canvas>
-					<ThreeComponentd />
+					{isDesktopOrLaptop && (
+						<>
+							<canvas id="bg"></canvas>
+							<ThreeComponentd />
+						</>
+					)}
 					<ParticlesBackground />
-
 					{showApp && <BackgroundAudio />}
 					{<AudioOnClick />}
 					{/* {<AudioOnHover />} */}
