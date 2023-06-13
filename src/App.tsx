@@ -13,7 +13,7 @@ import AudioOnHover from "./audio/AudioOnHover";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ParticlesBackground from "./Components/UI/Particles";
-import ThreeComponentd from "./Components/UI/ThreeJsBackground";
+import ThreeComponent from "./Components/UI/ThreeJsBackground";
 
 // Components
 const LandingComponentPromise = import(
@@ -65,7 +65,7 @@ function App() {
 					{isDesktopOrLaptop && (
 						<>
 							<canvas id="bg"></canvas>
-							<ThreeComponentd />
+							<ThreeComponent />
 						</>
 					)}
 					<ParticlesBackground />
