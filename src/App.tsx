@@ -64,8 +64,8 @@ function App() {
 					{/* {isDesktopOrLaptop && <ParticlesBackground />} */}
 					{isDesktopOrLaptop && (
 						<>
-							<canvas id="bg"></canvas>
-							<ThreeComponent />
+							{/* <canvas id="bg"></canvas>
+							<ThreeComponent /> */}
 						</>
 					)}
 					<ParticlesBackground />
