@@ -85,6 +85,20 @@ const ThreeComponent = () => {
 			rotationSpeedRefZ.current -= 0.005;
 		});
 
+		// on mobile, touchstart and touchend are used instead of mousedown and mouseup
+		document.addEventListener("touchstart", () => {
+			rotationSpeedRefX.current += 0.005;
+			rotationSpeedRefY.current += 0.005;
+			rotationSpeedRefZ.current += 0.005;
+		});
+
+		document.addEventListener("touchend", () => {
+			rotationSpeedRefX.current -= 0.005;
+			rotationSpeedRefY.current -= 0.005;
+
+			rotationSpeedRefZ.current -= 0.005;
+		});
+
 		function animate() {
 			requestAnimationFrame(animate);
 
