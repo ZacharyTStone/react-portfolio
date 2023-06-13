@@ -66,7 +66,7 @@ export default function MUIProjectCard(props) {
 						</h1>
 					</div>
 					<Parallax
-						blur={{ min: -5, max: 5 }}
+						blur={{ min: -1, max: 1 }}
 						bgImage={props.image}
 						bgImageAlt="the dog"
 						strength={75}
@@ -108,6 +108,7 @@ export default function MUIProjectCard(props) {
 
 const ProjectCard = styled(Card)`
 	box-shadow: none !important;
+
 	.ReactModal__Overlay {
 		overflow: auto !important;
 		/* padding-top: 200px !important; */
@@ -128,10 +129,9 @@ const ProjectCard = styled(Card)`
 	#MUI-Card {
 		width: 100%;
 		min-width: 325;
-		min-height: 520px;
 		overflow: auto;
 		margin-top: 20px !important;
-		padding-bottom: 20px !important;
+		margin-bottom: 20px !important;
 		box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 		background-color: var(--black);
 		cursor: url(${Dot}), 4, 4 pointer !important;
@@ -146,7 +146,7 @@ const ProjectCard = styled(Card)`
 
 	#card-media {
 		width: 400px;
-		max-width: 95vw;
+		/* min-width: 95vw; */
 		height: 250px;
 		cursor: url(${Dot}), 4, 4 pointer !important;
 		border-radius: 4px;
@@ -165,6 +165,7 @@ const ProjectCard = styled(Card)`
 
 	@media (max-width: 455px) {
 		#MUI-Card {
+			margin-bottom: 100px;
 			width: 340px !important;
 		}
 	}
@@ -214,6 +215,7 @@ const ProjectCard = styled(Card)`
 	}
 
 	@media (min-width: 1301px) {
+		border: 2px solid var(--secondary-color, #000) !important;
 		.darken-on-hover:hover {
 			opacity: 0.3 !important;
 		}

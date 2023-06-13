@@ -25,3 +25,9 @@ svg:hover {
 .contributions-header {
 	margin-bottom: 20px !important;
 }
+
+canvas {
+	position: fixed;
+	top: 0;
+	left: 0;
+}

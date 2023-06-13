@@ -18,7 +18,7 @@ const Projects = () => {
 		<>
 			<Main className="Projects" id="Projects">
 				<Title>{content.mainTitle}</Title>
-				<RunningImg src={Naruto} alt="naruto" />
+				{/* <RunningImg src={Naruto} alt="naruto" /> */}
 				<AnimationOnScroll
 					animateIn="animate__fadeIn"
 					animateOut="animate__fadeOut"
@@ -36,6 +36,7 @@ const Projects = () => {
 };
 
 const Title = styled.h1`
+	position: relative;
 	text-decoration-line: underline;
 	text-decoration-color: var(--secondary-color);
 	text-decoration-thickness: 5px;
@@ -45,7 +46,7 @@ const Main = styled.div`
 	text-align: center;
 	width: 100%;
 	user-select: none;
-	margin-top: 150px;
+
 	background: var(--black);
 
 	.projects-container {
@@ -59,6 +60,7 @@ const Main = styled.div`
 		align-content: center;
 		overflow: hidden;
 		gap: 32px;
+		margin-bottom: 200px;
 	}
 
 	.ReactModal__Overlay {
@@ -69,6 +71,8 @@ const Main = styled.div`
 		.project-icons {
 			display: none !important;
 		}
+
+		margin-top: 150px !important;
 	}
 
 	@media (min-width: 1300px) {
@@ -77,7 +81,7 @@ const Main = styled.div`
 			flex-wrap: wrap;
 			margin: auto;
 			margin-top: 60px;
-			padding-bottom: 60px;
+			margin-bottom: 200px;
 		}
 
 		h1 {

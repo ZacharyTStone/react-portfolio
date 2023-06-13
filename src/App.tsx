@@ -13,6 +13,7 @@ import AudioOnHover from "./audio/AudioOnHover";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ParticlesBackground from "./Components/UI/Particles";
+import ThreeComponentd from "./Components/UI/ThreeJsBackground";
 
 // Components
 const LandingComponentPromise = import(
@@ -61,11 +62,14 @@ function App() {
 
 				<Main showApp={showApp}>
 					{/* {isDesktopOrLaptop && <ParticlesBackground />} */}
+					<canvas id="bg"></canvas>
+					<ThreeComponentd />
 					<ParticlesBackground />
+
 					{showApp && <BackgroundAudio />}
 					{<AudioOnClick />}
 					{/* {<AudioOnHover />} */}
-					<Suspense fallback={<h1>Loading...</h1>}>
+					<Suspense fallback={<h1>Loading content...</h1>}>
 						<LandingV2 />
 						<About />
 						<Projects />

@@ -224,6 +224,7 @@ const Nav = styled(AppBar)`
 		right: 16px;
 		display: flex;
 		gap: 8px;
+		user-select: none;
 	}
 	.flag-div {
 		display: flex;

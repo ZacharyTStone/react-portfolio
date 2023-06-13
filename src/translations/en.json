@@ -4,8 +4,8 @@
 			"morning": "Good morning",
 			"afternoon": "Good afternoon",
 			"evening": "Good evening",
-			"name": "Zach Stone",
-			"description1": " and I build",
+			"name": "Zach Stone,",
+			"description1": "and I build",
 			"description2": " web applications."
 		},
 		"nav": {
@@ -35,7 +35,7 @@
 			"contact": "Let's connect!"
 		},
 		"intro": {
-			"enableAudio": "Enable Audio",
+			"enableAudio": "Click the checkbox to enable audio",
 			"accept": "Enter",
 			"header": "Welcome to my website"
 		},

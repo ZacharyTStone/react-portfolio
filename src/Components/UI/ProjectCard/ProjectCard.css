@@ -1,7 +1,6 @@
 #MUI-Card {
 	width: 100%;
 	min-width: 300px;
-	min-height: 520px;
 	overflow: auto;
 	margin-top: 20px !important;
 	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
@@ -67,6 +66,7 @@
 @media (max-width: 455px) {
 	#MUI-Card {
 		width: 340px !important;
+		margin-bottom: 50px !important;
 	}
 }
 

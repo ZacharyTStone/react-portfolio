@@ -13,8 +13,8 @@ const initialState = {
 		// localStorage.getItem("theme") || "dark",
 		"dark",
 	useAudio: false,
-	acceptApp: false,
-	showApp: false,
+	acceptApp: true,
+	showApp: true,
 };
 
 const AppContext = React.createContext();

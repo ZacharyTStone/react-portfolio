@@ -371,9 +371,18 @@ const SkillIconsDiv = styled.div`
 	display: grid;
 	grid-template-columns: repeat(5, 125px);
 	grid-template-rows: repeat(3, 1fr);
-	grid-gap: 15px;
+	grid-gap: 10px;
 	width: fit-content;
+	max-width: 100%;
+
+	@media (max-width: 1500px) {
+		grid-gap: 5px;
+		grid-template-columns: repeat(4, 125px) !important;
+		grid-template-rows: repeat(3, 1fr) !important;
+	}
 `;
+
+// tablet do repeat of 4
 
 const SkillTypeButton = styled.button`
 	border: 2px solid var(--secondary-color);
