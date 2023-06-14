@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-import mooon from "../../images/threeJS/moon.jpeg";
+import mooon from "../../images/threeJS/moon.webp";
 import space from "../../images/threeJS/space.jpeg";
 
 const ThreeComponent = () => {

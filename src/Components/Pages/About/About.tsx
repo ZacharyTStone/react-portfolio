@@ -98,6 +98,7 @@ const AboutInner = styled.div`
 	@media (max-width: 1000px) {
 		width: 100%;
 		background: transparent;
+		padding: 10px;
 	}
 `;
 
