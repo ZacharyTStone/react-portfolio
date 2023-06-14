@@ -122,7 +122,7 @@ const ProjectCard = styled(Card)`
 	}
 
 	.dark-mode {
-		filter: brightness(0.8) !important;
+		filter: brightness(0.9) !important;
 	}
 
 	#MUI-Card {
@@ -136,7 +136,7 @@ const ProjectCard = styled(Card)`
 		background-color: var(--black);
 		cursor: url(${Dot}), 4, 4 pointer !important;
 
-		/* border-radius: 20px; */
+		border-radius: 4px;
 	}
 
 	#MUI-Card:hover {
@@ -204,7 +204,7 @@ const ProjectCard = styled(Card)`
 		}
 
 		#MUI-Card {
-			border-radius: 10px;
+			border-radius: 4px;
 		}
 
 		.card-title-div {

@@ -21,7 +21,7 @@ export default function BlogCard({
 				minWidth: "250px",
 				height: "fit-content",
 				margin: "10px",
-				borderRadius: "20px",
+				borderRadius: "10px",
 				opacity: 0.9,
 				backgroundImage: "linear-gradient(to bottom, #00000080, #00000040)",
 				// border: "1px solid var(--secondary-color)",
@@ -36,13 +36,13 @@ export default function BlogCard({
 					loading="lazy"
 					style={{
 						filter: "brightness(0.75)",
-						borderRadius: "20px 20px 0 0",
+						borderRadius: "10px 10px 0 0",
 					}}
 				/>
 				<CardContent
 					style={{
 						minHeight: "100px",
-						borderRadius: "0 0 20px 20px",
+						borderRadius: "0 0 10px 10px",
 					}}
 				>
 					<Typography
