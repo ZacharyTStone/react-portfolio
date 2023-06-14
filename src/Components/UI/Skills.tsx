@@ -189,6 +189,7 @@ const Skills = () => {
 										style={{
 											marginLeft: "10px",
 											color: "var(--off-white)",
+											fontSize: "1.1rem",
 										}}
 									>
 										{t("skills.japaneseResume")}
@@ -370,7 +371,7 @@ const SkillIconsDiv = styled.div`
 	min-height: 175px;
 	display: grid;
 	grid-template-columns: repeat(5, 125px);
-	grid-template-rows: repeat(3, 1fr);
+	/* grid-template-rows: repeat(3, 1fr); */
 	grid-gap: 10px;
 	width: fit-content;
 	max-width: 100%;
@@ -378,7 +379,7 @@ const SkillIconsDiv = styled.div`
 	@media (max-width: 1500px) {
 		grid-gap: 5px;
 		grid-template-columns: repeat(4, 125px) !important;
-		grid-template-rows: repeat(3, 1fr) !important;
+		/* grid-template-rows: repeat(3, 1fr) !important; */
 	}
 `;
 
@@ -409,6 +410,9 @@ const SkillTypeButton = styled.button`
 `;
 
 const SkillsDiv = styled.div`
+	.github {
+		margin-bottom: 40px !important;
+	}
 	.ContributionCalendar-label {
 		fill: var(--secondary-color) !important;
 	}

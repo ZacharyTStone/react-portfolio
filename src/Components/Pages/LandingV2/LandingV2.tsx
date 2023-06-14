@@ -12,7 +12,7 @@ const LandingV2 = () => {
 	const { t, i18n } = useTranslation();
 	const time = new Date().getHours();
 
-	const { acceptApp, showApp } = useAppContext();
+	const { acceptApp, showApp, enableParticles } = useAppContext();
 	let currGreeting = "";
 	if (time < 12) {
 		currGreeting = t("landing.morning");
@@ -23,7 +23,7 @@ const LandingV2 = () => {
 	}
 
 	useEffect(() => {
-		if (showApp && acceptApp) {
+		if (showApp && acceptApp && enableParticles) {
 			toast.dark(t("toast.info"), {
 				progress: undefined,
 				autoClose: 5000,
@@ -33,7 +33,7 @@ const LandingV2 = () => {
 				toastId: "toast.info",
 			});
 		}
-	}, [showApp, t]);
+	}, [showApp, t, enableParticles]);
 
 	return (
 		<Landing>

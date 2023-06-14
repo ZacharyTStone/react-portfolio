@@ -1,21 +1,12 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
-
-import zach1 from "../../images/threeJS/zach1.jpg";
-import zach2 from "../../images/threeJS/zach2.jpg";
-import zach3 from "../../images/threeJS/zach3.jpg";
-import zach4 from "../../images/threeJS/zach4.jpg";
-import zach5 from "../../images/threeJS/zach5.jpeg";
+import mooon from "../../images/threeJS/moon.jpeg";
+import space from "../../images/threeJS/space.jpeg";
 
 const ThreeComponent = () => {
-	const linkToOpenInNewTab = "https://zachinjapan.com/gallery/";
-	const canvasRef = useRef();
-	const rotationSpeedRefX = useRef(0.0001); // Initial rotation speed
-	const rotationSpeedRefY = useRef(0.0001); // Initial rotation speed
-	const rotationSpeedRefZ = useRef(0.00000000001); // Initial rotation speed
-
 	useEffect(() => {
+		// Setup
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(
 			75,
@@ -23,100 +14,103 @@ const ThreeComponent = () => {
 			0.1,
 			1000
 		);
-		const renderer = new THREE.WebGLRenderer({
-			canvas: canvasRef.current,
-			alpha: true,
-		});
-
-		renderer.setPixelRatio(window.devicePixelRatio);
+		const renderer = new THREE.WebGLRenderer({ antialias: true });
 		renderer.setSize(window.innerWidth, window.innerHeight);
-		camera.position.setZ(30);
-		camera.position.setX(-3);
+		renderer.setPixelRatio(window.devicePixelRatio);
+		document
+			.getElementById("canvas-container")
+			.appendChild(renderer.domElement);
 
-		const geometry = new THREE.BoxGeometry(6, 6, 6);
-
-		const textureLoader = new THREE.TextureLoader();
-		const materials = [
-			new THREE.MeshStandardMaterial({ map: textureLoader.load(zach1) }),
-			new THREE.MeshStandardMaterial({ map: textureLoader.load(zach2) }),
-			new THREE.MeshStandardMaterial({ map: textureLoader.load(zach3) }),
-			new THREE.MeshStandardMaterial({ map: textureLoader.load(zach4) }),
-			new THREE.MeshStandardMaterial({ map: textureLoader.load(zach5) }),
-			new THREE.MeshStandardMaterial({ map: textureLoader.load(zach5) }),
-		];
-
-		materials.forEach((material) => {
-			material.color = new THREE.Color(0x414141);
+		// Torus
+		const geometry = new THREE.TorusGeometry(14, 4, 64, 100);
+		const moonTexture = new THREE.TextureLoader().load(mooon);
+		const material = new THREE.MeshStandardMaterial({
+			color: 0x323333,
+			map: moonTexture,
 		});
+		const torus = new THREE.Mesh(geometry, material);
+		scene.add(torus);
 
-		const cube = new THREE.Mesh(geometry, materials);
-
-		cube.userData = { URL: linkToOpenInNewTab };
-
-		scene.add(cube);
-		cube.position.z = 4;
-		cube.position.setX(-10);
-
+		// Lights
 		const pointLight = new THREE.PointLight(0xffffff);
 		pointLight.position.set(5, 5, 5);
+
 		const ambientLight = new THREE.AmbientLight(0xffffff);
 		scene.add(pointLight, ambientLight);
 
-		function moveCamera() {
+		// Helpers
+		// const lightHelper = new THREE.PointLightHelper(pointLight)
+		// const gridHelper = new THREE.GridHelper(200, 50);
+		// scene.add(lightHelper, gridHelper)
+
+		// const controls = new OrbitControls(camera, renderer.domElement);
+
+		const addStar = () => {
+			const geometry = new THREE.SphereGeometry(0.25, 24, 24);
+			const material = new THREE.MeshStandardMaterial({
+				color: 0x00ff00,
+				transparent: true,
+				opacity: 0.8,
+			});
+			const star = new THREE.Mesh(geometry, material);
+
+			const [x, y, z] = Array(3)
+				.fill()
+				.map(() => THREE.MathUtils.randFloatSpread(150));
+
+			star.position.set(x, y, z);
+			scene.add(star);
+		};
+
+		Array(200).fill().forEach(addStar);
+
+		// Background
+
+		const spaceTexture = new THREE.TextureLoader().load(space);
+		// darkens the background space image
+
+		scene.background = spaceTexture;
+
+		// darken background image
+
+		// Scroll Animation
+		const moveCamera = () => {
 			const t = document.body.getBoundingClientRect().top;
-			camera.position.z = t * -0.09;
-			camera.position.x = t * -0.00001;
-			camera.rotation.y = t * -0.0002;
-		}
+
+			// Move the camera based on scroll position
+			camera.position.z = t * -0.09; // Move camera along the z-axis
+			camera.position.x = t * -0.00009; // Move camera along the x-axis
+			camera.rotation.y = t * -0.0002; // Rotate camera around the y-axis
+		};
 
 		document.body.onscroll = moveCamera;
 		moveCamera();
 
-		// Event listeners for increasing and decreasing rotation speed
-		document.addEventListener("mousedown", () => {
-			rotationSpeedRefX.current += 0.005;
-			rotationSpeedRefY.current += 0.005;
-			rotationSpeedRefZ.current += 0.005;
-		});
-
-		document.addEventListener("mouseup", () => {
-			rotationSpeedRefX.current -= 0.005;
-			rotationSpeedRefY.current -= 0.005;
-			rotationSpeedRefZ.current -= 0.005;
-		});
-
-		// on mobile, touchstart and touchend are used instead of mousedown and mouseup
-		// document.addEventListener("touchstart", () => {
-		// 	rotationSpeedRefX.current += 0.005;
-		// 	rotationSpeedRefY.current += 0.005;
-		// 	rotationSpeedRefZ.current += 0.005;
-		// });
-
-		// document.addEventListener("touchend", () => {
-		// 	rotationSpeedRefX.current -= 0.005;
-		// 	rotationSpeedRefY.current -= 0.005;
-
-		// 	rotationSpeedRefZ.current -= 0.005;
-		// });
-
-		function animate() {
+		// Animation Loop
+		const animate = () => {
 			requestAnimationFrame(animate);
 
-			cube.rotation.x += rotationSpeedRefX.current;
-			// Adjust the rotation speed here
-			cube.rotation.y += rotationSpeedRefY.current;
-			// Adjust the rotation speed here
-			cube.rotation.z += rotationSpeedRefZ.current; // Adjust the rotation speed here
+			torus.rotation.x += 0.0001;
+			torus.rotation.y += 0.0005;
+			torus.rotation.z += 0.001;
+
+			// controls.update();
 
 			renderer.render(scene, camera);
-		}
+		};
 
 		animate();
 
-		return () => {};
+		// Clean up
+		return () => {
+			// remove the canvas on unmount
+			document
+				.getElementById("canvas-container")
+				?.removeChild(renderer.domElement);
+		};
 	}, []);
 
-	return <canvas ref={canvasRef} />;
+	return <div id="canvas-container" />;
 };
 
 export default ThreeComponent;

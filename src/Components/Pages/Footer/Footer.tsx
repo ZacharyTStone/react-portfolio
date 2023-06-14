@@ -15,18 +15,31 @@ const Footer = () => {
 				<div className="footer-text">
 					<span>
 						{isTabletOrMobile ? (
-							<>
+							<div
+								style={{
+									// glasmorphism blur background
+									backgroundColor: "rgba(0, 0, 0, 0.2)",
+									backdropFilter: "blur(10px)",
+									borderRadius: "10px",
+									padding: "10px",
+								}}
+							>
 								<span>Thank for looking at my portfolio.</span>
 								<span style={{ color: "var(--secondary-color)" }}>
 									Let's connect!
 								</span>
-							</>
+							</div>
 						) : (
 							<div
 								style={{
 									marginLeft: "74px",
 									display: "flex",
 									alignItems: "center",
+									// glasmorphism blur background
+									backgroundColor: "rgba(0, 0, 0, 0.2)",
+									backdropFilter: "blur(10px)",
+									borderRadius: "10px",
+									padding: "10px",
 								}}
 							>
 								<BsArrowLeft
@@ -75,6 +88,8 @@ const Main = styled.footer`
 		color: var(--off-white);
 		margin-left: 16px;
 		user-select: none;
+
+		// glasmorphism blur background
 	}
 
 	@media (max-width: 455px) {

@@ -28,12 +28,19 @@ const Intro = () => {
 					display: "flex",
 					gap: "8px",
 					alignItems: "center",
+					width: "fit-content",
 				}}
 			>
 				<h2
 					className="word-small"
 					style={{
 						textTransform: "uppercase",
+						// wrap
+						whiteSpace: "pre-wrap",
+						// overflow
+						overflowWrap: "break-word",
+						// word break
+						wordBreak: "break-word",
 					}}
 				>
 					{t("intro.enableAudio")}

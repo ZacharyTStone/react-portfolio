@@ -5,6 +5,7 @@ import {
 	SET_THEME,
 	SET_ACCEPT_APP,
 	SET_SHOW_APP,
+	SET_ENABLE_PARTICLES,
 } from "./actions";
 
 const initialState = {
@@ -15,6 +16,7 @@ const initialState = {
 	useAudio: false,
 	acceptApp: false,
 	showApp: false,
+	enableParticles: false,
 };
 
 const AppContext = React.createContext();
@@ -38,6 +40,10 @@ const AppProvider = ({ children }) => {
 		dispatch({ type: SET_SHOW_APP, payload: showApp });
 	};
 
+	const setEnableParticles = (enableParticles) => {
+		dispatch({ type: SET_ENABLE_PARTICLES, payload: enableParticles });
+	};
+
 	return (
 		<AppContext.Provider
 			value={{
@@ -46,6 +52,7 @@ const AppProvider = ({ children }) => {
 				setAudioPreference,
 				setAcceptApp,
 				setShowApp,
+				setEnableParticles,
 			}}
 		>
 			{children}

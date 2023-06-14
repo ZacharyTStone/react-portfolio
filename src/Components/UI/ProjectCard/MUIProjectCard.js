@@ -108,7 +108,6 @@ export default function MUIProjectCard(props) {
 
 const ProjectCard = styled(Card)`
 	box-shadow: none !important;
-
 	.ReactModal__Overlay {
 		overflow: auto !important;
 		/* padding-top: 200px !important; */
@@ -129,6 +128,7 @@ const ProjectCard = styled(Card)`
 	#MUI-Card {
 		width: 100%;
 		min-width: 325;
+		/* min-height: 520px; */
 		overflow: auto;
 		margin-top: 20px !important;
 		margin-bottom: 20px !important;
@@ -165,7 +165,6 @@ const ProjectCard = styled(Card)`
 
 	@media (max-width: 455px) {
 		#MUI-Card {
-			margin-bottom: 100px;
 			width: 340px !important;
 		}
 	}
@@ -215,7 +214,6 @@ const ProjectCard = styled(Card)`
 	}
 
 	@media (min-width: 1301px) {
-		border: 2px solid var(--secondary-color, #000) !important;
 		.darken-on-hover:hover {
 			opacity: 0.3 !important;
 		}

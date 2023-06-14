@@ -40,11 +40,18 @@ function App() {
 		"color:green;font-family:system-ui;font-size:2rem;-webkit-text-stroke: 1px black;font-weight:bold"
 	);
 
-	const isDesktopOrLaptop = useMediaQuery({
-		query: "(min-width: 1224px)",
-	});
+	useEffect(() => {
+		// whenever the viewpor changes re-render the ThreeComponent
+		window.addEventListener("resize", () => {
+			setShowThree(false);
+			setTimeout(() => {
+				setShowThree(true);
+			}, 300);
+		});
+	}, [window.innerWidth]);
 
-	const { acceptApp, showApp, setShowApp, theme } = useAppContext();
+	const { acceptApp, showApp, setShowApp, theme, enableParticles } =
+		useAppContext();
 
 	useEffect(() => {
 		if (!acceptApp) return;
@@ -52,6 +59,8 @@ function App() {
 			setShowApp(true);
 		}, 4750);
 	}, [acceptApp]);
+
+	const [showThree, setShowThree] = useState(true);
 
 	return (
 		<div className={`App ${theme === "light" ? "light-mode" : ""}`}>
@@ -61,14 +70,13 @@ function App() {
 				<ToastContainer />
 
 				<Main showApp={showApp}>
-					{/* {isDesktopOrLaptop && <ParticlesBackground />} */}
-					{isDesktopOrLaptop && (
+					{showThree && (
 						<>
-							{/* <canvas id="bg"></canvas>
-							<ThreeComponent /> */}
+							<canvas id="bg"></canvas>
+							<ThreeComponent />
 						</>
 					)}
-					<ParticlesBackground />
+					{enableParticles && <ParticlesBackground />}
 					{showApp && <BackgroundAudio />}
 					{<AudioOnClick />}
 					{/* {<AudioOnHover />} */}
