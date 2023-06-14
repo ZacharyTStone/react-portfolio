@@ -24,7 +24,7 @@ export default function BlogCard({
 				borderRadius: "20px",
 				opacity: 0.9,
 				backgroundImage: "linear-gradient(to bottom, #00000080, #00000040)",
-				border: "1px solid var(--secondary-color)",
+				// border: "1px solid var(--secondary-color)",
 			}}
 		>
 			<CardActionArea href={link} target="_blank">
