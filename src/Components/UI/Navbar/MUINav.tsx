@@ -17,6 +17,7 @@ import { MdLightMode as LightModeIcon } from "react-icons/md";
 import { MdPlayCircleFilled, MdPauseCircleFilled } from "react-icons/md";
 import { useAppContext } from "../../../context/appContext";
 import { TbClick } from "react-icons/tb";
+import { useMediaQuery } from "react-responsive";
 
 const MUINav = () => {
 	const {
@@ -27,6 +28,8 @@ const MUINav = () => {
 		enableParticles,
 		setEnableParticles,
 	} = useAppContext();
+
+	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
 	const { i18n, t } = useTranslation();
 
@@ -179,7 +182,7 @@ const MUINav = () => {
 								</div>
 							)}
 						</div> */}
-						{
+						{!isMobile && (
 							<div onClick={() => setEnableParticles(!enableParticles)}>
 								<div className="flag-div">
 									<div className="flag-div-holder">
@@ -194,7 +197,7 @@ const MUINav = () => {
 									</div>
 								</div>
 							</div>
-						}
+						)}
 						<div className="flag-div nav-button">
 							{i18n.language === "en" ? (
 								<div className="flag-div">

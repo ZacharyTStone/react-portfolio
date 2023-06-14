@@ -33,7 +33,7 @@ const Intro = () => {
 				}}
 			>
 				<h2
-					className="word-small"
+					className="word word-small"
 					style={{
 						textTransform: "uppercase",
 						// wrap
