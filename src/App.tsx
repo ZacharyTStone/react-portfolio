@@ -52,26 +52,6 @@ function App(): JSX.Element {
 		}, 4750);
 	}, [acceptApp]);
 
-	const [viewportWidth, setViewportWidth] = useState(window.innerWidth);
-	const [show3js, setShow3js] = useState(true);
-
-	const resetOf3js = () => {
-		setViewportWidth(window.innerWidth);
-		setShow3js(false);
-		setTimeout(() => {
-			setShow3js(true);
-		}, 1000);
-	};
-
-	const debounceResetOf3js = useCallback(debounce(resetOf3js, 1000), []);
-
-	useEffect(() => {
-		window.addEventListener("resize", debounceResetOf3js);
-		return () => {
-			window.removeEventListener("resize", debounceResetOf3js);
-		};
-	}, [debounceResetOf3js]);
-
 	return (
 		<div className={`App ${theme === "light" ? "light-mode" : ""}`}>
 			{!acceptApp && <Intro />}
@@ -80,12 +60,11 @@ function App(): JSX.Element {
 				<ToastContainer />
 
 				<Main showApp={showApp}>
-					{show3js && !isMobile && (
-						<>
-							<canvas id="bg"></canvas>
-							<ThreeComponent />
-						</>
-					)}
+					<>
+						<canvas id="bg"></canvas>
+						<ThreeComponent />
+					</>
+
 					{enableParticles && <ParticlesBackground />}
 					{showApp && <BackgroundAudio />}
 					{<AudioOnClick />}
