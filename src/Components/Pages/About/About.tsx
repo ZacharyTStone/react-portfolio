@@ -84,7 +84,7 @@ const AboutInner = styled.div`
 	/* background: rgba(20, 22, 26, 0.3); */
 	backdrop-filter: blur(5px) !important;
 	-webkit-backdrop-filter: blur(10px) !important;
-	padding: 20px;
+	padding: 30px;
 	border-radius: 20px;
 	// vignette to 100% opacity
 	background: radial-gradient(
@@ -97,6 +97,7 @@ const AboutInner = styled.div`
 
 	@media (max-width: 1000px) {
 		width: 100%;
+		background: transparent;
 	}
 `;
 
