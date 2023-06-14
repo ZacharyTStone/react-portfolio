@@ -134,7 +134,7 @@ const ProjectCard = styled(Card)`
 		margin-top: 20px !important;
 		margin-bottom: 20px !important;
 		box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
-		background-color: var(--black);
+		background-color: var(--black) !important;
 		cursor: url(${Dot}), 4, 4 pointer !important;
 
 		border-radius: 4px;
@@ -162,6 +162,7 @@ const ProjectCard = styled(Card)`
 	@media (max-width: 455px) {
 		#MUI-Card {
 			width: 340px !important;
+			background-color: transparent !important;
 		}
 	}
 
