@@ -182,7 +182,8 @@ const MUINav = () => {
 								</div>
 							)}
 						</div> */}
-						{!isMobile && (
+						{/* hide until i can check the performance impact */}
+						{/* {!isMobile  && (
 							<div onClick={() => setEnableParticles(!enableParticles)}>
 								<div className="flag-div">
 									<div className="flag-div-holder">
@@ -197,7 +198,7 @@ const MUINav = () => {
 									</div>
 								</div>
 							</div>
-						)}
+						)} */}
 						<div className="flag-div nav-button">
 							{i18n.language === "en" ? (
 								<div className="flag-div">
