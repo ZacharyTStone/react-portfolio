@@ -62,7 +62,7 @@ const ThreeComponent = () => {
 			scene.add(star);
 		};
 
-		Array(75).fill().forEach(addStar);
+		Array(25).fill().forEach(addStar);
 
 		// Background
 

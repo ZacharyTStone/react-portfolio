@@ -34,26 +34,46 @@ const Footer = React.lazy(() => FooterComponentPromise);
 // Inject analytics
 inject();
 
-function App() {
+function debounce<T extends (...args: any[]) => any>(func: T, delay: number) {
+	let timer: NodeJS.Timeout;
+	return function (this: any, ...args: Parameters<T>) {
+		clearTimeout(timer);
+		timer = setTimeout(() => func.apply(this, args), delay);
+	};
+}
+
+function App(): JSX.Element {
+	const [showThree, setShowThree] = useState(true);
+	const { acceptApp, showApp, setShowApp, theme, enableParticles } =
+		useAppContext();
 	console.log(
 		"%cHi! Thanks for checking out my code ☺ If you have any questions, feel free to reach out to me on Linkedin",
 		"color:green;font-family:system-ui;font-size:2rem;-webkit-text-stroke: 1px black;font-weight:bold"
 	);
 
+	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
+
 	useEffect(() => {
-		// whenever the viewpor changes re-render the ThreeComponent
-		window.addEventListener("resize", () => {
+		const handleResize = debounce(() => {
+			if (isMobile) return;
+			if (!showThree) return;
+			if (!showApp) return;
+			if (!acceptApp) return;
+			if (!showThree) return;
+
+			console.log("Resizing ThreeComponent");
 			setShowThree(false);
 			setTimeout(() => {
 				setShowThree(true);
 			}, 300);
-		});
-	}, [window.innerWidth]);
+		}, 300);
 
-	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
+		window.addEventListener("resize", handleResize);
 
-	const { acceptApp, showApp, setShowApp, theme, enableParticles } =
-		useAppContext();
+		return () => {
+			window.removeEventListener("resize", handleResize);
+		};
+	}, [isMobile, showThree, showApp, acceptApp]);
 
 	useEffect(() => {
 		if (!acceptApp) return;
@@ -61,8 +81,6 @@ function App() {
 			setShowApp(true);
 		}, 4750);
 	}, [acceptApp]);
-
-	const [showThree, setShowThree] = useState(true);
 
 	return (
 		<div className={`App ${theme === "light" ? "light-mode" : ""}`}>
