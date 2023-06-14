@@ -1,4 +1,3 @@
-import { AnimationOnScroll } from "react-animation-on-scroll";
 import ProjectModal from "../../UI/ProjectModal/ProjectModal";
 import styled from "styled-components";
 import "./Projects.css";
@@ -18,13 +17,7 @@ const Projects = () => {
 		<>
 			<Main className="Projects" id="Projects">
 				<Title>{content.mainTitle}</Title>
-				{/* <RunningImg src={Naruto} alt="naruto" /> */}
-				<AnimationOnScroll
-					animateIn="animate__fadeIn"
-					animateOut="animate__fadeOut"
-					animateOnce={true}
-				></AnimationOnScroll>
-
+				<RunningImg src={Naruto} alt="naruto" />
 				<div className="projects-container">
 					{content.projects.map((project: any) => (
 						<ProjectModal project={project} />
