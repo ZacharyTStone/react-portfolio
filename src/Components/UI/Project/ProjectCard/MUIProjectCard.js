@@ -11,8 +11,8 @@ import { RiGatsbyFill } from "react-icons/ri";
 
 import { RiVuejsFill } from "react-icons/ri";
 import styled from "styled-components";
-import Dot from "../../../images/cursor-ring.png";
-import { useAppContext } from "../../../context/appContext";
+import Dot from "../../../../images/cursor-ring.png";
+import { useAppContext } from "../../../../context/appContext";
 import { Parallax, Background } from "react-parallax";
 
 export default function MUIProjectCard(props) {
@@ -140,11 +140,6 @@ const ProjectCard = styled(Card)`
 		border-radius: 4px;
 	}
 
-	#MUI-Card:hover {
-		/* darken the card on hover */
-		background-color: var(--black 0.1);
-	}
-
 	#card-media {
 		width: 400px;
 		/* min-width: 95vw; */
@@ -167,6 +162,13 @@ const ProjectCard = styled(Card)`
 	@media (max-width: 455px) {
 		#MUI-Card {
 			width: 340px !important;
+		}
+	}
+
+	@media (min-width: 456px) {
+		#MUI-Card:hover {
+			/* darken the card on hover */
+			background-color: var(--black 0.1);
 		}
 	}
 
@@ -303,7 +305,7 @@ const ProjectCard = styled(Card)`
 
 	.ReactModal__Overlay {
 		// darken but don't hide the background
-		background-color: rgba(0, 0, 0, 0.2) !important;
+		/* background-color: rgba(0, 0, 0, 0.2) !important; */
 	}
 
 	@media (min-width: 1300px) {
