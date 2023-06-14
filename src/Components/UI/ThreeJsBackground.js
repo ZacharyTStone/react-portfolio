@@ -1,25 +1,26 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import mooon from "../../images/threeJS/moon.webp";
 import space from "../../images/threeJS/space.jpeg";
 
 const ThreeComponent = () => {
+	const canvasRef = useRef(null);
+
 	useEffect(() => {
-		// Setup
+		let animationFrameId;
+		const canvas = canvasRef.current;
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(
 			75,
-			window.innerWidth / window.innerHeight,
+			canvas.clientWidth / canvas.clientHeight,
 			0.1,
 			1000
 		);
 		const renderer = new THREE.WebGLRenderer({ antialias: true });
-		renderer.setSize(window.innerWidth, window.innerHeight);
+		renderer.setSize(canvas.clientWidth, canvas.clientHeight);
 		renderer.setPixelRatio(window.devicePixelRatio);
-		document
-			.getElementById("canvas-container")
-			.appendChild(renderer.domElement);
+		canvas.appendChild(renderer.domElement);
 
 		// Torus
 		const geometry = new THREE.TorusGeometry(14, 4, 64, 100);
@@ -37,13 +38,6 @@ const ThreeComponent = () => {
 
 		const ambientLight = new THREE.AmbientLight(0xffffff);
 		scene.add(pointLight, ambientLight);
-
-		// Helpers
-		// const lightHelper = new THREE.PointLightHelper(pointLight)
-		// const gridHelper = new THREE.GridHelper(200, 50);
-		// scene.add(lightHelper, gridHelper)
-
-		// const controls = new OrbitControls(camera, renderer.domElement);
 
 		const addStar = () => {
 			const geometry = new THREE.SphereGeometry(0.25, 24, 24);
@@ -65,36 +59,27 @@ const ThreeComponent = () => {
 		Array(25).fill().forEach(addStar);
 
 		// Background
-
 		const spaceTexture = new THREE.TextureLoader().load(space);
-		// darkens the background space image
-
 		scene.background = spaceTexture;
 
-		// darken background image
-
 		// Scroll Animation
-		const moveCamera = () => {
-			const t = document.body.getBoundingClientRect().top;
-
-			// Move the camera based on scroll position
-			camera.position.z = t * -0.09; // Move camera along the z-axis
-			camera.position.x = t * -0.00009; // Move camera along the x-axis
-			camera.rotation.y = t * -0.0002; // Rotate camera around the y-axis
+		const handleScroll = () => {
+			const t = canvas.getBoundingClientRect().top;
+			camera.position.z = t * -0.09;
+			camera.position.x = t * -0.00009;
+			camera.rotation.y = t * -0.0002;
 		};
 
-		document.body.onscroll = moveCamera;
-		moveCamera();
+		const canvasContainer = document.getElementById("canvas-container");
+		canvasContainer.addEventListener("scroll", handleScroll);
 
 		// Animation Loop
 		const animate = () => {
-			requestAnimationFrame(animate);
+			animationFrameId = requestAnimationFrame(animate);
 
 			torus.rotation.x += 0.0001;
 			torus.rotation.y += 0.0005;
 			torus.rotation.z += 0.001;
-
-			// controls.update();
 
 			renderer.render(scene, camera);
 		};
@@ -103,14 +88,13 @@ const ThreeComponent = () => {
 
 		// Clean up
 		return () => {
-			// remove the canvas on unmount
-			document
-				.getElementById("canvas-container")
-				?.removeChild(renderer.domElement);
+			cancelAnimationFrame(animationFrameId);
+			canvasContainer.removeEventListener("scroll", handleScroll);
+			canvas.removeChild(renderer.domElement);
 		};
 	}, []);
 
-	return <div id="canvas-container" />;
+	return <div id="canvas-container" ref={canvasRef} />;
 };
 
 export default ThreeComponent;

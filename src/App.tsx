@@ -34,16 +34,7 @@ const Footer = React.lazy(() => FooterComponentPromise);
 // Inject analytics
 inject();
 
-function debounce<T extends (...args: any[]) => any>(func: T, delay: number) {
-	let timer: NodeJS.Timeout;
-	return function (this: any, ...args: Parameters<T>) {
-		clearTimeout(timer);
-		timer = setTimeout(() => func.apply(this, args), delay);
-	};
-}
-
 function App(): JSX.Element {
-	const [showThree, setShowThree] = useState(true);
 	const { acceptApp, showApp, setShowApp, theme, enableParticles } =
 		useAppContext();
 	console.log(
@@ -52,28 +43,6 @@ function App(): JSX.Element {
 	);
 
 	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
-
-	useEffect(() => {
-		const handleResize = debounce(() => {
-			if (isMobile) return;
-			if (!showThree) return;
-			if (!showApp) return;
-			if (!acceptApp) return;
-			if (!showThree) return;
-
-			console.log("Resizing ThreeComponent");
-			setShowThree(false);
-			setTimeout(() => {
-				setShowThree(true);
-			}, 300);
-		}, 300);
-
-		window.addEventListener("resize", handleResize);
-
-		return () => {
-			window.removeEventListener("resize", handleResize);
-		};
-	}, [isMobile, showThree, showApp, acceptApp]);
 
 	useEffect(() => {
 		if (!acceptApp) return;
@@ -90,7 +59,7 @@ function App(): JSX.Element {
 				<ToastContainer />
 
 				<Main showApp={showApp}>
-					{showThree && !isMobile && (
+					{!isMobile && (
 						<>
 							<canvas id="bg"></canvas>
 							<ThreeComponent />
