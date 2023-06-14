@@ -42,15 +42,16 @@ const ThreeComponent = () => {
 
 		const ambientLight = new THREE.AmbientLight(0xffffff);
 		scene.add(pointLight, ambientLight);
+		const starGeometry = new THREE.SphereGeometry(0.25, 24, 24);
+		const starMaterial = new THREE.MeshStandardMaterial({
+			color: 0x00ff00,
+			transparent: true,
+			opacity: 0.8,
+		});
+		const starMesh = new THREE.Mesh(starGeometry, starMaterial);
 
 		const addStar = () => {
-			const geometry = new THREE.SphereGeometry(0.25, 24, 24);
-			const material = new THREE.MeshStandardMaterial({
-				color: 0x00ff00,
-				transparent: true,
-				opacity: 0.8,
-			});
-			const star = new THREE.Mesh(geometry, material);
+			const star = starMesh.clone();
 
 			const [x, y, z] = Array(3)
 				.fill()
