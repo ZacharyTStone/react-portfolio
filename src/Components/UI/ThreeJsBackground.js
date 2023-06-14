@@ -1,26 +1,27 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import * as THREE from "three";
 import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
 import mooon from "../../images/threeJS/moon.webp";
 import space from "../../images/threeJS/space.jpeg";
 
 const ThreeComponent = () => {
-	const canvasRef = useRef(null);
+	// reloads the page when the window is resized
 
 	useEffect(() => {
-		let animationFrameId;
-		const canvas = canvasRef.current;
+		// Setup
 		const scene = new THREE.Scene();
 		const camera = new THREE.PerspectiveCamera(
 			75,
-			canvas.clientWidth / canvas.clientHeight,
+			window.innerWidth / window.innerHeight,
 			0.1,
 			1000
 		);
 		const renderer = new THREE.WebGLRenderer({ antialias: true });
-		renderer.setSize(canvas.clientWidth, canvas.clientHeight);
+		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.setPixelRatio(window.devicePixelRatio);
-		canvas.appendChild(renderer.domElement);
+		document
+			.getElementById("canvas-container")
+			.appendChild(renderer.domElement);
 
 		// Torus
 		const geometry = new THREE.TorusGeometry(14, 4, 64, 100);
@@ -39,6 +40,13 @@ const ThreeComponent = () => {
 		const ambientLight = new THREE.AmbientLight(0xffffff);
 		scene.add(pointLight, ambientLight);
 
+		// Helpers
+		// const lightHelper = new THREE.PointLightHelper(pointLight)
+		// const gridHelper = new THREE.GridHelper(200, 50);
+		// scene.add(lightHelper, gridHelper)
+
+		// const controls = new OrbitControls(camera, renderer.domElement);
+
 		const addStar = () => {
 			const geometry = new THREE.SphereGeometry(0.25, 24, 24);
 			const material = new THREE.MeshStandardMaterial({
@@ -56,30 +64,39 @@ const ThreeComponent = () => {
 			scene.add(star);
 		};
 
-		Array(25).fill().forEach(addStar);
+		Array(75).fill().forEach(addStar);
 
 		// Background
+
 		const spaceTexture = new THREE.TextureLoader().load(space);
+		// darkens the background space image
+
 		scene.background = spaceTexture;
 
+		// darken background image
+
 		// Scroll Animation
-		const handleScroll = () => {
-			const t = canvas.getBoundingClientRect().top;
-			camera.position.z = t * -0.09;
-			camera.position.x = t * -0.00009;
-			camera.rotation.y = t * -0.0002;
+		const moveCamera = () => {
+			const t = document.body.getBoundingClientRect().top;
+
+			// Move the camera based on scroll position
+			camera.position.z = t * -0.09; // Move camera along the z-axis
+			camera.position.x = t * -0.00009; // Move camera along the x-axis
+			camera.rotation.y = t * -0.0002; // Rotate camera around the y-axis
 		};
 
-		const canvasContainer = document.getElementById("canvas-container");
-		canvasContainer.addEventListener("scroll", handleScroll);
+		document.body.onscroll = moveCamera;
+		moveCamera();
 
 		// Animation Loop
 		const animate = () => {
-			animationFrameId = requestAnimationFrame(animate);
+			requestAnimationFrame(animate);
 
 			torus.rotation.x += 0.0001;
 			torus.rotation.y += 0.0005;
 			torus.rotation.z += 0.001;
+
+			// controls.update();
 
 			renderer.render(scene, camera);
 		};
@@ -88,13 +105,14 @@ const ThreeComponent = () => {
 
 		// Clean up
 		return () => {
-			cancelAnimationFrame(animationFrameId);
-			canvasContainer.removeEventListener("scroll", handleScroll);
-			canvas.removeChild(renderer.domElement);
+			// remove the canvas on unmount
+			document
+				.getElementById("canvas-container")
+				?.removeChild(renderer.domElement);
 		};
 	}, []);
 
-	return <div id="canvas-container" ref={canvasRef} />;
+	return <div id="canvas-container" />;
 };
 
 export default ThreeComponent;
