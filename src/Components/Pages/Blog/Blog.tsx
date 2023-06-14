@@ -104,10 +104,6 @@ const Main = styled.div<{ isMobile: boolean }>`
 		overflow: show;
 	}
 
-	.ReactModal__Overlay {
-		background-color: var(--black) !important;
-	}
-
 	@media (max-width: 800px) {
 		.project-icons {
 			display: none !important;

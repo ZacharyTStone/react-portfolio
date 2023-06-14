@@ -17,9 +17,9 @@ import styled from "styled-components";
 import { useAppContext } from "../../../context/appContext";
 
 const customStyles = {
-	overflowX: "auto",
-	overflowY: "hidden",
-	maxWidth: "95vw",
+	overlay: {
+		backgroundColor: "rgba(0, 0, 0, 0.75)",
+	},
 	content: {
 		top: "40%",
 		left: "50%",
@@ -27,10 +27,10 @@ const customStyles = {
 		bottom: "auto",
 		marginRight: "-50%",
 		transform: "translate(-50%, -35%)",
-		backgroundColor: "var(--black)",
 		border: "solid 5px var(--secondary-color)",
 		borderRadius: "10px",
 		maxWidth: "99vw",
+		background: "transparent",
 		padding: "10px",
 	},
 };
@@ -70,7 +70,7 @@ function ProjectModal({ project }) {
 	}
 
 	return (
-		<div>
+		<Wrapper>
 			<div onClick={openModal}>
 				<MUIProjectCard
 					cardWidth="405px"
@@ -91,7 +91,7 @@ function ProjectModal({ project }) {
 				style={customStyles}
 				contentLabel="Example Modal"
 			>
-				<Card id="MUI-Card">
+				<Card id="MUI-Card" style={{ backgroundColor: "transparent" }}>
 					<div
 						className="card-content"
 						style={{
@@ -266,10 +266,11 @@ function ProjectModal({ project }) {
 					</div>
 				</IconButton>
 			</Modal>
-		</div>
+		</Wrapper>
 	);
 }
 
+const Wrapper = styled.div``;
 const IconButtonText = styled.h5`
 	font-size: 1.2rem;
 	color: var(--off-white);

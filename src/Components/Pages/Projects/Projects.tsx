@@ -64,7 +64,7 @@ const Main = styled.div`
 	}
 
 	.ReactModal__Overlay {
-		background-color: var(--black) !important;
+		background-color: rgba(0, 0, 0, 0.75);
 	}
 
 	@media (max-width: 800px) {

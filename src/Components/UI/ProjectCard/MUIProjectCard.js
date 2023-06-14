@@ -110,7 +110,8 @@ const ProjectCard = styled(Card)`
 	box-shadow: none !important;
 	.ReactModal__Overlay {
 		overflow: auto !important;
-		/* padding-top: 200px !important; */
+		// black backgorund semi transparent
+		background-color: rgba(0, 0, 0, 0.2) !important;
 	}
 
 	.cardMediaTag {
@@ -301,7 +302,8 @@ const ProjectCard = styled(Card)`
 	}
 
 	.ReactModal__Overlay {
-		background-color: var(--black) !important;
+		// darken but don't hide the background
+		background-color: rgba(0, 0, 0, 0.2) !important;
 	}
 
 	@media (min-width: 1300px) {
