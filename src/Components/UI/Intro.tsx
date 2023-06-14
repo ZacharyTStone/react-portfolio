@@ -29,6 +29,7 @@ const Intro = () => {
 					gap: "8px",
 					alignItems: "center",
 					width: "fit-content",
+					maxWidth: "100%",
 				}}
 			>
 				<h2
@@ -41,6 +42,8 @@ const Intro = () => {
 						overflowWrap: "break-word",
 						// word break
 						wordBreak: "break-word",
+
+						maxWidth: "100%",
 					}}
 				>
 					{t("intro.enableAudio")}

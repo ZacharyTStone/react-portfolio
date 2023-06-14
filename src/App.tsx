@@ -50,6 +50,8 @@ function App() {
 		});
 	}, [window.innerWidth]);
 
+	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
+
 	const { acceptApp, showApp, setShowApp, theme, enableParticles } =
 		useAppContext();
 
@@ -70,7 +72,7 @@ function App() {
 				<ToastContainer />
 
 				<Main showApp={showApp}>
-					{showThree && (
+					{showThree && !isMobile && (
 						<>
 							<canvas id="bg"></canvas>
 							<ThreeComponent />
