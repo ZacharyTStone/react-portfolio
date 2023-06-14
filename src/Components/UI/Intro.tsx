@@ -32,8 +32,7 @@ const Intro = () => {
 					maxWidth: "100%",
 				}}
 			>
-				<h2
-					className="word word-small"
+				<SubTitle
 					style={{
 						textTransform: "uppercase",
 						// wrap
@@ -47,7 +46,7 @@ const Intro = () => {
 					}}
 				>
 					{t("intro.enableAudio")}
-				</h2>
+				</SubTitle>
 
 				<StyledInput
 					type="checkbox"
@@ -143,6 +142,31 @@ const Title = styled(motion.h1)`
 	text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
 		1px 1px 0 var(--off-white);
 	color: black;
+
+	overflow-wrap: break-word;
+	word-break: break-word;
+	max-width: 100%;
+`;
+
+const SubTitle = styled(motion.h5)`
+	/* font-size: 100px; */
+	/* font-weight: 900; */
+	color: var(--off-white);
+	text-align: center;
+	text-transform: uppercase;
+
+	font-size: 1rem;
+	font-family: "Rubik", sans-serif;
+
+	margin: 0rem;
+	text-transform: uppercase;
+
+	opacity: 0.5;
+
+	color: var(--off-white);
+	overflow-wrap: break-word;
+	word-break: break-word;
+	max-width: 100%;
 `;
 
 export const Container = styled(motion.div)`
