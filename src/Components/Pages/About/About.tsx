@@ -9,6 +9,8 @@ const About = () => {
 
 	return (
 		<AboutDiv className="about" id="About">
+			<AboutTitle>{t("about.title")}</AboutTitle>
+
 			<AboutInner className="about-inner">
 				<AnimationOnScroll
 					animateIn="animate__fadeIn"
@@ -16,7 +18,6 @@ const About = () => {
 					offset={200}
 					duration={3}
 				>
-					<AboutTitle>{t("about.title")}</AboutTitle>
 					<AboutDescriptionWrapper>
 						<AboutDescription>{t("about.description1")}</AboutDescription>
 						<AboutDescription>{t("about.description2")}</AboutDescription>
@@ -56,10 +57,10 @@ const AboutDiv = styled.div`
 	margin: auto;
 	border-radius: 10px;
 	display: flex;
-	flex-direction: row;
-	justify-content: space-around;
+	flex-direction: column;
+	/* justify-content: space-around; */
 	align-items: center;
-	flex-wrap: wrap;
+	/* flex-wrap: wrap; */
 	color: var(--off-white);
 	overflow: hidden;
 	user-select: none;
@@ -112,6 +113,7 @@ const AboutTitle = styled.h1`
 	text-decoration-skip-ink: none;
 	overflow: hidden;
 	margin-bottom: 50px;
+	position: relative;
 `;
 
 const AboutDescriptionWrapper = styled.div`
