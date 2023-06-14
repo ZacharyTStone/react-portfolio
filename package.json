@@ -5,6 +5,7 @@
 	"dependencies": {
 		"@emotion/react": "^11.9.3",
 		"@emotion/styled": "^11.9.3",
+		"@juggle/resize-observer": "^3.4.0",
 		"@mui/material": "^5.8.5",
 		"@vercel/analytics": "^1.0.0",
 		"animate.css": "^4.1.1",
