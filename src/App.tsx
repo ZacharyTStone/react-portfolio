@@ -24,6 +24,7 @@ const AboutComponentPromise = import("./Components/Pages/About/About");
 const ProjectsComponentPromise = import("./Components/Pages/Projects/Projects");
 const BlogComponentPromise = import("./Components/Pages/Blog/Blog");
 const FooterComponentPromise = import("./Components/Pages/Footer/Footer");
+const ThreeJSComponentPromise = import("./Components/UI/ThreeJsBackground");
 
 // Lazy-loaded components
 const LandingV2 = React.lazy(() => LandingComponentPromise);
@@ -31,6 +32,7 @@ const About = React.lazy(() => AboutComponentPromise);
 const Projects = React.lazy(() => ProjectsComponentPromise);
 const Blog = React.lazy(() => BlogComponentPromise);
 const Footer = React.lazy(() => FooterComponentPromise);
+const ThreeJS = React.lazy(() => ThreeJSComponentPromise);
 
 // Inject analytics
 inject();
@@ -62,7 +64,9 @@ function App(): JSX.Element {
 				<Main showApp={showApp}>
 					<>
 						<canvas id="bg"></canvas>
-						<ThreeComponent />
+						<Suspense fallback={<h1>Loading Background...</h1>}>
+							<ThreeJS />
+						</Suspense>
 					</>
 
 					{enableParticles && <ParticlesBackground />}
