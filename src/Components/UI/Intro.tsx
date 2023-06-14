@@ -29,7 +29,7 @@ const Intro = () => {
 					gap: "8px",
 					alignItems: "center",
 					width: "fit-content",
-					maxWidth: "100%",
+					maxWidth: "75vw",
 				}}
 			>
 				<SubTitle
