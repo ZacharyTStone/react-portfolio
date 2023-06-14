@@ -17,7 +17,7 @@ const Projects = () => {
 		<>
 			<Main className="Projects" id="Projects">
 				<Title>{content.mainTitle}</Title>
-				<RunningImg src={Naruto} alt="naruto" />
+				{/* <RunningImg src={Naruto} alt="naruto" /> */}
 				<div className="projects-container">
 					{content.projects.map((project: any) => (
 						<ProjectModal project={project} />
