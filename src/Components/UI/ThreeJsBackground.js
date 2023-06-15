@@ -28,15 +28,14 @@ const ThreeComponent = () => {
 		renderer.setPixelRatio(window.devicePixelRatio);
 		containerRef.current.appendChild(renderer.domElement);
 
-		const geometry = new THREE.TorusGeometry(10, 3, 16, 100); // Adjust torus shape
+		const geometry = new THREE.TorusGeometry(10, 3, 70, 8); // Adjust torus shape
 		const moonTexture = new THREE.TextureLoader().load(mooon);
 		const material = new THREE.MeshStandardMaterial({
 			// white light
 			color: 0xffffff,
-
 			map: moonTexture,
 			roughness: 0.9,
-			metalness: 0.8,
+			metalness: 0.9,
 		});
 
 		const torus = new THREE.Mesh(geometry, material);
