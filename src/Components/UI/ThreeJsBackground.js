@@ -78,9 +78,9 @@ const ThreeComponent = () => {
 		const animate = () => {
 			requestAnimationFrame(animate);
 
-			torus.rotation.x += 0.0001;
-			torus.rotation.y += 0.0005;
-			torus.rotation.z += 0.001;
+			torus.rotation.x += 0.00009;
+			torus.rotation.y += 0.0004;
+			torus.rotation.z += 0.0009;
 
 			renderer.render(scene, camera);
 		};
