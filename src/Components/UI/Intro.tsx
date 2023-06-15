@@ -174,7 +174,7 @@ export const Container = styled(motion.div)`
 	position: fixed;
 	bottom: 0;
 	left: 0;
-	width: 100%;
+	width: 100vw;
 	height: 100vh;
 	height: 100svh;
 	display: flex;

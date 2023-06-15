@@ -1,52 +1,68 @@
 #MUI-Card {
-	width: 100%;
-	min-width: 300px;
-	overflow: auto;
+	width: 300px;
+	overflow: show;
 	margin-top: 20px !important;
 	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 	background-color: transparent !important;
-}
-
-#MUI-Card:hover {
-	background-color: var(--black 0.1);
+	position: relative;
+	z-index: 0;
 }
 
 #card-media {
 	width: 100%;
 	height: 250px;
-	cursor: url("../../../../images/ring-pointer.png"), 4, 4 pointer !important;
+	cursor: url("../../../images/ring-pointer.png"), 4, 4 pointer !important;
+}
+
+.card-title-div {
+	position: absolute;
+	top: -40px;
+	left: -40px;
+	z-index: 1;
+	padding: 10px;
+	background: rgba(255, 255, 255, 0.1);
+	border-radius: 10px;
+	width: max-content;
+	-webkit-backdrop-filter: blur(5px);
+
+	backdrop-filter: blur(5px);
+}
+
+.card-title {
+	color: var(--secondary-color);
+	width: max-content;
 }
 
 @media (max-width: 1300px) {
+	.card-title-div {
+		position: relative;
+		margin-bottom: 20px;
+		justify-content: center;
+		display: flex;
+		width: 100%;
+		top: 0;
+		left: 0;
+		padding: 0px;
+		padding-top: 10px;
+		padding-bottom: 10px;
+	}
 	.project-flag-div {
 		display: none !important;
-	}
-
-	.card-title-div {
-		font-size: 1rem !important;
-		display: block !important;
-		position: relative !important;
-		margin-bottom: 40px !important;
 	}
 
 	.card-title {
 		font-size: 2.5rem !important;
 		text-decoration-thickness: 4px !important;
 		text-align: center !important;
+		color: var(--secondary-color);
 	}
 
 	#card-media:hover {
-		opacity: 1;
-		cursor: url("../../../../images/ring-pointer.png"), 4, 4 pointer !important;
+		cursor: url("../../../images/ring-pointer.png"), 4, 4 pointer !important;
 	}
 
 	.card-content-text {
 		border: none !important;
-	}
-
-	.card-title-div {
-		top: 0px !important;
-		left: 0px !important;
 	}
 }
 
@@ -59,24 +75,7 @@
 	margin-bottom: -25px;
 }
 
-@media (max-width: 455px) {
-	#MUI-Card {
-		width: 340px !important;
-		/* background-color: transparent !important; */
-	}
-}
-
-@media (min-width: 700px) {
-	#MUI-Card {
-		width: 300px !important;
-		background-color: var(--black) !important;
-	}
-}
-
 @media (min-width: 1300px) {
-	.darken-on-hover:hover {
-		opacity: 0.3 !important;
-	}
 	#MUI-Card {
 		margin-left: 0px !important;
 		margin-right: 0px !important;
@@ -90,7 +89,7 @@
 		width: 100%;
 		height: 525px;
 		image-rendering: pixelated;
-		cursor: url("../../../../images/ring-pointer.png"), 4, 4 pointer !important;
+		cursor: url("../../../images/ring-pointer.png"), 4, 4 pointer !important;
 	}
 
 	.MuiCardHeader-title {
@@ -120,7 +119,7 @@
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
-		max-width: 300px;
+
 		height: 480px;
 	}
 
@@ -143,7 +142,7 @@
 		#card-media {
 			width: 1000px !important;
 			max-width: 100% !important;
-			cursor: url("../../../../images/ring-pointer.png"), 4, 4 pointer !important;
+			cursor: url("../../../images/ring-pointer.png"), 4, 4 pointer !important;
 		}
 	}
 }

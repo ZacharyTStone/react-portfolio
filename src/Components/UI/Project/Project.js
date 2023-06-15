@@ -70,7 +70,7 @@ function Project({ project }) {
 	}
 
 	return (
-		<Wrapper>
+		<div>
 			<div onClick={openModal}>
 				<MUIProjectCard
 					cardWidth="405px"
@@ -266,11 +266,10 @@ function Project({ project }) {
 					</div>
 				</IconButton>
 			</Modal>
-		</Wrapper>
+		</div>
 	);
 }
 
-const Wrapper = styled.div``;
 const IconButtonText = styled.h5`
 	font-size: 1.2rem;
 	color: var(--off-white);
