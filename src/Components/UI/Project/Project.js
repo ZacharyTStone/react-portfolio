@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { CardMedia } from "@mui/material";
 import Card from "@mui/material/Card";
 import Modal from "react-modal";
-import MUIProjectCard from "../ProjectCard/MUIProjectCard";
+import MUIProjectCard from "./ProjectCard/MUIProjectCard";
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
@@ -38,7 +38,7 @@ const customStyles = {
 // Make sure to bind modal to your appElement (https://reactcommunity.org/react-modal/accessibility/)
 Modal.setAppElement(document.getElementById("root"));
 
-function ProjectModal({ project }) {
+function Project({ project }) {
 	const [isLoading, setIsLoading] = useState(true);
 
 	const { useAudio, setAudioPreference } = useAppContext();
@@ -285,4 +285,4 @@ const IconButtonText = styled.h5`
 	}
 `;
 
-export default ProjectModal;
+export default Project;

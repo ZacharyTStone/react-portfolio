@@ -1,4 +1,4 @@
-import ProjectModal from "../../UI/ProjectModal/ProjectModal";
+import Project from "../../UI/Project/Project";
 import styled from "styled-components";
 import "./Projects.css";
 import { useTranslation } from "react-i18next";
@@ -20,7 +20,7 @@ const Projects = () => {
 				{/* <RunningImg src={Naruto} alt="naruto" /> */}
 				<div className="projects-container">
 					{content.projects.map((project: any) => (
-						<ProjectModal project={project} />
+						<Project project={project} />
 					))}
 				</div>
 			</Main>

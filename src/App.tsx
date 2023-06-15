@@ -13,8 +13,6 @@ import AudioOnHover from "./audio/AudioOnHover";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import ParticlesBackground from "./Components/UI/Particles";
-import ThreeComponent from "./Components/UI/ThreeJsBackground";
-import debounce from "lodash.debounce";
 
 // Components
 const LandingComponentPromise = import(
