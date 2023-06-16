@@ -89,9 +89,9 @@ function Project({ project }) {
 				onAfterOpen={afterOpenModal}
 				onRequestClose={closeModal}
 				style={customStyles}
-				contentLabel="Example Modal"
+				contentLabel="Project Modal"
 			>
-				<Card id="MUI-Card" style={{ backgroundColor: "transparent" }}>
+				<Card id="card-modal" style={{ backgroundColor: "transparent" }}>
 					<div
 						className="card-content"
 						style={{
@@ -145,9 +145,7 @@ function Project({ project }) {
 
 						<CardContent className="card-content-text">
 							<Typography variant="body2" color="var(--off-white)">
-								<span className="project-description">
-									{project.description}
-								</span>
+								<Description>{project.description}</Description>
 							</Typography>
 							<CardActions disableSpacing className="icon-div">
 								<div>
@@ -182,28 +180,21 @@ function Project({ project }) {
 									<IconButtonText>Site</IconButtonText>
 								</div>
 							</CardActions>
-							<Typography paragraph align="left" minHeight="90px">
-								<div
-									style={{
-										minHeight: "90px",
-									}}
-								>
-									{project.tags.map((tag) => (
-										<TagButton
-											disabled={true}
-											key={tag}
-											style={{
-												background: "var(--primary-color)",
-
-												color: "var(--off-white)",
-												marginRight: "10px",
-												marginBottom: "10px",
-											}}
-										>
-											{tag}
-										</TagButton>
-									))}
-								</div>
+							<Typography paragraph align="left">
+								{project.tags.map((tag) => (
+									<TagButton
+										disabled={true}
+										key={tag}
+										style={{
+											background: "var(--secondary-color-dark)",
+											color: "var(--off-white)",
+											marginRight: "10px",
+											marginBottom: "10px",
+										}}
+									>
+										{tag}
+									</TagButton>
+								))}
 								<div
 									className="project-flag-div"
 									style={{
@@ -284,4 +275,22 @@ const IconButtonText = styled.h5`
 	}
 `;
 
+const Description = styled.h5`
+	font-size: 1.2rem;
+	color: var(--off-white);
+	text-decoration: none;
+
+	//glassmorphism background
+	background: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 10px;
+	padding: 10px;
+
+	@media (max-width: 1300px) {
+		font-size: 1rem;
+		color: var(--off-white);
+		text-decoration: none;
+	}
+`;
 export default Project;

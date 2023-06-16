@@ -1,11 +1,24 @@
 #MUI-Card {
-	width: 300px;
+	width: 500px;
+	max-width: 90vw;
 	overflow: show;
 	margin-top: 20px !important;
 	box-shadow: 10px 10px 10px rgba(0, 0, 0, 0.1);
 	background-color: transparent !important;
 	position: relative;
 	z-index: 0;
+}
+
+.card-modal {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 16px;
+
+	max-width: 1400px;
 }
 
 #card-media {
