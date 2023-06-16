@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../context/appContext";
+
 const Intro = () => {
 	const { useAudio, setAudioPreference, setAcceptApp } = useAppContext();
 	const { t } = useTranslation();
@@ -17,44 +18,34 @@ const Intro = () => {
 			document.body.style.overflow = "auto";
 		};
 	}, []);
+
+	const handleAudioChange = () => {
+		setAudioPreference(!useAudio);
+	};
+
+	const handleAcceptApp = () => {
+		setAcceptApp(true);
+	};
+
 	return (
 		<Container>
-			<Title className="word " id="special-1">
-				{" "}
-				{t("intro.header")}
-			</Title>
+			<Title id="special-1">{t("intro.header")}</Title>
 			<div
 				style={{
 					display: "flex",
-					gap: "8px",
 					alignItems: "center",
-					width: "fit-content",
-					maxWidth: "75vw",
+					justifyContent: "center",
+					gap: "8px",
 				}}
 			>
-				<SubTitle
-					style={{
-						textTransform: "uppercase",
-						// wrap
-						whiteSpace: "pre-wrap",
-						// overflow
-						overflowWrap: "break-word",
-						// word break
-						wordBreak: "break-word",
-
-						maxWidth: "100%",
-					}}
-				>
-					{t("intro.enableAudio")}
-				</SubTitle>
-
+				<SubTitle>{t("intro.enableAudio")}</SubTitle>
 				<StyledInput
 					type="checkbox"
 					checked={useAudio}
-					onChange={() => setAudioPreference(!useAudio)}
+					onChange={handleAudioChange}
 				/>
 			</div>
-			<Button onClick={() => setAcceptApp(true)}>{t("intro.accept")}</Button>
+			<Button onClick={handleAcceptApp}>{t("intro.accept")}</Button>
 		</Container>
 	);
 };
@@ -64,6 +55,8 @@ export default Intro;
 const StyledInput = styled.input`
 	position: relative;
 	width: 32px;
+	min-width: 32px;
+	min-height: 32px;
 	height: 32px;
 	appearance: none;
 	-webkit-appearance: none;
@@ -114,7 +107,6 @@ const Button = styled(motion.button)`
 	&:hover {
 		background-color: var(--secondary-color);
 		color: var(--primary-color);
-
 		box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 	}
 
@@ -125,51 +117,33 @@ const Button = styled(motion.button)`
 `;
 
 const Title = styled(motion.h1)`
-	font-size: 100px;
-	font-weight: 900;
-	color: var(--off-white);
-	text-align: center;
-	text-transform: uppercase;
-	text-shadow: -1px -1px 0 var(--off-white), 1px -1px 0 var(--off-white);
-
-	font-size: clamp(1.3rem, 6.5vw, 5rem);
+	font-size: 3rem;
 	font-family: "Rubik", sans-serif;
 	font-weight: 400;
-	margin: 0rem;
+	margin: 0;
 	text-transform: uppercase;
 	transition: opacity 250ms ease;
 	opacity: 0.5;
-	text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-		1px 1px 0 var(--off-white);
 	color: black;
-
 	overflow-wrap: break-word;
 	word-break: break-word;
 	max-width: 100%;
+	text-align: center;
 `;
 
 const SubTitle = styled(motion.h5)`
-	/* font-size: 100px; */
-	/* font-weight: 900; */
-	color: var(--off-white);
-	text-align: center;
-	text-transform: uppercase;
-
 	font-size: 1rem;
 	font-family: "Rubik", sans-serif;
-
-	margin: 0rem;
+	margin: 0;
 	text-transform: uppercase;
-
 	opacity: 0.5;
-
 	color: var(--off-white);
 	overflow-wrap: break-word;
 	word-break: break-word;
 	max-width: 100%;
 `;
 
-export const Container = styled(motion.div)`
+const Container = styled(motion.div)`
 	z-index: 999;
 	position: fixed;
 	bottom: 0;
@@ -182,34 +156,29 @@ export const Container = styled(motion.div)`
 	align-items: center;
 	overflow: hidden;
 	flex-direction: column;
-
 	gap: 16px;
 	padding: 8px;
-	background-color: "var(--secondary-color)";
+	background-color: var(--black);
 
 	.word {
-		font-size: clamp(1.3rem, 6.5vw, 5rem);
+		font-size: 1.3rem;
 		font-family: "Rubik", sans-serif;
 		font-weight: 400;
-		margin: 0rem;
+		margin: 0;
 		text-transform: uppercase;
 		transition: opacity 250ms ease;
 		opacity: 0.5;
-		text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-			1px 1px 0 var(--off-white);
 		color: black;
 	}
 
 	.word-small {
-		font-size: clamp(0.25rem, 6.5vw, 1.25rem);
+		font-size: 0.25rem;
 		font-family: "Rubik", sans-serif;
 		font-weight: 400;
-		margin: 0rem;
+		margin: 0;
 		text-transform: uppercase;
 		transition: opacity 250ms ease;
 		opacity: 0.5;
-		/* text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-			1px 1px 0 var(--off-white); */
 		color: var(--off-white);
 	}
 

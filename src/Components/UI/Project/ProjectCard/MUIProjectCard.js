@@ -19,6 +19,7 @@ export default function MUIProjectCard(props) {
 	return (
 		<div
 			id="MUI-Card"
+			// if we want to add styling based on the project.
 			className={props.github.slice(props.github.lastIndexOf("/") + 1)}
 		>
 			<a

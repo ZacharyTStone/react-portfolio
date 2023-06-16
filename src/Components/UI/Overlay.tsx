@@ -13,8 +13,8 @@ export default function Index() {
 
 	const getRandomColor = (baseColor: string): string => {
 		// Generate random variations for brightness and saturation
-		const brightnessVariation = Math.random() * 0.2 - 0.1;
-		const saturationVariation = Math.random() * 0.2 - 0.1;
+		const brightnessVariation = Math.random() * 0.4 - 0.2;
+		const saturationVariation = Math.random() * 0.4 - 0.2;
 
 		// Adjust brightness and saturation of the base color
 		const adjustedColor = adjustColor(
@@ -52,7 +52,6 @@ export default function Index() {
 
 		return `rgb(${adjustedRgb[0]}, ${adjustedRgb[1]}, ${adjustedRgb[2]})`;
 	};
-
 	const hslToRgb = (h: number, s: number, l: number): number[] => {
 		let r = 0,
 			g = 0,

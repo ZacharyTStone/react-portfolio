@@ -48,56 +48,47 @@ const ParticlesBackground = () => {
 					},
 					modes: {
 						push: {
-							quantity: 4,
-						},
-						repulse: {
-							distance: 200,
-							duration: 0.4,
+							quantity: 1,
 						},
 					},
 				},
 				particles: {
 					color: {
-						value: "#ffffff",
-					},
-					links: {
-						color: "#43c396",
-						distance: 150,
-						enable: true,
-						opacity: 1,
-						width: 4,
-					},
-					collisions: {
-						enable: true,
-					},
-					move: {
-						direction: "none",
-						enable: true,
-						outModes: {
-							default: "bounce",
-						},
-						random: false,
-						speed: 1,
-						straight: false,
-					},
-					number: {
-						density: {
-							enable: true,
-							area: 800,
-						},
-						value: 40,
-					},
-					opacity: {
-						value: 0.1,
+						value: "#fff01c",
 					},
 					shape: {
 						type: "circle",
 					},
+					opacity: {
+						value: 1,
+						random: true,
+						anim: {
+							enable: true,
+							speed: 1,
+							opacity_min: 0.6,
+							sync: false,
+						},
+					},
 					size: {
-						value: { min: 1, max: 5 },
+						value: { min: 0.8, max: 4 },
+						random: true,
+						anim: {
+							enable: true,
+							speed: 1,
+							size_min: 0.1,
+							sync: false,
+						},
+					},
+					move: {
+						enable: true,
+						speed: 0.2,
+						direction: "none",
+						random: true,
+						straight: false,
+						out_mode: "out",
+						bounce: false,
 					},
 				},
-				detectRetina: true,
 			}}
 		/>
 	);
