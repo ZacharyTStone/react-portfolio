@@ -51,11 +51,20 @@ export default function MUIProjectCard(props) {
 				<Parallax
 					blur={{ min: -1, max: 1 }}
 					bgImage={props.image}
-					bgImageAlt="the dog"
+					bgImageAlt="project"
 					strength={75}
 					className={`darken-on-hover ${
 						theme === "light" ? "light-mode" : "dark-mode"
 					}`}
+					// contain not cover
+					bgImageStyle={{
+						backgroundSize: "contain",
+						backgroundRepeat: "no-repeat",
+						backgroundPosition: "center",
+						filter: "brightness(0.85)",
+						borderRadius: "20px",
+						width: "100%",
+					}}
 				>
 					<div id="card-media" />
 				</Parallax>
