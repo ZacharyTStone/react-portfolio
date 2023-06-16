@@ -43,12 +43,14 @@
 .card-title {
 	color: var(--secondary-color);
 	width: max-content;
+	padding: 0px;
+	margin-top: 20px;
+	margin-bottom: 40px;
 }
 
 @media (max-width: 1300px) {
 	.card-title-div {
 		position: relative;
-		margin-bottom: 20px;
 		justify-content: center;
 		display: flex;
 		width: 100%;

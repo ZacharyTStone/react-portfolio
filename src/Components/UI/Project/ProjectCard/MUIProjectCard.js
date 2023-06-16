@@ -36,9 +36,6 @@ export default function MUIProjectCard(props) {
 							fontWeight: "bold",
 							textAlign: "left",
 
-							margin: "0",
-							padding: "0",
-
 							opactiy: 1,
 							zIndex: 1,
 							// underline
