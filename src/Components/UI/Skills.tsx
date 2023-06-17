@@ -155,7 +155,7 @@ const Skills = () => {
 									}}
 								>
 									{" "}
-									<IoMdPaper size={"1.25rem"} color="var(--secondary-color)" />
+									<IoMdPaper size={"1.5rem"} color="var(--secondary-color)" />
 									<span
 										className="about-description resume-link-text"
 										style={{
@@ -183,13 +183,12 @@ const Skills = () => {
 									}}
 								>
 									{" "}
-									<IoMdPaper size={"1.25rem"} color="var(--secondary-color)" />
+									<IoMdPaper size={"1.5rem"} color="var(--secondary-color)" />
 									<span
 										className="about-description resume-link-text"
 										style={{
 											marginLeft: "10px",
 											color: "var(--off-white)",
-											fontSize: "1.1rem",
 										}}
 									>
 										{t("skills.japaneseResume")}
@@ -210,7 +209,7 @@ const Skills = () => {
 										display: "flex",
 									}}
 								>
-									<BsUiChecks color="var(--secondary-color)" size={"1.25rem"} />
+									<BsUiChecks color="var(--secondary-color)" size={"1.5rem"} />
 									<span
 										className="about-description resume-link-text"
 										style={{
@@ -490,6 +489,10 @@ const SkillsDiv = styled.div`
 
 	.skill-img {
 		margin-top: 10px;
+	}
+
+	.resume-link-text {
+		font-size: 1.5rem;
 	}
 
 	.resume-link-text:hover {
