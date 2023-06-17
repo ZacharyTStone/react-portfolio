@@ -18,6 +18,11 @@
 
 My portfolio website
 
+This has changed and morphed over the years. I do minor updates when I have the time, so it has a high commit count.
+
+
+これは年々変化し変形してきました。時間があるときに細かいなアップデートするので、コミット数が多いです。
+
 </br>
 
 ## Table of Contents
