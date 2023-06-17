@@ -43,6 +43,15 @@
 }
 
 .card-title {
+	font-size: 4.7rem !important;
+	font-weight: bold;
+	text-align: left;
+	opacity: 1;
+	z-index: 1;
+	/* underline */
+	text-decoration: underline;
+	text-decoration-color: var(--secondary-color);
+	text-decoration-style: solid;
 	color: var(--secondary-color);
 	width: max-content;
 	padding: 0px;
@@ -59,6 +68,7 @@
 		top: 0;
 		left: 0;
 		padding: 0px;
+		background: rgba(0, 0, 0, 0.3);
 	}
 
 	.project-flag-div {
@@ -66,8 +76,8 @@
 	}
 
 	.card-title {
-		font-size: 2.5rem !important;
-		text-decoration-thickness: 4px !important;
+		font-size: 2.5rem;
+		text-decoration-thickness: 4px;
 		text-align: center !important;
 		color: var(--secondary-color);
 	}
@@ -159,4 +169,17 @@
 			cursor: url("../../../images/ring-pointer.png"), 4, 4 pointer !important;
 		}
 	}
+}
+
+.card-title-div {
+	opacity: 0;
+	transition: opacity 2s ease-in-out;
+}
+
+.fade-in {
+	opacity: 1;
+}
+
+.fade-in-hidden {
+	opacity: 0;
 }

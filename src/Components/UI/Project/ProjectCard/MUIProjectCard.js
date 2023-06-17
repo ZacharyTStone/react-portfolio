@@ -1,12 +1,9 @@
+import React, { useEffect, useRef, useState } from "react";
 import Card from "@mui/material/Card";
-
 import CardMedia from "@mui/material/CardMedia";
-
 import { FaReact } from "react-icons/fa";
-
 import { IconContext } from "react-icons";
 import { RiGatsbyFill } from "react-icons/ri";
-
 import { RiVuejsFill } from "react-icons/ri";
 import styled from "styled-components";
 import Dot from "../../../../images/cursor-ring.png";
@@ -16,37 +13,47 @@ import "../../Project/Project.css";
 
 export default function MUIProjectCard(props) {
 	const { theme } = useAppContext();
+	const [isVisible, setIsVisible] = useState(false);
+	const titleRef = useRef(null);
+
+	useEffect(() => {
+		const observer = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						setIsVisible(true);
+						observer.unobserve(entry.target);
+					}
+				});
+			},
+			{ threshold: 0.5 } // Adjust the threshold as needed
+		);
+
+		observer.observe(titleRef.current);
+
+		return () => {
+			observer.disconnect();
+		};
+	}, []);
+
 	return (
 		<div
 			id="MUI-Card"
-			// if we want to add styling based on the project.
 			className={props.github.slice(props.github.lastIndexOf("/") + 1)}
 		>
 			<a
 				href={props.link}
-				target={"_blank"}
+				target="_blank"
 				rel="noreferrer"
 				className="cardMediaTag"
 			>
-				<div className="card-title-div">
-					<h1
-						className="card-title"
-						style={{
-							fontSize: "4.7rem",
-							fontWeight: "bold",
-							textAlign: "left",
-
-							opactiy: 1,
-							zIndex: 1,
-							// underline
-							textDecoration: "underline",
-							textDecorationColor: "var(--secondary-color)",
-							textDecorationThickness: "10px",
-							textDecorationStyle: "solid",
-						}}
-					>
-						{props.title}
-					</h1>
+				<div
+					className={`card-title-div ${
+						isVisible ? "fade-in" : "fade-in-hidden"
+					} ${theme === "light" ? "light-mode" : "dark-mode"}`}
+					ref={titleRef}
+				>
+					<h1 className="card-title">{props.title}</h1>
 				</div>
 				<Parallax
 					blur={{ min: -1, max: 1 }}
@@ -56,7 +63,6 @@ export default function MUIProjectCard(props) {
 					className={`darken-on-hover ${
 						theme === "light" ? "light-mode" : "dark-mode"
 					}`}
-					// contain not cover
 					bgImageStyle={{
 						backgroundSize: "contain",
 						backgroundRepeat: "no-repeat",

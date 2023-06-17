@@ -86,28 +86,30 @@ const Landing = styled.div`
 		margin: 0rem;
 		text-transform: uppercase;
 		transition: opacity 250ms ease;
-		opacity: 0.6;
+		opacity: 0.7;
 		text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
 			1px 1px 0 var(--off-white);
 		color: black;
 	}
 
+	#text {
+		// glassmorphism background
+		background: rgba(0, 0, 0, 0.09);
+		backdrop-filter: blur(20px);
+		-webkit-backdrop-filter: blur(20px);
+		border-radius: 20px;
+		padding: 20px;
+	}
+
 	@media (max-width: 768px) {
-		.word {
-			color: var(--off-white);
-			text-shadow: none;
+		#text {
+			background: rgba(0, 0, 0, 0.3);
 		}
 	}
 
 	#special-1 {
 		opacity: 1 !important;
-		text-shadow: none !important;
 		color: var(--off-white) !important;
-	}
-
-	#special-2 {
-		color: gray !important;
-		opacity: 0.5 !important;
 	}
 
 	display: flex;

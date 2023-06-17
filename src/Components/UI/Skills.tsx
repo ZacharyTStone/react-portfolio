@@ -368,7 +368,7 @@ const ButtonContainer = styled.div`
 `;
 
 const SkillIconsDiv = styled.div`
-	min-height: 175px;
+	min-height: 240px;
 	display: grid;
 	grid-template-columns: repeat(5, 125px);
 	/* grid-template-rows: repeat(3, 1fr); */
