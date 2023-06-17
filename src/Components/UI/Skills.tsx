@@ -391,7 +391,7 @@ const SkillTypeButton = styled.button`
 		var(--secondary_color),
 		var(--secondary-color-dark)
 	);
-	color: var(--secondary-color-dark);
+	color: var(--white);
 	border-radius: 10px;
 	/* cursor: pointer; */
 
@@ -501,11 +501,8 @@ const SkillsDiv = styled.div`
 	// skill option button neomorphic styling using the seconday color
 
 	.active {
-		background: linear-gradient(
-			var(--secondary_color),
-			var(--secondary-color-dark)
-		);
-		color: var(--secondary-color);
+		background: var(--secondary-color);
+		color: var(--white);
 	}
 `;
 

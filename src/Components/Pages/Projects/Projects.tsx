@@ -51,7 +51,6 @@ const Main = styled.div`
 		justify-content: space-around;
 		align-items: center;
 		align-content: center;
-		overflow: hidden;
 		gap: 32px;
 		margin-bottom: 200px;
 	}

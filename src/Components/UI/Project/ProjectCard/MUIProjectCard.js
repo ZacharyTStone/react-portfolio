@@ -51,7 +51,7 @@ export default function MUIProjectCard(props) {
 				<Parallax
 					blur={{ min: -1, max: 1 }}
 					bgImage={props.image}
-					bgImageAlt="project"
+					bgImageAlt={`${props.title} image`}
 					strength={75}
 					className={`darken-on-hover ${
 						theme === "light" ? "light-mode" : "dark-mode"

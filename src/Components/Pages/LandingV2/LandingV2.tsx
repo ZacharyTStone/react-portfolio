@@ -86,7 +86,7 @@ const Landing = styled.div`
 		margin: 0rem;
 		text-transform: uppercase;
 		transition: opacity 250ms ease;
-		opacity: 0.5;
+		opacity: 0.6;
 		text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
 			1px 1px 0 var(--off-white);
 		color: black;
