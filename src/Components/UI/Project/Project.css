@@ -43,7 +43,7 @@
 }
 
 .card-title {
-	font-size: 4.7rem !important;
+	font-size: 4.7rem;
 	font-weight: bold;
 	text-align: left;
 	opacity: 1;
@@ -76,7 +76,7 @@
 	}
 
 	.card-title {
-		font-size: 2.5rem;
+		font-size: 2rem;
 		text-decoration-thickness: 4px;
 		text-align: center !important;
 		color: var(--secondary-color);
@@ -100,7 +100,7 @@
 	margin-bottom: -25px;
 }
 
-@media (min-width: 1300px) {
+@media (min-width: 1301px) {
 	#MUI-Card {
 		margin-left: 0px !important;
 		margin-right: 0px !important;
@@ -117,8 +117,8 @@
 		cursor: url("../../../images/ring-pointer.png"), 4, 4 pointer !important;
 	}
 
-	.MuiCardHeader-title {
-		font-size: 2rem !important;
+	.card-title {
+		font-size: 4.5rem;
 	}
 
 	.card-content {

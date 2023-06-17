@@ -76,10 +76,6 @@ const Main = styled.div`
 			margin-top: 60px;
 			margin-bottom: 200px;
 		}
-
-		h1 {
-			font-size: 2.5rem;
-		}
 	}
 `;
 
