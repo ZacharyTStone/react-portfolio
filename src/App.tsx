@@ -87,6 +87,9 @@ function App(): JSX.Element {
 const Main = styled.div<{ showApp: boolean }>`
 	opacity: 0;
 	transition: opacity 0.5s linear;
+	width: 100%;
+	height: 100%;
+	max-width: 100vw;
 
 	${(props) =>
 		props.showApp &&

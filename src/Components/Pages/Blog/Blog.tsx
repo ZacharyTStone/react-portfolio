@@ -39,7 +39,7 @@ const Blog: React.FC = () => {
 				onSwiper={(swiper) => console.log(swiper)}
 				onSlideChange={() => console.log("slide change")}
 				loop
-				style={{ maxWidth: "2000px", overflow: "visible" }}
+				style={{ maxWidth: "2000px", width: "100%" }}
 			>
 				{content.posts.map((post: any, index: number) => (
 					<SwiperSlide key={index}>
