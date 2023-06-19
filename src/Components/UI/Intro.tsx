@@ -145,16 +145,10 @@ const SubTitle = styled(motion.h5)`
 
 const Container = styled(motion.div)`
 	z-index: 999;
-	position: fixed;
-	bottom: 0;
-	left: 0;
-	width: 100vw;
-	height: 100vh;
-	height: 100svh;
+	min-height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	overflow: hidden;
 	flex-direction: column;
 	gap: 16px;
 	padding: 40px;
