@@ -79,26 +79,20 @@ const AboutDiv = styled.div`
 
 const AboutInner = styled.div`
 	width: 50%;
-
-	// blend the --black background
-	// rgb(20, 22, 26);
-	/* background: rgba(20, 22, 26, 0.3); */
 	backdrop-filter: blur(5px) !important;
 	-webkit-backdrop-filter: blur(10px) !important;
 	padding: 30px;
 	border-radius: 20px;
-	// vignette to 100% opacity
 	background: radial-gradient(
 			circle,
 			rgba(0, 0, 0, 0) 0%,
 			rgba(0, 0, 0, 0.5) 100%
 		),
 		linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
-	// blend the --black background
 
 	@media (max-width: 1000px) {
 		width: 100%;
-		background: transparent;
+		/* background: transparent; */
 		padding: 10px;
 	}
 `;

@@ -56,7 +56,6 @@ export default function MUIProjectCard(props) {
 					<h1 className="card-title">{props.title}</h1>
 				</div>
 				<Parallax
-					blur={{ min: -1, max: 1 }}
 					bgImage={props.image}
 					bgImageAlt={`${props.title} image`}
 					strength={75}

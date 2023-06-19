@@ -90,6 +90,8 @@ const Landing = styled.div`
 		text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
 			1px 1px 0 var(--off-white);
 		color: black;
+		// no wrap
+		white-space: nowrap;
 	}
 
 	#text {
@@ -104,6 +106,7 @@ const Landing = styled.div`
 	@media (max-width: 768px) {
 		#text {
 			background: rgba(0, 0, 0, 0.3);
+			padding: 5px;
 		}
 	}
 
