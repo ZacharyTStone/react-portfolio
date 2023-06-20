@@ -60,12 +60,14 @@ function App(): JSX.Element {
 				<ToastContainer />
 
 				<Main showApp={showApp}>
-					<>
-						<canvas id="bg"></canvas>
-						<Suspense fallback={<h1>Loading Background...</h1>}>
-							<ThreeJS />
-						</Suspense>
-					</>
+					{!isMobile && (
+						<>
+							<canvas id="bg"></canvas>
+							<Suspense fallback={<h1>Loading Background...</h1>}>
+								<ThreeJS />
+							</Suspense>
+						</>
+					)}
 
 					{enableParticles && <ParticlesBackground />}
 					{showApp && <BackgroundAudio />}
@@ -87,9 +89,6 @@ function App(): JSX.Element {
 const Main = styled.div<{ showApp: boolean }>`
 	opacity: 0;
 	transition: opacity 0.5s linear;
-	width: 100%;
-	height: 100%;
-	max-width: 100vw;
 
 	${(props) =>
 		props.showApp &&
