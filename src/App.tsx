@@ -60,13 +60,14 @@ function App(): JSX.Element {
 				<ToastContainer />
 
 				<Main showApp={showApp}>
-					<>
-						<canvas id="bg"></canvas>
-						<Suspense fallback={<h1>Loading Background...</h1>}>
-							<ThreeJS />
-						</Suspense>
-					</>
-
+					{acceptApp && (
+						<>
+							<canvas id="bg"></canvas>
+							<Suspense fallback={<h1>Loading Background...</h1>}>
+								<ThreeJS />
+							</Suspense>
+						</>
+					)}
 					{enableParticles && <ParticlesBackground />}
 					{showApp && <BackgroundAudio />}
 					{<AudioOnClick />}
