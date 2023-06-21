@@ -154,7 +154,7 @@ const Container = styled(motion.div)`
 	align-items: center;
 	flex-direction: column;
 	gap: 16px;
-	/* padding: 40px; */
+	padding: 20px;
 	background-color: var(--black);
 
 	.word {
