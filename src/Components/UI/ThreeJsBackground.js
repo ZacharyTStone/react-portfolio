@@ -5,14 +5,31 @@ import mooon from "../../images/threeJS/moon.webp";
 import space from "../../images/threeJS/space.jpeg";
 import { ResizeObserver } from "@juggle/resize-observer";
 import { debounce } from "lodash";
+import { useMediaQuery } from "react-responsive";
 
 const ThreeComponent = () => {
+	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 	const containerRef = useRef(null);
 	const sceneRef = useRef(null);
 	const cameraRef = useRef(null);
 	const rendererRef = useRef(null);
 	const torusRef = useRef(null);
 	const controlsRef = useRef(null);
+
+	let largestMobileHeight = window.innerHeight;
+
+	const calculateHeight = () => {
+		if (isMobile) {
+			if (window.innerHeight > largestMobileHeight) {
+				largestMobileHeight = window.innerHeight;
+				return largestMobileHeight;
+			} else {
+				return largestMobileHeight;
+			}
+		} else {
+			return window.innerHeight;
+		}
+	};
 
 	const init = useCallback(() => {
 		const scene = new THREE.Scene();
@@ -106,7 +123,7 @@ const ThreeComponent = () => {
 
 	const handleWindowResize = debounce(() => {
 		const width = window.innerWidth;
-		const height = window.innerHeight;
+		const height = calculateHeight();
 		const camera = cameraRef.current;
 		const renderer = rendererRef.current;
 

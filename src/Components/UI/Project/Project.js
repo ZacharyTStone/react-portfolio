@@ -104,7 +104,7 @@ function Project({ project }) {
 									<div
 										style={{
 											display: "flex",
-											width: "1000px",
+											width: "100%",
 											height: "225px",
 										}}
 									/>
