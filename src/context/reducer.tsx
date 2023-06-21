@@ -3,7 +3,6 @@ import {
 	SET_AUDIO_PREFERENCE,
 	SET_ACCEPT_APP,
 	SET_SHOW_APP,
-	SET_ENABLE_PARTICLES,
 } from "./actions";
 
 import { initialState } from "./appContext";
@@ -40,10 +39,6 @@ const reducer = (
 
 	if (action.type === SET_SHOW_APP) {
 		return { ...state, showApp: action.payload };
-	}
-
-	if (action.type === SET_ENABLE_PARTICLES) {
-		return { ...state, enableParticles: action.payload };
 	}
 
 	throw new Error(`No Matching "${action.type}" - action type`);

@@ -10,11 +10,14 @@ import Dot from "../../../../images/cursor-ring.png";
 import { useAppContext } from "../../../../context/appContext";
 import { Parallax, Background } from "react-parallax";
 import "../../Project/Project.css";
+import { useMediaQuery } from "react-responsive";
 
 export default function MUIProjectCard(props) {
 	const { theme } = useAppContext();
 	const [isVisible, setIsVisible] = useState(false);
 	const titleRef = useRef(null);
+
+	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -58,7 +61,7 @@ export default function MUIProjectCard(props) {
 				<Parallax
 					bgImage={props.image}
 					bgImageAlt={`${props.title} image`}
-					strength={75}
+					strength={isMobile ? 0 : 75}
 					className={`darken-on-hover ${
 						theme === "light" ? "light-mode" : "dark-mode"
 					}`}

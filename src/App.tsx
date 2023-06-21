@@ -12,7 +12,6 @@ import AudioOnClick from "./audio/AudioOnClick";
 import AudioOnHover from "./audio/AudioOnHover";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import ParticlesBackground from "./Components/UI/Particles";
 
 // Components
 const LandingComponentPromise = import(
@@ -68,10 +67,8 @@ function App(): JSX.Element {
 							</Suspense>
 						</>
 					)}
-					{enableParticles && <ParticlesBackground />}
 					{showApp && <BackgroundAudio />}
 					{<AudioOnClick />}
-					{/* {<AudioOnHover />} */}
 					<Suspense fallback={<h1>Loading content...</h1>}>
 						<LandingV2 />
 						<About />

@@ -58,9 +58,7 @@ const AboutDiv = styled.div`
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
-	/* justify-content: space-around; */
 	align-items: center;
-	/* flex-wrap: wrap; */
 	color: var(--off-white);
 	overflow: hidden;
 	user-select: none;
@@ -83,21 +81,15 @@ const AboutInner = styled.div`
 	-webkit-backdrop-filter: blur(10px) !important;
 	padding: 30px;
 	border-radius: 20px;
-	background: radial-gradient(
-			circle,
-			rgba(0, 0, 0, 0) 0%,
-			rgba(0, 0, 0, 0.5) 100%
-		),
-		linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+	background: rgba(0, 0, 0, 0.5);
 
 	@media (max-width: 1000px) {
 		width: 100%;
-		/* background: transparent; */
 		padding: 10px;
 	}
 `;
 
-const AboutTitle = styled.h1`
+const AboutTitle = styled.h2`
 	text-align: center;
 	padding-bottom: 1rem;
 	text-decoration: underline;
@@ -108,6 +100,7 @@ const AboutTitle = styled.h1`
 	overflow: hidden;
 	margin-bottom: 50px;
 	position: relative;
+	font-size: 2rem;
 `;
 
 const AboutDescriptionWrapper = styled.div`
@@ -116,10 +109,6 @@ const AboutDescriptionWrapper = styled.div`
 
 const AboutDescription = styled.p`
 	font-size: 1.5rem;
-
-	@media (max-width: 1000px) {
-		font-size: 1rem;
-	}
 
 	text-align: left;
 `;

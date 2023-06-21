@@ -2,9 +2,8 @@ import Project from "../../UI/Project/Project";
 import styled from "styled-components";
 import "./Projects.css";
 import { useTranslation } from "react-i18next";
-import { PROJECTS } from "../../../utils/vars";
-import RunningImg from "../../UI/RunningImg";
-import Naruto from "../../../images/UI/narutoRun.gif";
+import { PROJECTS } from "../../../utils/constants";
+
 const Projects = () => {
 	const { i18n } = useTranslation();
 
@@ -17,7 +16,6 @@ const Projects = () => {
 		<>
 			<Main className="Projects" id="Projects">
 				<Title>{content.mainTitle}</Title>
-				{/* <RunningImg src={Naruto} alt="naruto" /> */}
 				<div className="projects-container">
 					{content.projects.map((project: any) => (
 						<Project project={project} />
@@ -28,12 +26,13 @@ const Projects = () => {
 	);
 };
 
-const Title = styled.h1`
+const Title = styled.h2`
 	position: relative;
 	text-decoration-line: underline;
 	text-decoration-color: var(--secondary-color);
 	text-decoration-thickness: 5px;
 	text-underline-offset: 12px;
+	font-size: 2rem;
 `;
 const Main = styled.div`
 	text-align: center;
