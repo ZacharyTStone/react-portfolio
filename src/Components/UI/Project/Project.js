@@ -39,6 +39,7 @@ const customStyles = {
 Modal.setAppElement(document.getElementById("root"));
 
 function Project({ project }) {
+	// not currently used but could be used to show a loading spinner
 	const [isLoading, setIsLoading] = useState(true);
 
 	const { useAudio, setAudioPreference } = useAppContext();
@@ -100,15 +101,6 @@ function Project({ project }) {
 					>
 						{project.youtube ? (
 							<div>
-								{isLoading && (
-									<div
-										style={{
-											display: "flex",
-											width: "100%",
-											height: "225px",
-										}}
-									/>
-								)}
 								{project.youtube && (
 									<iframe
 										id="card-media"
@@ -122,7 +114,7 @@ function Project({ project }) {
 										style={{
 											hover: "none",
 											cursor: "url(../../images/cursor-pointer.png), auto",
-											display: isLoading ? "none" : "block",
+											display: "block",
 										}}
 										onLoad={handleOnLoad}
 									/>
