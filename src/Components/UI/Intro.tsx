@@ -145,16 +145,18 @@ const SubTitle = styled(motion.h5)`
 
 const Container = styled(motion.div)`
 	z-index: 999;
+	position: fixed;
 	bottom: 0;
 	left: 0;
+	width: 100vw;
 	height: 100vh;
 	height: 100svh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	overflow: hidden;
 	flex-direction: column;
 	gap: 16px;
-	padding: 20px;
 	background-color: var(--black);
 
 	.word {
@@ -166,7 +168,6 @@ const Container = styled(motion.div)`
 		transition: opacity 250ms ease;
 		opacity: 0.5;
 		color: black;
-		word-break: break-all;
 	}
 
 	.word-small {
@@ -178,7 +179,6 @@ const Container = styled(motion.div)`
 		transition: opacity 250ms ease;
 		opacity: 0.5;
 		color: var(--off-white);
-		word-break: break-all;
 	}
 
 	#special-1 {
@@ -186,12 +186,6 @@ const Container = styled(motion.div)`
 		text-shadow: none !important;
 		color: var(--off-white) !important;
 	}
-`;
-
-const Content = styled(motion.div)`
-	max-width: 90%;
-	width: fit-content;
-	overflow: auto;
 `;
 
 export const LogoContainer = styled(motion.div)`

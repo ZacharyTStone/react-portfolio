@@ -12,6 +12,7 @@ import AudioOnClick from "./audio/AudioOnClick";
 import AudioOnHover from "./audio/AudioOnHover";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import space from "./images/threeJS/space.jpeg";
 
 // Components
 const LandingComponentPromise = import(
@@ -58,8 +59,8 @@ function App(): JSX.Element {
 				{acceptApp && !showApp && <Overlay />}
 				<ToastContainer />
 
-				<Main showApp={showApp}>
-					{acceptApp && (
+				<Main showApp={showApp} isMobile={isMobile}>
+					{acceptApp & showApp && (
 						<>
 							<canvas id="bg"></canvas>
 							<Suspense fallback={<h1>Loading Background...</h1>}>
@@ -82,7 +83,7 @@ function App(): JSX.Element {
 	);
 }
 
-const Main = styled.div<{ showApp: boolean }>`
+const Main = styled.div<{ showApp: boolean; isMobile: boolean }>`
 	opacity: 0;
 	transition: opacity 0.5s linear;
 
@@ -91,7 +92,14 @@ const Main = styled.div<{ showApp: boolean }>`
 		`
     opacity: 1;
     visibility: visible;
-  `}
+  `}/* ${(props) =>
+		props.isMobile &&
+		// no threejs background on mobile
+		// so we need to add the img background
+		`
+		background: url(${space}) no-repeat center center fixed;
+		background-size: cover;
+		`} */
 `;
 
 export default App;

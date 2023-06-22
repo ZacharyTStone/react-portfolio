@@ -15,12 +15,7 @@ const Footer = () => {
 				<FooterText isTabletOrMobile={isTabletOrMobile}>
 					{isTabletOrMobile ? (
 						<MobileContainer>
-							<span>Thank for looking at my portfolio.</span>
-							<span
-								style={{ color: "var(--secondary-color)", marginLeft: "8px" }}
-							>
-								Let's connect!
-							</span>
+							<SocialLinks />
 						</MobileContainer>
 					) : (
 						<DesktopContainer>
@@ -38,7 +33,6 @@ const Footer = () => {
 						</DesktopContainer>
 					)}
 				</FooterText>
-				{isTabletOrMobile && <SocialLinks />}
 			</FooterWrapper>
 		</FooterContainer>
 	);
@@ -47,12 +41,10 @@ const Footer = () => {
 const FooterContainer = styled.footer`
 	background-color: transparent;
 	display: flex;
-	justify-content: space-between;
-	z-index: 10;
-	position: absolute;
 	width: 100%;
-	height: 75px;
-	padding-bottom: 5px;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	padding-bottom: 10px;
 `;
 
 const FooterWrapper = styled.div`
@@ -63,7 +55,6 @@ const FooterWrapper = styled.div`
 
 const FooterText = styled.div<{ isTabletOrMobile: boolean }>`
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	color: var(--off-white);
 	margin-left: 16px;
@@ -87,6 +78,10 @@ const MobileContainer = styled.div`
 	backdrop-filter: blur(10px);
 	border-radius: 10px;
 	padding: 10px;
+	display: flex;
+	gap: 8px;
+	justify-content: space-around;
+	width: 100%;
 `;
 
 const DesktopContainer = styled.div`
@@ -97,6 +92,7 @@ const DesktopContainer = styled.div`
 	backdrop-filter: blur(10px);
 	border-radius: 10px;
 	padding: 10px;
+	transform: translateY(-10px);
 `;
 
 export default Footer;
