@@ -29,29 +29,41 @@ const Intro = () => {
 
 	return (
 		<Container>
-			<Title id="special-1">{t("intro.header")}</Title>
-			<div
-				style={{
-					display: "flex",
-					alignItems: "center",
-					justifyContent: "center",
-					gap: "8px",
-				}}
-			>
-				<SubTitle>{t("intro.enableAudio")}</SubTitle>
-				<StyledInput
-					type="checkbox"
-					checked={useAudio}
-					onChange={handleAudioChange}
-				/>
-			</div>
-			<Button onClick={handleAcceptApp}>{t("intro.accept")}</Button>
+			<Content>
+				{" "}
+				<Title id="special-1">{t("intro.header")}</Title>
+				<div
+					style={{
+						display: "flex",
+						alignItems: "center",
+						justifyContent: "center",
+						gap: "8px",
+					}}
+				>
+					<SubTitle>{t("intro.enableAudio")}</SubTitle>
+					<StyledInput
+						type="checkbox"
+						checked={useAudio}
+						onChange={handleAudioChange}
+					/>
+				</div>
+				<Button onClick={handleAcceptApp}>{t("intro.accept")}</Button>
+			</Content>
 		</Container>
 	);
 };
 
 export default Intro;
 
+const Content = styled.div`
+	margin: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	flex-direction: column;
+	gap: 16px;
+`;
 const StyledInput = styled.input`
 	position: relative;
 	width: 32px;
@@ -154,7 +166,6 @@ const Container = styled(motion.div)`
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	overflow: hidden;
 	flex-direction: column;
 	gap: 16px;
 	background-color: var(--black);
