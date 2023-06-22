@@ -66,11 +66,6 @@ const FooterText = styled.div<{ isTabletOrMobile: boolean }>`
 		props.isTabletOrMobile ? "blur(10px)" : "none"};
 	border-radius: ${(props) => (props.isTabletOrMobile ? "10px" : "none")};
 	padding: ${(props) => (props.isTabletOrMobile ? "10px" : "none")};
-
-	@media (max-width: 455px) {
-		display: none;
-		/* z-index: 10; */
-	}
 `;
 
 const MobileContainer = styled.div`
