@@ -60,7 +60,7 @@ function App(): JSX.Element {
 				<ToastContainer />
 
 				<Main showApp={showApp} isMobile={isMobile}>
-					{acceptApp & showApp && (
+					{!isMobile && (
 						<>
 							<canvas id="bg"></canvas>
 							<Suspense fallback={<h1>Loading Background...</h1>}>
@@ -92,14 +92,15 @@ const Main = styled.div<{ showApp: boolean; isMobile: boolean }>`
 		`
     opacity: 1;
     visibility: visible;
-  `}/* ${(props) =>
+  `}
+	${(props) =>
 		props.isMobile &&
 		// no threejs background on mobile
 		// so we need to add the img background
 		`
 		background: url(${space}) no-repeat center center fixed;
 		background-size: cover;
-		`} */
+		`}
 `;
 
 export default App;

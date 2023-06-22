@@ -39,7 +39,7 @@ const Main = styled.div`
 	width: 100%;
 	user-select: none;
 
-	background: var(--black);
+	background: transparent;
 
 	.projects-container {
 		width: 100%;

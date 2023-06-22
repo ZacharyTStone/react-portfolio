@@ -111,6 +111,10 @@ const AboutDescription = styled.p`
 	font-size: 1.5rem;
 
 	text-align: left;
+
+	@media (max-width: 1000px) {
+		font-size: 1.2rem;
+	}
 `;
 
 const AboutLink = styled.a`
