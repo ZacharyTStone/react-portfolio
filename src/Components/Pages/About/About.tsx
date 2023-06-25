@@ -12,41 +12,39 @@ const About = () => {
 			<AboutTitle>{t("about.title")}</AboutTitle>
 
 			<AboutInner className="about-inner">
-				<AnimationOnScroll
+				<AnimatedDescriptionWrapper
 					animateIn="animate__fadeIn"
 					animateOnce
 					offset={200}
 					duration={3}
 				>
-					<AboutDescriptionWrapper>
-						<AboutDescription>{t("about.description1")}</AboutDescription>
-						<AboutDescription>{t("about.description2")}</AboutDescription>
-						<AboutDescription>
-							{t("about.description3a")}
-							<AboutLink
-								href="https://www.rapptrlabs.com/"
-								target="_blank"
-								rel="noreferrer"
-							>
-								{t("about.currentCompany")}
-							</AboutLink>
-							{t("about.description3b")}
-						</AboutDescription>
-						<AboutDescription style={{ wordBreak: "break-word" }}>
-							{t("about.description4")}
-						</AboutDescription>
-						<AboutDescription>{t("about.description5")}</AboutDescription>
-					</AboutDescriptionWrapper>
-				</AnimationOnScroll>
+					<AnimatedDescription>{t("about.description1")}</AnimatedDescription>
+					<AnimatedDescription>{t("about.description2")}</AnimatedDescription>
+					<AnimatedDescription>
+						{t("about.description3a")}
+						<AboutLink
+							href="https://www.rapptrlabs.com/"
+							target="_blank"
+							rel="noreferrer"
+						>
+							{t("about.currentCompany")}
+						</AboutLink>
+						{t("about.description3b")}
+					</AnimatedDescription>
+					<AnimatedDescription style={{ wordBreak: "break-word" }}>
+						{t("about.description4")}
+					</AnimatedDescription>
+					<AnimatedDescription>{t("about.description5")}</AnimatedDescription>
+				</AnimatedDescriptionWrapper>
 
-				<AnimationOnScroll
+				<AnimatedSkills
 					animateIn="animate__fadeIn"
 					animateOnce
 					offset={250}
 					duration={2}
 				>
 					<Skills />
-				</AnimationOnScroll>
+				</AnimatedSkills>
 			</AboutInner>
 		</AboutDiv>
 	);
@@ -103,13 +101,12 @@ const AboutTitle = styled.h2`
 	font-size: 2rem;
 `;
 
-const AboutDescriptionWrapper = styled.div`
+const AnimatedDescriptionWrapper = styled(AnimationOnScroll)`
 	padding-bottom: 1rem;
 `;
 
-const AboutDescription = styled.p`
+const AnimatedDescription = styled.p`
 	font-size: 1.5rem;
-
 	text-align: left;
 
 	@media (max-width: 1000px) {
@@ -119,6 +116,10 @@ const AboutDescription = styled.p`
 
 const AboutLink = styled.a`
 	color: var(--secondary-color);
+`;
+
+const AnimatedSkills = styled(AnimationOnScroll)`
+	/* Styles for animated skills component, if necessary */
 `;
 
 export default About;

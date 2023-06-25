@@ -26,7 +26,9 @@ const Footer = () => {
 							/>
 							<span>
 								{t("footer.thanks")}
-								<span style={{ color: "var(--secondary-color)" }}>
+								<span
+									style={{ color: "var(--secondary-color)", marginLeft: "8px" }}
+								>
 									{t("footer.contact")}
 								</span>
 							</span>
