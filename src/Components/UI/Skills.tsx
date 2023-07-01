@@ -264,7 +264,7 @@ const Skills = () => {
 								))}
 							{selectedSkill === "Frontend Tools" &&
 								TOOLS.map((skill: any) => (
-									<div key={skill[1]}>
+									<div key={skill[1]} className="skill">
 										<a
 											href={skill[2]}
 											target="_blank"
@@ -286,7 +286,7 @@ const Skills = () => {
 								))}
 							{selectedSkill === "Backend" &&
 								Backend.map((skill: any) => (
-									<div key={skill[1]}>
+									<div key={skill[1]} className="skill">
 										<a
 											href={skill[2]}
 											target="_blank"
@@ -308,7 +308,7 @@ const Skills = () => {
 								))}
 							{selectedSkill === "Server" &&
 								Server.map((skill: any) => (
-									<div key={skill[1]}>
+									<div key={skill[1]} className="skill">
 										<a
 											href={skill[2]}
 											target="_blank"
@@ -331,7 +331,7 @@ const Skills = () => {
 
 							{selectedSkill === "Other" &&
 								Other.map((skill: any) => (
-									<div key={skill[1]}>
+									<div key={skill[1]} className="skill">
 										<a
 											href={skill[2]}
 											target="_blank"
@@ -369,10 +369,10 @@ const ButtonContainer = styled.div`
 const SkillIconsDiv = styled.div`
 	min-height: 240px;
 	display: grid;
-	grid-template-columns: repeat(5, 125px);
+	grid-template-columns: repeat(5, 1fr);
 	/* grid-template-rows: repeat(3, 1fr); */
 	grid-gap: 10px;
-	width: fit-content;
+	width: 100%;
 	max-width: 100%;
 
 	@media (max-width: 1500px) {
@@ -425,6 +425,12 @@ const SkillsDiv = styled.div`
 		justify-content: center;
 	}
 
+	.skill {
+		display: flex;
+		justify-content: center;
+		width: 100%;
+	}
+
 	.Skills {
 		margin: auto;
 		height: auto;
@@ -462,7 +468,6 @@ const SkillsDiv = styled.div`
 	}
 
 	.skill-icon {
-		width: 75px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
