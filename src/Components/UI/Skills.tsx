@@ -462,6 +462,7 @@ const SkillsDiv = styled.div`
 	}
 
 	.skill-icon {
+		width: 75px;
 		display: flex;
 		flex-direction: column;
 		justify-content: center;

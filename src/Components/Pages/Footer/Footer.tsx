@@ -89,7 +89,7 @@ const DesktopContainer = styled.div`
 	backdrop-filter: blur(10px);
 	border-radius: 10px;
 	padding: 10px;
-	transform: translateY(-10px);
+	transform: translateY(-12px);
 `;
 
 export default Footer;
