@@ -377,7 +377,7 @@ const SkillIconsDiv = styled.div`
 
 	@media (max-width: 1500px) {
 		grid-gap: 5px;
-		grid-template-columns: repeat(4, 125px) !important;
+		grid-template-columns: repeat(4, 1fr) !important;
 		/* grid-template-rows: repeat(3, 1fr) !important; */
 	}
 `;
