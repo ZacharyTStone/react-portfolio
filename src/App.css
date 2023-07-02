@@ -31,3 +31,11 @@ canvas {
 	top: 0;
 	left: 0;
 }
+.mobile-background {
+    background: url('./images/threeJS/space.jpeg') no-repeat center center fixed;
+    background-size: cover;
+ 
+}
+
+
+

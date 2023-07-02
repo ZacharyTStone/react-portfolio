@@ -53,13 +53,13 @@ function App(): JSX.Element {
 	}, [acceptApp]);
 
 	return (
-		<div className={`App ${theme === "light" ? "light-mode" : ""}`}>
-			{!acceptApp && <Intro />}
+		<div className={`App ${theme === "light" ? "light-mode" : isMobile? "mobile-background" : ""}`}>
+ 			{!acceptApp && <Intro />}
 			<>
 				{acceptApp && !showApp && <Overlay />}
 				<ToastContainer />
 
-				<Main showApp={showApp} isMobile={isMobile}>
+				<Main showApp={showApp}>
 					{!isMobile && (
 						<>
 							<canvas id="bg"></canvas>
@@ -83,7 +83,7 @@ function App(): JSX.Element {
 	);
 }
 
-const Main = styled.div<{ showApp: boolean; isMobile: boolean }>`
+const Main = styled.div<{ showApp: boolean}>`
 	opacity: 0;
 	transition: opacity 0.5s linear;
 
@@ -93,14 +93,6 @@ const Main = styled.div<{ showApp: boolean; isMobile: boolean }>`
     opacity: 1;
     visibility: visible;
   `}
-	${(props) =>
-		props.isMobile &&
-		// no threejs background on mobile
-		// so we need to add the img background
-		`
-		background: url(${space}) no-repeat center center fixed;
-		background-size: cover;
-		`}
 `;
 
 export default App;

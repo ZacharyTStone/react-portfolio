@@ -362,8 +362,9 @@ const Skills = () => {
 const ButtonContainer = styled.div`
 	display: flex;
 	flex-direction: row;
-	justify-content: space-around;
+	justify-content: space-evenly;
 	width: 100%;
+	flex-wrap: wrap;
 `;
 
 const SkillIconsDiv = styled.div`
@@ -401,7 +402,7 @@ const SkillTypeButton = styled.button`
 	font-size: medium;
 	font-weight: 600;
 	padding: 10px;
-	margin: 10px;
+	margin: 5px;
 	min-height: 50px;
 	cursor: url(${Dot}) 4 4, pointer;
 
