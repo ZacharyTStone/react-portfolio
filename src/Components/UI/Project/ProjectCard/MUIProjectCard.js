@@ -19,6 +19,8 @@ export default function MUIProjectCard(props) {
 
 	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
+	const isGoldProject = props.github.slice(props.github.lastIndexOf("/") + 1) === "my-anime-collection";
+
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -42,7 +44,7 @@ export default function MUIProjectCard(props) {
 	return (
 		<div
 			id="MUI-Card"
-			className={props.github.slice(props.github.lastIndexOf("/") + 1)}
+			
 		>
 			<a
 				href={props.link}
@@ -53,18 +55,24 @@ export default function MUIProjectCard(props) {
 				<div
 					className={`card-title-div ${
 						isVisible ? "fade-in" : "fade-in-hidden"
-					} ${theme === "light" ? "light-mode" : "dark-mode"}`}
+					} ${theme === "light" ? "light-mode" : "dark-mode"} ${
+						isGoldProject? 'gold-title' : ''
+					} 
+					 
+					`}
 					ref={titleRef}
 				>
 					<h1 className="card-title">{props.title}</h1>
 				</div>
-				<Parallax
+				<Parallax 
+				
 					bgImage={props.image}
 					bgImageAlt={`${props.title} image`}
 					strength={isMobile ? 0 : 75}
 					className={`darken-on-hover ${
 						theme === "light" ? "light-mode" : "dark-mode"
 					}`}
+				
 					bgImageStyle={{
 						backgroundSize: "contain",
 						backgroundRepeat: "no-repeat",
@@ -74,7 +82,7 @@ export default function MUIProjectCard(props) {
 						width: "100%",
 					}}
 				>
-					<div id="card-media" />
+					<div id="card-media" className={isGoldProject? "gold-project" : ""} />
 				</Parallax>
 
 				<div
@@ -92,11 +100,13 @@ export default function MUIProjectCard(props) {
 						}}
 					>
 						{props.tags[0] === "React" ? (
-							<FaReact />
+							<FaReact 
+							 color={isGoldProject ? "gold" : 'var(--secondary-color)'}
+							/>
 						) : props.tags[0] === "Vue" ? (
-							<RiVuejsFill />
+							<RiVuejsFill	 color={isGoldProject ? "gold" : 'var(--secondary-color)'} />
 						) : props.tags[0] === "Gatsby" ? (
-							<RiGatsbyFill />
+							<RiGatsbyFill 	 color={isGoldProject ? "gold" : 'var(--secondary-color)'}/>
 						) : null}
 					</IconContext.Provider>
 				</div>

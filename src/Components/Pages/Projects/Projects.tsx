@@ -26,13 +26,13 @@ const Projects = () => {
 	);
 };
 
-const Title = styled.h2`
-	position: relative;
+const Title = styled.h1`
+	margin-top: 0px;
+	margin-bottom: 75px;
 	text-decoration-line: underline;
 	text-decoration-color: var(--secondary-color);
 	text-decoration-thickness: 5px;
 	text-underline-offset: 12px;
-	font-size: 2rem;
 `;
 const Main = styled.div`
 	text-align: center;

@@ -9,7 +9,7 @@ const About = () => {
 
 	return (
 		<AboutDiv className="about" id="About">
-			<AboutTitle>{t("about.title")}</AboutTitle>
+			<Title>{t("about.title")}</Title>
 
 			<AboutInner className="about-inner">
 				<AnimatedDescriptionWrapper
@@ -87,18 +87,14 @@ const AboutInner = styled.div`
 	}
 `;
 
-const AboutTitle = styled.h2`
-	text-align: center;
-	padding-bottom: 1rem;
-	text-decoration: underline;
+const Title = styled.h1`
+	margin-top: 0px;
+	margin-bottom: 75px;
+	text-decoration-line: underline;
 	text-decoration-color: var(--secondary-color);
 	text-decoration-thickness: 5px;
-	text-underline-offset: 6px;
-	text-decoration-skip-ink: none;
-	overflow: hidden;
-	margin-bottom: 50px;
-	position: relative;
-	font-size: 2rem;
+	text-underline-offset: 12px;
+	color: 'white'
 `;
 
 const AnimatedDescriptionWrapper = styled(AnimationOnScroll)`

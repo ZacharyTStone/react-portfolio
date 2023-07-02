@@ -9,6 +9,13 @@
 	z-index: 0;
 }
 
+.gold-project {
+	border: 3px solid gold;
+	border-radius: 0px;
+}
+
+
+
 .card-modal {
 	width: 100%;
 	height: 100%;
