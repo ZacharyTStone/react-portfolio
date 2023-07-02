@@ -53,7 +53,8 @@ function App(): JSX.Element {
 	}, [acceptApp]);
 
 	return (
-		<div className={`App ${theme === "light" ? "light-mode" : isMobile? "mobile-background" : ""}`}>
+		// had issues with having mobile background on main
+		<div className={`App ${theme === "light" ? "light-mode" : (isMobile && showApp) ? "mobile-background" : ""}`}>
  			{!acceptApp && <Intro />}
 			<>
 				{acceptApp && !showApp && <Overlay />}

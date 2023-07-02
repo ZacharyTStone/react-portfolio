@@ -359,31 +359,52 @@ const Skills = () => {
 	);
 };
 
-const ButtonContainer = styled.div`
-	display: flex;
-	flex-direction: row;
-	justify-content: space-evenly;
-	width: 100%;
-	flex-wrap: wrap;
-`;
+
 
 const SkillIconsDiv = styled.div`
-	min-height: 240px;
+  min-height: 240px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 10px;
+  width: 100%;
+
+  @media (max-width: 1500px) {
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  @media (max-width: 1200px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (max-width: 900px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+`;
+
+
+// tablet do repeat of 4
+
+const ButtonContainer = styled.div`
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
-	/* grid-template-rows: repeat(3, 1fr); */
+	grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	grid-gap: 10px;
 	width: 100%;
-	max-width: 100%;
 
 	@media (max-width: 1500px) {
-		grid-gap: 5px;
-		grid-template-columns: repeat(4, 1fr) !important;
-		/* grid-template-rows: repeat(3, 1fr) !important; */
+		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+	}
+
+	@media (max-width: 768px) {
+		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 	}
 `;
 
-// tablet do repeat of 4
+
 
 const SkillTypeButton = styled.button`
 	border: 2px solid var(--secondary-color);
@@ -462,11 +483,7 @@ const SkillsDiv = styled.div`
 		justify-content: center;
 	}
 
-	@media (max-width: 768px) {
-		.skills-container {
-			display: none;
-		}
-	}
+
 
 	.skill-icon {
 		display: flex;
