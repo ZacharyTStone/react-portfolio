@@ -36,8 +36,7 @@ const ThreeJS = React.lazy(() => ThreeJSComponentPromise);
 inject();
 
 function App(): JSX.Element {
-	const { acceptApp, showApp, setShowApp, theme, enableParticles } =
-		useAppContext();
+	const { acceptApp, showApp, setShowApp, setAcceptApp } = useAppContext();
 	console.log(
 		"%cHi! Thanks for checking out my code ☺ If you have any questions, feel free to reach out to me on Linkedin",
 		"color:green;font-family:system-ui;font-size:2rem;-webkit-text-stroke: 1px black;font-weight:bold"
@@ -45,21 +44,32 @@ function App(): JSX.Element {
 
 	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
+	const loadingAnimationTime = 4750;
+
+	// Show app loader after accepting app
 	useEffect(() => {
-		if (!acceptApp) return;
+		if (!acceptApp && !isMobile) {
+			return;
+		}
+
 		setTimeout(() => {
 			setShowApp(true);
-		}, 4750);
+		}, loadingAnimationTime);
 	}, [acceptApp]);
 
+	// Skip intro on mobile
+	useEffect(() => {
+		if (!acceptApp && isMobile) {
+			setAcceptApp(true);
+		}
+	}, [isMobile]);
+
 	return (
-		// had issues with having mobile background on main
-		<div className={`App ${theme === "light" ? "light-mode" : (isMobile && showApp) ? "mobile-background" : ""}`}>
- 			{!acceptApp && <Intro />}
+		<div className={`App`}>
+			<ToastContainer />
+			{!acceptApp && <Intro />}
 			<>
 				{acceptApp && !showApp && <Overlay />}
-				<ToastContainer />
-
 				<Main showApp={showApp}>
 					{!isMobile && (
 						<>
@@ -84,7 +94,10 @@ function App(): JSX.Element {
 	);
 }
 
-const Main = styled.div<{ showApp: boolean}>`
+// this app uses some heavy animations like the threeJS background. I wanted to make sure that the user could see the app before the animations loaded
+
+// So I opted to have everything load in the background from the start and then show the app afer the user accepts the app and sees the intro
+const Main = styled.div<{ showApp: boolean }>`
 	opacity: 0;
 	transition: opacity 0.5s linear;
 
