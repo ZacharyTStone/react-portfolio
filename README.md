@@ -20,11 +20,7 @@ My portfolio website
 
 This has changed and morphed over the years. I do minor updates when I can, often with my morning coffee. That's why it has such a high commit count.
 
-Because of that, it is definitely in need of some refactoring. 
-
-If you want to see how I would code professionally, I recommend checking out my project, My Anime Collection.
-
-https://github.com/ZacharyTStone/My-Anime-Collection
+Because of that, it is definitely in need of some refactoring. I plan to spend a couple of hours one day to clean it up.
 
 これは年々変化し変形してきました。時間があるときに細かいなアップデートするので、コミット数が多いです。
 
