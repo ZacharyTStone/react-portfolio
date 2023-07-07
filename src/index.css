@@ -1,8 +1,17 @@
 @import url("https://fonts.googleapis.com/css2?family=Nanum+Myeongjo:wght@700&display=swap");
 
+:root {
+	--primary-color: #303030;
+	--secondary-color: #43c396;
+	--secondary-color-dark: hsl(162, 55%, 29%);
+	--off-white: #f5f5f5;
+	--black: rgb(12, 12, 14);
+}
+
 * {
 	cursor: url("./images/ring-pointer.png"), 4, 4 auto !important;
 }
+
 body {
 	margin: 0;
 	font-family: "Roboto", sans-serif;
@@ -23,11 +32,9 @@ p {
 	color: var(--off-white);
 }
 
-button {
-	cursor: url("./images/ring-pointer.png"), auto;
-}
-
-input {
+button,
+input,
+a {
 	cursor: url("./images/ring-pointer.png"), auto;
 }
 
@@ -37,27 +44,4 @@ svg:hover {
 
 html {
 	scroll-behavior: smooth !important;
-}
-
-a {
-	cursor: url("./images/ring-pointer.png"), auto;
-}
-
-a :hover {
-	cursor: url("./images/ring-pointer.png"), auto !important;
-}
-
-a::after {
-	cursor: url("./images/ring-pointer.png"), 4, 4 pointer !important;
-}
-
-a:hover {
-	cursor: url("./images/ring-pointer.png"), 4, 4 pointer !important;
-}
-:root {
-	--primary-color: #303030;
-	--secondary-color: #43c396;
-	--secondary-color-dark: hsl(162, 55%, 29%);
-	--off-white: #f5f5f5;
-	--black: rgb(12, 12, 14);
 }

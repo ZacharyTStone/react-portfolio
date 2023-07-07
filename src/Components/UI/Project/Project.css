@@ -14,8 +14,6 @@
 	border-radius: 0px;
 }
 
-
-
 .card-modal {
 	width: 100%;
 	height: 100%;
@@ -24,14 +22,13 @@
 	justify-content: space-between;
 	align-items: center;
 	gap: 16px;
-
 	max-width: 1400px;
 }
 
 #card-media {
 	width: 100%;
 	height: 250px;
-	cursor: url("../../../images/ring-pointer.png"), 4, 4 pointer !important;
+	cursor: url("../../../images/ring-pointer.png"), 4 4, pointer !important;
 }
 
 .card-title-div {
@@ -56,9 +53,7 @@
 	opacity: 1;
 	z-index: 1;
 	/* underline */
-	text-decoration: underline;
-	text-decoration-color: var(--secondary-color);
-	text-decoration-style: solid;
+	text-decoration: underline var(--secondary-color) solid;
 	color: var(--secondary-color);
 	width: max-content;
 	padding: 0px;
@@ -75,7 +70,9 @@
 		top: 0;
 		left: 0;
 		padding: 0px;
-		background: rgba(0, 0, 0, 0.3);
+		-webkit-backdrop-filter: blur(0px);
+		backdrop-filter: blur(0px);
+		background: transparent;
 	}
 
 	.project-flag-div {
@@ -90,7 +87,7 @@
 	}
 
 	#card-media:hover {
-		cursor: url("../../../images/ring-pointer.png"), 4, 4 pointer !important;
+		cursor: url("../../../images/ring-pointer.png"), 4 4, pointer !important;
 	}
 
 	.card-content-text {
@@ -117,7 +114,7 @@
 		width: 100%;
 		height: 525px;
 		image-rendering: pixelated;
-		cursor: url("../../../images/ring-pointer.png"), 4, 4 pointer !important;
+		cursor: url("../../../images/ring-pointer.png"), 4 4, pointer !important;
 	}
 
 	.card-title {
@@ -169,7 +166,7 @@
 		#card-media {
 			width: 1000px !important;
 			max-width: 100% !important;
-			cursor: url("../../../images/ring-pointer.png"), 4, 4 pointer !important;
+			cursor: url("../../../images/ring-pointer.png"), 4 4, pointer !important;
 		}
 	}
 }

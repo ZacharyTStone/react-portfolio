@@ -1,6 +1,6 @@
 import "./App.css";
 import "animate.css/animate.min.css";
-import React, { Suspense, useState, useEffect, useCallback } from "react";
+import React, { Suspense, useState, useEffect } from "react";
 import { useMediaQuery } from "react-responsive";
 import { Overlay } from "./Components/index";
 import { inject } from "@vercel/analytics";
@@ -14,23 +14,17 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import space from "./images/threeJS/space.jpeg";
 
-// Components
-const LandingComponentPromise = import(
-	"./Components/Pages/LandingV2/LandingV2"
-);
-const AboutComponentPromise = import("./Components/Pages/About/About");
-const ProjectsComponentPromise = import("./Components/Pages/Projects/Projects");
-const BlogComponentPromise = import("./Components/Pages/Blog/Blog");
-const FooterComponentPromise = import("./Components/Pages/Footer/Footer");
-const ThreeJSComponentPromise = import("./Components/UI/ThreeJsBackground");
-
 // Lazy-loaded components
-const LandingV2 = React.lazy(() => LandingComponentPromise);
-const About = React.lazy(() => AboutComponentPromise);
-const Projects = React.lazy(() => ProjectsComponentPromise);
-const Blog = React.lazy(() => BlogComponentPromise);
-const Footer = React.lazy(() => FooterComponentPromise);
-const ThreeJS = React.lazy(() => ThreeJSComponentPromise);
+const LandingV2 = React.lazy(
+	() => import("./Components/Pages/LandingV2/LandingV2")
+);
+const About = React.lazy(() => import("./Components/Pages/About/About"));
+const Projects = React.lazy(
+	() => import("./Components/Pages/Projects/Projects")
+);
+const Blog = React.lazy(() => import("./Components/Pages/Blog/Blog"));
+const Footer = React.lazy(() => import("./Components/Pages/Footer/Footer"));
+const ThreeJS = React.lazy(() => import("./Components/UI/ThreeJsBackground"));
 
 // Inject analytics
 inject();
@@ -65,7 +59,7 @@ function App(): JSX.Element {
 	}, [isMobile]);
 
 	return (
-		<div className={`App`}>
+		<div className="App">
 			<div className={`${showApp && isMobile ? "mobile-background" : ""}`} />
 			<ToastContainer />
 			{!acceptApp && <Intro />}
@@ -95,15 +89,12 @@ function App(): JSX.Element {
 	);
 }
 
-// this app uses some heavy animations like the threeJS background. I wanted to make sure that the user could see the app before the animations loaded
-
-// So I opted to have everything load in the background from the start and then show the app afer the user accepts the app and sees the intro
 const Main = styled.div<{ showApp: boolean }>`
 	opacity: 0;
 	transition: opacity 0.5s linear;
 
-	${(props) =>
-		props.showApp &&
+	${({ showApp }) =>
+		showApp &&
 		`
     opacity: 1;
     visibility: visible;

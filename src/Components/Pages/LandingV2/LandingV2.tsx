@@ -4,23 +4,15 @@ import styled from "styled-components";
 import MUINav from "../../UI/Navbar/MUINav";
 import SocialLinksVertical from "../../UI/SocialLinksVertical";
 import "animate.css";
-import { ToastContainer, toast } from "react-toastify";
+import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { useAppContext } from "../../../context/appContext";
+import { createGreeting } from "../../../utils/misc";
 
 const LandingV2 = () => {
 	const { t, i18n } = useTranslation();
-	const time = new Date().getHours();
 
 	const { acceptApp, showApp, enableParticles } = useAppContext();
-	let currGreeting = "";
-	if (time < 12) {
-		currGreeting = t("landing.morning");
-	} else if (time >= 12 && time <= 18) {
-		currGreeting = t("landing.afternoon");
-	} else {
-		currGreeting = t("landing.evening");
-	}
 
 	useEffect(() => {
 		if (showApp && acceptApp && enableParticles) {
@@ -43,7 +35,9 @@ const LandingV2 = () => {
 					<div id="text">
 						<div className="line">
 							<p className="word">
-								{`${currGreeting}${i18n.language === "en" ? " I'm " : " "}`}
+								{`${t(createGreeting())}${
+									i18n.language === "en" ? " I'm " : " "
+								}`}
 							</p>
 						</div>
 						<div className="line">
@@ -90,12 +84,10 @@ const Landing = styled.div`
 		text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
 			1px 1px 0 var(--off-white);
 		color: black;
-		// no wrap
 		white-space: nowrap;
 	}
 
 	#text {
-		// glassmorphism background
 		background: rgba(0, 0, 0, 0.09);
 		backdrop-filter: blur(20px);
 		-webkit-backdrop-filter: blur(20px);
