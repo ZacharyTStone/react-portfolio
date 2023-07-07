@@ -80,7 +80,7 @@ const Landing = styled.div`
 	}
 
 	.word {
-		font-size: clamp(1.5rem, 6.5vw, 5rem);
+		font-size: clamp(1.8rem, 6.5vw, 5rem);
 		font-family: "Rubik", sans-serif;
 		font-weight: 400;
 		margin: 0rem;
@@ -103,13 +103,11 @@ const Landing = styled.div`
 		padding: 20px;
 	}
 
-
 	@media (max-width: 768px) {
 		#text {
 			background: rgba(0, 0, 0, 0.3);
 			padding: 5px;
 		}
-
 	}
 
 	#special-1 {
