@@ -13,7 +13,6 @@ import "../../Project/Project.css";
 import { useMediaQuery } from "react-responsive";
 
 export default function MUIProjectCard(props) {
-	const { theme } = useAppContext();
 	const [isVisible, setIsVisible] = useState(false);
 	const titleRef = useRef(null);
 
@@ -56,7 +55,7 @@ export default function MUIProjectCard(props) {
 				<div
 					className={`card-title-div ${
 						isVisible ? "fade-in" : "fade-in-hidden"
-					} ${theme === "light" ? "light-mode" : "dark-mode"} ${
+					} ${"dark-mode"} ${
 						isGoldProject && highlightGoldProjects ? "gold-title" : ""
 					} 
 					 
@@ -69,9 +68,7 @@ export default function MUIProjectCard(props) {
 					bgImage={props.image}
 					bgImageAlt={`${props.title} image`}
 					strength={isMobile ? 0 : 75}
-					className={`darken-on-hover ${
-						theme === "light" ? "light-mode" : "dark-mode"
-					}`}
+					className={`darken-on-hover dark-mode`}
 					bgImageStyle={{
 						backgroundSize: "contain",
 						backgroundRepeat: "no-repeat",

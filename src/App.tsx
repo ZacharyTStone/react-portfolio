@@ -66,6 +66,7 @@ function App(): JSX.Element {
 
 	return (
 		<div className={`App`}>
+			<div className={`${showApp && isMobile ? "mobile-background" : ""}`} />
 			<ToastContainer />
 			{!acceptApp && <Intro />}
 			<>

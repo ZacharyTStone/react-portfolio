@@ -61,11 +61,3 @@ a:hover {
 	--off-white: #f5f5f5;
 	--black: rgb(12, 12, 14);
 }
-
-.light-mode {
-	--primary-color: #e8e2e2;
-	--secondary-color: #327f64;
-	--secondary-color-dark: #43c396;
-	--off-white: rgb(20, 22, 26);
-	--black: #d5e2dd;
-}

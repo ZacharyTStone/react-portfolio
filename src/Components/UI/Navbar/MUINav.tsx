@@ -20,14 +20,8 @@ import { TbClick } from "react-icons/tb";
 import { useMediaQuery } from "react-responsive";
 
 const MUINav = () => {
-	const {
-		theme,
-		setTheme,
-		useAudio,
-		setAudioPreference,
-		enableParticles,
-		setEnableParticles,
-	} = useAppContext();
+	const { useAudio, setAudioPreference, enableParticles, setEnableParticles } =
+		useAppContext();
 
 	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
@@ -167,38 +161,6 @@ const MUINav = () => {
 								<MdPlayCircleFilled className="flag" />
 							)}
 						</div>
-						{/* <div onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-							{theme === "light" ? (
-								<div className="flag-div">
-									<div className="flag-div-holder">
-										<DarkModeIcon className="flag" />
-									</div>
-								</div>
-							) : (
-								<div className="jp">
-									<div className="flag-div-holder">
-										<LightModeIcon className="flag" />
-									</div>
-								</div>
-							)}
-						</div> */}
-						{/* hide until i can check the performance impact */}
-						{/* {!isMobile  && (
-							<div onClick={() => setEnableParticles(!enableParticles)}>
-								<div className="flag-div">
-									<div className="flag-div-holder">
-										<TbClick
-											color={
-												enableParticles
-													? "var(--secondary-color)"
-													: "var(--off-white)"
-											}
-											className="flag"
-										/>
-									</div>
-								</div>
-							</div>
-						)} */}
 						<div className="flag-div nav-button">
 							{i18n.language === "en" ? (
 								<div className="flag-div">

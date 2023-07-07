@@ -46,7 +46,7 @@ function Project({ project }) {
 	const handleOnLoad = () => {
 		setIsLoading(false);
 	};
-	const TagButton = styled(Button)(({ theme }) => ({
+	const TagButton = styled(Button)(() => ({
 		color: "var(--secondary-color)",
 		backgroundColor: "var(--off-white)",
 		disabled: true,
