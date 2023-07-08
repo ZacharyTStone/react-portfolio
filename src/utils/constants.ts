@@ -287,3 +287,5 @@ export const PROJECTS = {
 		],
 	},
 };
+
+export 	const OVERLAY_COLORS: string[] = ["#3CCF48", "#3FD977", "#43C396", "#3FD9CE"];

@@ -137,9 +137,10 @@ const Skills = () => {
 								justifyContent: "flex-start",
 								flexWrap: "wrap",
 								width: "fit-content",
+								alignItems: "center",
 							}}
 						>
-							<>
+							
 								<a
 									href="https://docs.google.com/document/d/1r5U9UF6FJc0zr_L98dpIwj9Xe0-0CtoVfoux4nxD-g8/edit?usp=sharing"
 									target="_blank"
@@ -154,7 +155,7 @@ const Skills = () => {
 										display: "flex",
 									}}
 								>
-									{" "}
+										<div style={{ display: "flex", alignItems: "center" }}>
 									<IoMdPaper size={"1.5rem"} color="var(--secondary-color)" />
 									<span
 										className="about-description resume-link-text"
@@ -165,8 +166,8 @@ const Skills = () => {
 									>
 										{t("skills.resume")}
 									</span>
+									</div>
 								</a>
-							</>
 							<>
 								<a
 									href="https://docs.google.com/document/d/1SFRXMNP7yeWrZRcPUAJX-_R28WVdn3w3V7w7fxJnn0w/edit?usp=sharing"
@@ -182,7 +183,7 @@ const Skills = () => {
 										display: "flex",
 									}}
 								>
-									{" "}
+										<div style={{ display: "flex", alignItems: "center" }}>
 									<IoMdPaper size={"1.5rem"} color="var(--secondary-color)" />
 									<span
 										className="about-description resume-link-text"
@@ -193,6 +194,7 @@ const Skills = () => {
 									>
 										{t("skills.japaneseResume")}
 									</span>
+									</div>
 								</a>
 							</>
 							<>
@@ -209,6 +211,7 @@ const Skills = () => {
 										display: "flex",
 									}}
 								>
+										<div style={{ display: "flex", alignItems: "center" }}>
 									<BsUiChecks color="var(--secondary-color)" size={"1.5rem"} />
 									<span
 										className="about-description resume-link-text"
@@ -219,6 +222,7 @@ const Skills = () => {
 									>
 										{t("skills.certifications")}
 									</span>
+									</div>
 								</a>
 							</>
 						</div>

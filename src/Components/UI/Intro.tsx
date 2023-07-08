@@ -4,20 +4,15 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { useAppContext } from "../../context/appContext";
+import { UseLockScroll } from "../../utils/hooks";
+
 
 const Intro = () => {
 	const { useAudio, setAudioPreference, setAcceptApp } = useAppContext();
 	const { t } = useTranslation();
 
-	useEffect(() => {
-		// Lock scroll when the component is mounted
-		document.body.style.overflow = "hidden";
-
-		// Unlock scroll when the component is unmounted
-		return () => {
-			document.body.style.overflow = "auto";
-		};
-	}, []);
+	
+    UseLockScroll();
 
 	const handleAudioChange = () => {
 		setAudioPreference(!useAudio);
@@ -30,23 +25,15 @@ const Intro = () => {
 	return (
 		<Container>
 			<Content>
-				{" "}
-				<Title id="special-1">{t("intro.header")}</Title>
-				<div
-					style={{
-						display: "flex",
-						alignItems: "center",
-						justifyContent: "center",
-						gap: "8px",
-					}}
-				>
+				<IntroTitle id="special-1">{t("intro.header")}</IntroTitle>
+				<CenteredDiv>
 					<SubTitle>{t("intro.enableAudio")}</SubTitle>
 					<StyledInput
 						type="checkbox"
 						checked={useAudio}
 						onChange={handleAudioChange}
 					/>
-				</div>
+				</CenteredDiv>
 				<Button onClick={handleAcceptApp}>{t("intro.accept")}</Button>
 			</Content>
 		</Container>
@@ -54,6 +41,14 @@ const Intro = () => {
 };
 
 export default Intro;
+
+const CenteredDiv = styled.div`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 8px;
+`;
+
 
 const Content = styled.div`
 	margin: 20px;
@@ -128,7 +123,7 @@ const Button = styled(motion.button)`
 	}
 `;
 
-const Title = styled(motion.h1)`
+const IntroTitle = styled(motion.h1)`
 	font-size: 3rem;
 	font-family: "Rubik", sans-serif;
 	font-weight: 400;
