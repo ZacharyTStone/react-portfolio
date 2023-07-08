@@ -11,9 +11,9 @@ const LandingV2 = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <Landing>
+    <Landing className="animate__fadeIn animate__fadeOut">
       <MUINav />
-      <ContentWrapper className="content fade-in-on-mount">
+      <ContentWrapper className="content">
         <LandingTile>
           <>
             <Line>
