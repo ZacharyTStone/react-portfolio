@@ -14,13 +14,10 @@ import styled from "styled-components";
 import Dot from "../../../images/ring-pointer.png";
 import { MdPlayCircleFilled, MdPauseCircleFilled } from "react-icons/md";
 import { useAppContext } from "../../../context/appContext";
-import { useMediaQuery } from "react-responsive";
 
 const MUINav = () => {
 	const { useAudio, setAudioPreference, enableParticles, setEnableParticles } =
 		useAppContext();
-
-	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
 	const { i18n, t } = useTranslation();
 

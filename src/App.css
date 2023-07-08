@@ -1,12 +1,3 @@
-h1,
-p {
-	color: var(--off-white);
-}
-
-svg:hover {
-	color: var(--secondary-color) !important;
-}
-
 .App {
 	max-width: 100vw !important;
 	overflow: hidden;

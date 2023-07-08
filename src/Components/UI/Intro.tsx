@@ -1,5 +1,4 @@
 import React, { useEffect } from "react";
-import { useAnimation } from "framer-motion";
 import styled from "styled-components";
 import { motion } from "framer-motion";
 import { useTranslation } from "react-i18next";
