@@ -100,15 +100,15 @@ const Skills = () => {
 		[<AiFillWechat />, "Chat GPT", "https://chat.openai.com/chat"],
 	];
 	const SKILL_OPTIONS = [
-		"Frontend Frameworks",
-		"Frontend Tools",
-		"Backend",
-		"Server",
-		"Other",
+		"frontendFrameworks",
+		"frontendTools",
+		"backend",
+		"server",
+		"other",
 	];
 
 	const [selectedSkill, setSelectedSkill] = React.useState(
-		"Frontend Frameworks"
+		"frontendFrameworks"
 	);
 
 	return (
@@ -238,12 +238,12 @@ const Skills = () => {
 									onClick={() => setSelectedSkill(skill)}
 									className={selectedSkill === skill ? "active" : ""}
 								>
-									{skill}
+									{t(`skills.${skill}`)}
 								</SkillTypeButton>
 							))}
 						</ButtonContainer>
 						<SkillIconsDiv>
-							{selectedSkill === "Frontend Frameworks" &&
+							{selectedSkill === "frontendFrameworks" &&
 								FRAMEWORKS.map((skill: any) => (
 									<div key={skill[1]}>
 										<a
@@ -266,7 +266,7 @@ const Skills = () => {
 										</a>
 									</div>
 								))}
-							{selectedSkill === "Frontend Tools" &&
+							{selectedSkill === "frontendTools" &&
 								TOOLS.map((skill: any) => (
 									<div key={skill[1]} className="skill">
 										<a
@@ -288,7 +288,7 @@ const Skills = () => {
 										</a>
 									</div>
 								))}
-							{selectedSkill === "Backend" &&
+							{selectedSkill === "backend" &&
 								Backend.map((skill: any) => (
 									<div key={skill[1]} className="skill">
 										<a
@@ -310,7 +310,7 @@ const Skills = () => {
 										</a>
 									</div>
 								))}
-							{selectedSkill === "Server" &&
+							{selectedSkill === "server" &&
 								Server.map((skill: any) => (
 									<div key={skill[1]} className="skill">
 										<a
@@ -333,7 +333,7 @@ const Skills = () => {
 									</div>
 								))}
 
-							{selectedSkill === "Other" &&
+							{selectedSkill === "other" &&
 								Other.map((skill: any) => (
 									<div key={skill[1]} className="skill">
 										<a

@@ -29,7 +29,12 @@
 			"resume": "履歴書(英語)",
 			"japaneseResume": "職務経歴書(日本語)",
 			"japaneseWorkHistory": "職務経歴書(日本語)",
-			"certifications": "資格"
+			"certifications": "資格",
+			"frontendFrameworks": "フロントエンドフレームワーク",
+			"frontendTools": "フロントエンドツール",
+			"backend" : "バックエンド",
+			"server": "サーバー",
+			"other": "その他"
 		},
 		"footer": {
 			"thanks": "ウェブサイトをご覧いただきありがとうございます。",
