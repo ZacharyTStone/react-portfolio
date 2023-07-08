@@ -1,138 +1,117 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import MUINav from "../../UI/Navbar/MUINav";
 import SocialLinksVertical from "../../UI/SocialLinksVertical";
 import "animate.css";
-import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { useAppContext } from "../../../context/appContext";
 import { createGreeting } from "../../../utils/misc";
 
 const LandingV2 = () => {
-	const { t, i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
 
-	const { acceptApp, showApp, enableParticles } = useAppContext();
-
-	useEffect(() => {
-		if (showApp && acceptApp && enableParticles) {
-			toast.dark(t("toast.info"), {
-				progress: undefined,
-				autoClose: 5000,
-				hideProgressBar: true,
-				closeOnClick: true,
-				position: "bottom-right",
-				toastId: "toast.info",
-			});
-		}
-	}, [showApp, t, enableParticles]);
-
-	return (
-		<Landing>
-			<MUINav />
-			<div className="content">
-				<LandingTile className="animate__animated animate__fadeIn">
-					<div id="text">
-						<div className="line">
-							<p className="word">
-								{`${t(createGreeting())}${
-									i18n.language === "en" ? " I'm " : " "
-								}`}
-							</p>
-						</div>
-						<div className="line">
-							<p className="word" id="special-1">
-								{t("landing.name")}
-							</p>
-						</div>
-						<div className="line">
-							<p className="word">{t("landing.description1")}</p>
-						</div>
-						<div className="line">
-							<p className="word">{t("landing.description2")}</p>
-						</div>
-					</div>
-				</LandingTile>
-				<SocialLinksVertical />
-			</div>
-		</Landing>
-	);
+  return (
+    <Landing>
+      <MUINav />
+      <ContentWrapper className="content fade-in-on-mount">
+        <LandingTile>
+          <>
+            <Line>
+              <Word>
+                {`${t(createGreeting())}${i18n.language === "en" ? " I'm " : " "}`}
+              </Word>
+            </Line>
+            <Line>
+              <Word id="special-1">{t("landing.name")}</Word>
+            </Line>
+            <Line>
+              <Word>{t("landing.description1")}</Word>
+            </Line>
+            <Line>
+              <Word>{t("landing.description2")}</Word>
+            </Line>
+          </>
+        </LandingTile>
+        <SocialLinksVertical />
+      </ContentWrapper>
+    </Landing>
+  );
 };
 
 const Landing = styled.div`
-	.content {
-		height: 100%;
-		justify-content: center;
-		display: flex;
-		flex-direction: column;
-		align-items: center;
-	}
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 
-	.line {
-		display: flex;
-		justify-content: space-between;
-	}
-
-	.word {
-		font-size: clamp(1.8rem, 6.5vw, 5rem);
-		font-family: "Rubik", sans-serif;
-		font-weight: 400;
-		margin: 0rem;
-		text-transform: uppercase;
-		transition: opacity 250ms ease;
-		opacity: 0.7;
-		text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
-			1px 1px 0 var(--off-white);
-		color: black;
-		white-space: nowrap;
-	}
-
-	#text {
-		background: rgba(0, 0, 0, 0.09);
-		backdrop-filter: blur(20px);
-		-webkit-backdrop-filter: blur(20px);
-		border-radius: 20px;
-		padding: 20px;
-	}
-
-	@media (max-width: 768px) {
-		#text {
-			background: rgba(0, 0, 0, 0.3);
-			padding: 5px;
-		}
-	}
-
-	#special-1 {
-		opacity: 1 !important;
-		color: var(--off-white) !important;
-	}
-
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	width: 100%;
-	height: 100vh;
-
-	@media (max-width: 768px) {
-		height: calc(100vh - 56px);
-	}
+  @media (max-width: 768px) {
+    height: calc(100vh - 56px);
+  }
 `;
+
+const ContentWrapper = styled.div`
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  #special-1 {
+    opacity: 1 !important;
+    color: var(--off-white) !important;
+  }
+`;
+
+const Line = styled.div`
+  display: flex;
+  justify-content: space-between;
+`;
+
+const Word = styled.p`
+  font-size: clamp(1.8rem, 5vw, 5rem);
+  font-family: "Rubik", sans-serif;
+  font-weight: 400;
+  margin: 0rem;
+  text-transform: uppercase;
+  transition: opacity 250ms ease;
+  opacity: 0.7;
+  text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 var(--off-white);
+  color: black;
+  white-space: nowrap;
+
+
+`;
+
+
 
 const LandingTile = styled.h3`
-	font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-	width: fit-content;
-	max-width: 1000px;
-	height: max-content;
-	text-align: center;
-	user-select: none;
-	margin: 50px;
-	font-size: 3rem;
-	padding-bottom: 61px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans,
+    Helvetica Neue, sans-serif;
+  width: fit-content;
+  max-width: 1000px;
+  height: max-content;
+  text-align: center;
+  user-select: none;
+  margin: 50px;
+  font-size: 3rem;
+  padding-bottom: 61px;
+  background: rgba(0, 0, 0, 0.09);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  border-radius: 20px;
+  padding: 20px;
+  width: fit-content;
 
-	@media (max-width: 1024px) {
-		font-size: 2.5rem;
-	}
+  @media (max-width: 768px) {
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+  }
+
+  @media (max-width: 1024px) {
+    font-size: 2.5rem;
+  }
 `;
+
 
 export default LandingV2;

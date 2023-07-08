@@ -22,7 +22,7 @@ const Intro = () => {
 	};
 
 	return (
-		<Container>
+		<Container className="fade-in-on-mount">
 			<Content>
 				<IntroTitle id="special-1">{t("intro.header")}</IntroTitle>
 				<CenteredDiv>

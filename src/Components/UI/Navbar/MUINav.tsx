@@ -53,7 +53,7 @@ const MUINav = () => {
 
 	return (
 		<>
-			<Nav position="relative" className="nav-menu">
+			<Nav position="relative" className="nav-menu fade-in-on-mount">
 				<Toolbar>
 					<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
 						<IconButton

@@ -91,7 +91,7 @@ export default function Index() {
     UseLockScroll();
 
 	return (
-		<Container>
+		<Container className="fade-in-on-mount">
 			{divAnimations.map((animation, index) => (
 				<LogoContainer
 					animate={animation}

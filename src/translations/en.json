@@ -32,7 +32,7 @@
 			"frontendFrameworks": "Frontend Frameworks",
 			"frontendTools": "Frontend Tools",
 			"backend" : "Backend",
-			"sever": "Server",
+			"server": "Server",
 			"other": "Other"
 		},
 		"footer": {
