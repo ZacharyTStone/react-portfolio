@@ -3,7 +3,7 @@ import { BsArrowLeft } from "react-icons/bs";
 import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 import { useTranslation } from "react-i18next";
-import SocialLinks from "../../UI/SocialLinks";
+import SocialLinksHorizontal from "../../UI/SocialLinksHorizontal";
 
 const Footer = () => {
 	const { t } = useTranslation();
@@ -15,7 +15,7 @@ const Footer = () => {
 				<FooterText isTabletOrMobile={isTabletOrMobile}>
 					{isTabletOrMobile ? (
 						<MobileContainer>
-							<SocialLinks />
+							<SocialLinksHorizontal />
 						</MobileContainer>
 					) : (
 						<DesktopContainer>

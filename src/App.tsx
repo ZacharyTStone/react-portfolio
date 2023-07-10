@@ -31,6 +31,7 @@ inject();
 
 function App(): JSX.Element {
 	const { acceptApp, showApp, setShowApp, setAcceptApp } = useAppContext();
+
 	console.log(
 		"%cHi! Thanks for checking out my code ☺ If you have any questions, feel free to reach out to me on Linkedin",
 		"color:green;font-family:system-ui;font-size:2rem;-webkit-text-stroke: 1px black;font-weight:bold"
@@ -51,7 +52,7 @@ function App(): JSX.Element {
 		}, loadingAnimationTime);
 	}, [acceptApp]);
 
-	// Skip intro on mobile
+	// Always Skip Audio accepting screen on mobile
 	useEffect(() => {
 		if (!acceptApp && isMobile) {
 			setAcceptApp(true);

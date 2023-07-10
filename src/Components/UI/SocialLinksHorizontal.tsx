@@ -4,7 +4,7 @@ import { AiTwotoneMail } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import styled from "styled-components";
 
-const SocialLinks = () => {
+const SocialLinksHorizontal = () => {
 	return (
 		<IconContext.Provider
 			value={{
@@ -62,4 +62,4 @@ const Main = styled.div`
 		}
 	}
 `;
-export default SocialLinks;
+export default SocialLinksHorizontal;

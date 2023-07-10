@@ -14,7 +14,7 @@ const Projects = () => {
 
 	return (
 		<>
-			<Main className="Projects" id="Projects">
+			<Main id="Projects">
 				<Title>{content.mainTitle}</Title>
 				<div className="projects-container">
 					{content.projects.map((project: any) => (

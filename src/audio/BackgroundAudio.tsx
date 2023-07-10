@@ -1,16 +1,16 @@
 import React, { useState, useRef, useEffect } from "react";
-import ambient from "../audio/ambient2.mp3";
+// @ts-ignore
+import ambient from "./ambient2.mp3";
 import { useAppContext } from "../context/appContext";
 
 const BackgroundAudio = () => {
 	const { useAudio } = useAppContext();
-
-	const audioRef = useRef(null);
+	const audioRef = useRef<HTMLAudioElement>(null);
 
 	useEffect(() => {
-		if (useAudio) {
+		if (useAudio && audioRef.current) {
 			audioRef.current.play();
-		} else {
+		} else if (audioRef.current) {
 			audioRef.current.pause();
 		}
 	}, [useAudio]);

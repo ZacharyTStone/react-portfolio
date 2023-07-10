@@ -27,7 +27,7 @@ const Blog: React.FC = () => {
 		content: any;
 		activeSlide: number;
 		setActiveSlide: React.Dispatch<React.SetStateAction<number>>;
-	}> = ({ content, activeSlide, setActiveSlide }) => {
+	}> = ({ content }) => {
 		return (
 			<Swiper
 				modules={[Navigation, Scrollbar, A11y, EffectCoverflow]}

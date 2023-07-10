@@ -1,14 +1,18 @@
-import { useEffect, useRef } from "react";
-import boop from "./boop.mp3";
+import React, { useEffect, useRef } from "react";
 import { useAppContext } from "../context/appContext";
+// @ts-ignore
+import boop from "./boop.mp3";
 
-const AudioOnClick = () => {
-	const { useAudio } = useAppContext();
-	const audioRef = useRef(null);
-
+{
+	/* may be useful in the future for now it's just used in this componeent */
+}
+const useAudioOnClick = (
+	audioRef: React.RefObject<HTMLAudioElement>,
+	useAudio: boolean
+) => {
 	useEffect(() => {
 		const handleClick = () => {
-			if (useAudio) {
+			if (useAudio && audioRef.current) {
 				audioRef.current.currentTime = 0; // Reset the audio playback to the beginning
 				audioRef.current.play();
 			}
@@ -19,7 +23,14 @@ const AudioOnClick = () => {
 		return () => {
 			document.removeEventListener("click", handleClick);
 		};
-	}, [useAudio]);
+	}, [useAudio, audioRef]);
+};
+
+const AudioOnClick = () => {
+	const { useAudio } = useAppContext();
+	const audioRef = useRef<HTMLAudioElement>(null);
+
+	useAudioOnClick(audioRef, useAudio);
 
 	return (
 		<div>
