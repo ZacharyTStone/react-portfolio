@@ -10,6 +10,7 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Scrollbar, A11y, EffectCoverflow } from "swiper";
 import Dot from "../../../images/ring-pointer.png";
+import { Title } from "../../UI/StyledComponents";
 
 const Blog: React.FC = () => {
 	const { i18n } = useTranslation();
@@ -71,14 +72,7 @@ const Blog: React.FC = () => {
 	);
 };
 
-const Title = styled.h1`
-	margin-top: 0px;
-	margin-bottom: 75px;
-	text-decoration-line: underline;
-	text-decoration-color: var(--secondary-color);
-	text-decoration-thickness: 5px;
-	text-underline-offset: 12px;
-`;
+
 
 const Main = styled.div<{ isMobile: boolean }>`
 	background-color: transparent;

@@ -3,6 +3,7 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import Skills from "../../UI/Skills";
+import { Title } from "../../UI/StyledComponents";
 
 const About = () => {
 	const { t } = useTranslation();
@@ -10,7 +11,6 @@ const About = () => {
 	return (
 		<AboutDiv className="about" id="About">
 			<Title>{t("about.title")}</Title>
-
 			<AboutInner className="about-inner">
 				<AnimatedDescriptionWrapper
 					animateIn="animate__fadeIn"
@@ -87,15 +87,7 @@ const AboutInner = styled.div`
 	}
 `;
 
-const Title = styled.h1`
-	margin-top: 0px;
-	margin-bottom: 75px;
-	text-decoration-line: underline;
-	text-decoration-color: var(--secondary-color);
-	text-decoration-thickness: 5px;
-	text-underline-offset: 12px;
-	color: 'white'
-`;
+
 
 const AnimatedDescriptionWrapper = styled(AnimationOnScroll)`
 	padding-bottom: 1rem;

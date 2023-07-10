@@ -3,6 +3,7 @@ import styled from "styled-components";
 import "./Projects.css";
 import { useTranslation } from "react-i18next";
 import { PROJECTS } from "../../../utils/constants";
+import { Title } from "../../UI/StyledComponents";
 
 const Projects = () => {
 	const { i18n } = useTranslation();
@@ -26,14 +27,7 @@ const Projects = () => {
 	);
 };
 
-const Title = styled.h1`
-	margin-top: 0px;
-	margin-bottom: 75px;
-	text-decoration-line: underline;
-	text-decoration-color: var(--secondary-color);
-	text-decoration-thickness: 5px;
-	text-underline-offset: 12px;
-`;
+
 const Main = styled.div`
 	text-align: center;
 	width: 100%;

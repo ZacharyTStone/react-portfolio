@@ -32,6 +32,7 @@ p {
 	color: var(--off-white);
 }
 
+
 button,
 input,
 a {
@@ -42,6 +43,17 @@ svg:hover {
 	color: var(--secondary-color) !important;
 }
 
+
 html {
 	scroll-behavior: smooth !important;
+}
+
+
+
+.fade-in-on-mount {
+	animation: fadeIn ease 1.5s;
+	-webkit-animation: fadeIn ease 1.5s;
+	-moz-animation: fadeIn ease 1.5s;
+	-o-animation: fadeIn ease 1.5s;
+	-ms-animation: fadeIn ease 1.5s;
 }

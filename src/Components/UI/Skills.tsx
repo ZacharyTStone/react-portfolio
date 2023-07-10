@@ -100,15 +100,15 @@ const Skills = () => {
 		[<AiFillWechat />, "Chat GPT", "https://chat.openai.com/chat"],
 	];
 	const SKILL_OPTIONS = [
-		"Frontend Frameworks",
-		"Frontend Tools",
-		"Backend",
-		"Server",
-		"Other",
+		"frontendFrameworks",
+		"frontendTools",
+		"backend",
+		"server",
+		"other",
 	];
 
 	const [selectedSkill, setSelectedSkill] = React.useState(
-		"Frontend Frameworks"
+		"frontendFrameworks"
 	);
 
 	return (
@@ -137,9 +137,10 @@ const Skills = () => {
 								justifyContent: "flex-start",
 								flexWrap: "wrap",
 								width: "fit-content",
+								alignItems: "center",
 							}}
 						>
-							<>
+							
 								<a
 									href="https://docs.google.com/document/d/1r5U9UF6FJc0zr_L98dpIwj9Xe0-0CtoVfoux4nxD-g8/edit?usp=sharing"
 									target="_blank"
@@ -154,7 +155,7 @@ const Skills = () => {
 										display: "flex",
 									}}
 								>
-									{" "}
+										<div style={{ display: "flex", alignItems: "center" }}>
 									<IoMdPaper size={"1.5rem"} color="var(--secondary-color)" />
 									<span
 										className="about-description resume-link-text"
@@ -165,8 +166,8 @@ const Skills = () => {
 									>
 										{t("skills.resume")}
 									</span>
+									</div>
 								</a>
-							</>
 							<>
 								<a
 									href="https://docs.google.com/document/d/1SFRXMNP7yeWrZRcPUAJX-_R28WVdn3w3V7w7fxJnn0w/edit?usp=sharing"
@@ -182,7 +183,7 @@ const Skills = () => {
 										display: "flex",
 									}}
 								>
-									{" "}
+										<div style={{ display: "flex", alignItems: "center" }}>
 									<IoMdPaper size={"1.5rem"} color="var(--secondary-color)" />
 									<span
 										className="about-description resume-link-text"
@@ -193,6 +194,7 @@ const Skills = () => {
 									>
 										{t("skills.japaneseResume")}
 									</span>
+									</div>
 								</a>
 							</>
 							<>
@@ -209,6 +211,7 @@ const Skills = () => {
 										display: "flex",
 									}}
 								>
+										<div style={{ display: "flex", alignItems: "center" }}>
 									<BsUiChecks color="var(--secondary-color)" size={"1.5rem"} />
 									<span
 										className="about-description resume-link-text"
@@ -219,6 +222,7 @@ const Skills = () => {
 									>
 										{t("skills.certifications")}
 									</span>
+									</div>
 								</a>
 							</>
 						</div>
@@ -234,12 +238,12 @@ const Skills = () => {
 									onClick={() => setSelectedSkill(skill)}
 									className={selectedSkill === skill ? "active" : ""}
 								>
-									{skill}
+									{t(`skills.${skill}`)}
 								</SkillTypeButton>
 							))}
 						</ButtonContainer>
 						<SkillIconsDiv>
-							{selectedSkill === "Frontend Frameworks" &&
+							{selectedSkill === "frontendFrameworks" &&
 								FRAMEWORKS.map((skill: any) => (
 									<div key={skill[1]}>
 										<a
@@ -262,7 +266,7 @@ const Skills = () => {
 										</a>
 									</div>
 								))}
-							{selectedSkill === "Frontend Tools" &&
+							{selectedSkill === "frontendTools" &&
 								TOOLS.map((skill: any) => (
 									<div key={skill[1]} className="skill">
 										<a
@@ -284,7 +288,7 @@ const Skills = () => {
 										</a>
 									</div>
 								))}
-							{selectedSkill === "Backend" &&
+							{selectedSkill === "backend" &&
 								Backend.map((skill: any) => (
 									<div key={skill[1]} className="skill">
 										<a
@@ -306,7 +310,7 @@ const Skills = () => {
 										</a>
 									</div>
 								))}
-							{selectedSkill === "Server" &&
+							{selectedSkill === "server" &&
 								Server.map((skill: any) => (
 									<div key={skill[1]} className="skill">
 										<a
@@ -329,7 +333,7 @@ const Skills = () => {
 									</div>
 								))}
 
-							{selectedSkill === "Other" &&
+							{selectedSkill === "other" &&
 								Other.map((skill: any) => (
 									<div key={skill[1]} className="skill">
 										<a

@@ -1,9 +1,9 @@
 {
 	"translation": {
 		"landing": {
-			"morning": "Good morning",
-			"afternoon": "Good afternoon",
-			"evening": "Good evening",
+			"morning": "Good morning.",
+			"afternoon": "Good afternoon.",
+			"evening": "Good evening.",
 			"name": "Zach Stone,",
 			"description1": "and I build",
 			"description2": " web applications."
@@ -28,7 +28,12 @@
 			"title": "Skills",
 			"resume": "Resume",
 			"japaneseResume": "Japanese Resume",
-			"certifications": "Certifications"
+			"certifications": "Certifications",
+			"frontendFrameworks": "Frontend Frameworks",
+			"frontendTools": "Frontend Tools",
+			"backend" : "Backend",
+			"server": "Server",
+			"other": "Other"
 		},
 		"footer": {
 			"thanks": "Thanks for visiting!",

@@ -14,15 +14,18 @@
 
 ## Description
 
-私の Portfolio サイトです。
-
 My portfolio website
 
-This has changed and morphed over the years. I do minor updates when I can, often with my morning coffee. That's why it has such a high commit count.
+This has changed and morphed over the years.
 
-Because of that, it is definitely in need of some refactoring. I plan to spend a couple of hours one day to clean it up.
+I do minor updates when I can, often with my morning coffee. ☕ 
 
-これは年々変化し変形してきました。時間があるときに細かいなアップデートするので、コミット数が多いです。
+
+私のポートフォリオのウェブサイト
+
+これは年月を経て変形しました。
+
+できるだけ頻繁に、よく朝のコーヒーを飲みながら小さい更新を行っています。 ☕
 
 </br>
 

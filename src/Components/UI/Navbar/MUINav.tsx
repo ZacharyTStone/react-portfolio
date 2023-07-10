@@ -12,18 +12,12 @@ import japan from "../../../images/japan-big.png";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import Dot from "../../../images/ring-pointer.png";
-import { MdDarkMode as DarkModeIcon } from "react-icons/md";
-import { MdLightMode as LightModeIcon } from "react-icons/md";
 import { MdPlayCircleFilled, MdPauseCircleFilled } from "react-icons/md";
 import { useAppContext } from "../../../context/appContext";
-import { TbClick } from "react-icons/tb";
-import { useMediaQuery } from "react-responsive";
 
 const MUINav = () => {
 	const { useAudio, setAudioPreference, enableParticles, setEnableParticles } =
 		useAppContext();
-
-	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
 	const { i18n, t } = useTranslation();
 
@@ -59,7 +53,7 @@ const MUINav = () => {
 
 	return (
 		<>
-			<Nav position="relative" className="nav-menu">
+			<Nav position="relative" className="nav-menu fade-in-on-mount">
 				<Toolbar>
 					<Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
 						<IconButton
