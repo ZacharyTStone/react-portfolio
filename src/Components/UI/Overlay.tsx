@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { useAnimation } from "framer-motion";
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { UseLockScroll } from "../../utils/hooks";
+import { useLockScroll } from "../../utils/hooks";
 import { getRandomColor } from "../../utils/misc";
 import { OVERLAY_COLORS } from "../../utils/constants";
 
@@ -88,7 +88,7 @@ export default function Index() {
 		divSequence(4);
 	}, []);
 
-    UseLockScroll();
+    useLockScroll();
 
 	return (
 		<Container className="fade-in-on-mount">

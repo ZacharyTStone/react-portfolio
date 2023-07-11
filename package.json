@@ -58,7 +58,9 @@
 	},
 	"devDependencies": {
 		"@types/lodash.debounce": "^4.0.7",
+		"@types/react-modal": "^3.16.0",
 		"@types/styled-components": "^5.1.25",
+		"@types/three": "^0.153.0",
 		"typescript": "^4.5.4"
 	}
 }

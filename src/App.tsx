@@ -30,7 +30,7 @@ const ThreeJS = React.lazy(() => import("./Components/UI/ThreeJsBackground"));
 inject();
 
 function App(): JSX.Element {
-	const { acceptApp, showApp, setShowApp, setAcceptApp } = useAppContext();
+	const { acceptApp, showApp, setShowApp,  } = useAppContext();
 
 	console.log(
 		"%cHi! Thanks for checking out my code ☺ If you have any questions, feel free to reach out to me on Linkedin",
@@ -52,12 +52,6 @@ function App(): JSX.Element {
 		}, loadingAnimationTime);
 	}, [acceptApp]);
 
-	// Always Skip Audio accepting screen on mobile
-	useEffect(() => {
-		if (!acceptApp && isMobile) {
-			setAcceptApp(true);
-		}
-	}, [isMobile]);
 
 	return (
 		<div className="App">

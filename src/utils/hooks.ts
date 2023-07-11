@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 
-export const UseLockScroll = () => {
+export const useLockScroll = () => {
 	useEffect(() => {
 		// Lock scroll when the component is mounted
 		document.body.style.overflow = "hidden";
