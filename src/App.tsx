@@ -43,7 +43,7 @@ function App(): JSX.Element {
 
 	// Show app loader after accepting app
 	useEffect(() => {
-		if (!acceptApp && !isMobile) {
+		if (!acceptApp) {
 			return;
 		}
 
