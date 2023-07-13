@@ -32,11 +32,11 @@ p {
 	color: var(--off-white);
 }
 
-
+iframe,
 button,
 input,
 a {
-	cursor: url("./images/ring-pointer.png"), auto;
+	cursor: url("./images/ring-pointer.png"), auto !important;
 }
 
 svg:hover {

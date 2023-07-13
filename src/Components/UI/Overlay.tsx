@@ -76,7 +76,8 @@ export default function Index() {
 				// get smaller and smaller until it's gone into the center of the screen
 				scale: 0,
 				transition: {
-					duration: 0.5 + Math.random() * 0.5,
+					// small variation so you see the different squares as they get smaller
+					duration: 0.7 + Math.random() * 0.3,
 					ease: "easeInOut",
 				},
 			});
