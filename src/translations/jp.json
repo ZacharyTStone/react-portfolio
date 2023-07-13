@@ -16,13 +16,13 @@
 		},
 		"about": {
 			"title": "自己紹介",
-			"description1": "ウェブ開発に集中しているのソフトウェアエンジニアです。",
+			"description1": "ウェブ開発に集中しているソフトウェアエンジニアです。",
 			"description2": "私の主なスキルセットには、React.js、Node.js、TypeScript、およびGraphQLが含まれています。ただし、VueやGatsby JSなど、他の技術にも経験があります。",
 			"description3a": "現在、",
 			"description3b": "でフロントエンドソフトウェアエンジニアとして働いています。",
 			"currentCompany": "Rapptr Labs",
 			"description4": "コーディング以外の時間には、日本語の勉強を楽しんでおり、JLPT N2および漢字検定10級の試験に合格しました。",
-			"description5": "お問い合わせはZach.Stone.Developer@gmail.comまでお願いします。"
+			"description5": "お問い合わせは、Zach.Stone.Developer@gmail.comまでお願いいたします。"
 		},
 		"skills": {
 			"title": "スキル",
