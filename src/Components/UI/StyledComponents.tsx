@@ -18,5 +18,5 @@ export const Title = styled.h1`
 	-webkit-backdrop-filter: blur(10px);
 	border-radius: 10px;
 	padding: 20px;
-	width: max-content;
+	text-wrap: balance;
 `;

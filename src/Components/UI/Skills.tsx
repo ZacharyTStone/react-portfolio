@@ -243,6 +243,11 @@ const Skills = () => {
 					 style={{
 						width: "100% !important",
 						minWidth: "100% !important",
+						maxWidth: "100% !important",
+						
+						// contain img
+						objectFit: "contain",
+						
 					 }}
 					/>
 					</GithubStats>
