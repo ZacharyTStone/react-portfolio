@@ -21,6 +21,7 @@ body {
 	cursor: url("./images/cursor-ring.png") 4 4, default !important;
 }
 
+
 h1,
 h2,
 h3,
@@ -30,6 +31,7 @@ h6,
 p {
 	user-select: none;
 	color: var(--off-white);
+	text-wrap: balance;
 }
 
 iframe,
