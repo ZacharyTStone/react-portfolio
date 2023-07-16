@@ -6,7 +6,7 @@ import { PROJECTS } from "../../../utils/constants";
 import { Title } from "../../UI/StyledComponents";
 
 const Projects = () => {
-	const { i18n } = useTranslation();
+	const { i18n, t } = useTranslation();
 
 	let content = PROJECTS as any;
 	i18n.language === "en"
@@ -16,7 +16,9 @@ const Projects = () => {
 	return (
 		<>
 			<Main id="Projects">
-				<Title>{content.mainTitle}</Title>
+				<Title style={{
+					zIndex: 0,
+				}}>{content.mainTitle}</Title>
 				<div className="projects-container">
 					{content.projects.map((project: any) => (
 						<Project project={project} />
@@ -33,7 +35,11 @@ const Main = styled.div`
 	width: 100%;
 	user-select: none;
 
-	background: transparent;
+	// background: transparent;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
 
 	.projects-container {
 		width: 100%;

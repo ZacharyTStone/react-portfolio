@@ -33,7 +33,8 @@
 			"frontendTools": "Frontend Tools",
 			"backend" : "Backend",
 			"server": "Server",
-			"other": "Other"
+			"other": "Other",
+			"githubStats": "GitHub Stats"
 		},
 		"footer": {
 			"thanks": "Thanks for visiting!",

@@ -60,7 +60,6 @@ const Blog: React.FC = () => {
 			<Main isMobile={isMobile}>
 				<div id="Blog">
 					<Title>{content.mainTitle}</Title>
-
 					<DesktopBlogCarousel
 						content={content}
 						activeSlide={activeSlide}
@@ -111,14 +110,15 @@ const Main = styled.div<{ isMobile: boolean }>`
 			padding-bottom: 60px;
 		}
 
-		h1 {
-			font-size: 2.5rem;
-		}
+		
 	}
 
 	#Blog {
 		text-align: center;
 		padding-bottom: ${(props) => (props.isMobile ? "30px" : "100px")};
+		display: flex;
+		flex-direction: column;
+		align-items: center;
 	}
 
 	.direction-btn {

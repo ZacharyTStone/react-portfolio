@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { IconContext } from "react-icons";
 import { GithubContributions } from "react-github-graph";
 import Dot from "../../images/ring-pointer.png";
+import {Title} from "../UI/StyledComponents";
 
 import { FaReact, FaBootstrap, FaNodeJs } from "react-icons/fa";
 import {
@@ -227,9 +228,24 @@ const Skills = () => {
 							</>
 						</div>
 					</div>
-					<div className="github">
+					{/* <div className="github">
 						<GithubContributions username="ZacharyTStone" />
-					</div>
+					</div> */}
+					<GithubStats>
+						<Title style={{
+							marginBottom: "0px",
+							background: "transparent",
+							fontSize: "2rem",
+						}}>
+							{t("skills.githubStats")}
+						</Title>
+					<img  src="https://github-readme-streak-stats.herokuapp.com/?user=ZacharyTStone&" alt="zachinjapan" className="github-stats-img"  
+					 style={{
+						width: "100% !important",
+						minWidth: "100% !important",
+					 }}
+					/>
+					</GithubStats>
 					<div className="skills-container">
 						<ButtonContainer>
 							{SKILL_OPTIONS.map((skill: any) => (
@@ -362,6 +378,24 @@ const Skills = () => {
 		</>
 	);
 };
+
+const GithubStats = styled.div`
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 40px;
+	margin-top: 20px;
+	margin-bottom: 40px;
+
+
+	.github-stats-img {
+      width : "100%" !important;
+	  height: "auto";
+
+	  // semi transparent
+	  opacity: 0.6;
+	}
+`;
 
 
 
