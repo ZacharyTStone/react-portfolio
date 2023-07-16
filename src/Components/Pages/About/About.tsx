@@ -10,7 +10,7 @@ const About = () => {
 
 	return (
 		<AboutDiv className="about" id="About">
-			<Title>{t("about.title")}</Title>
+			{/* <Title>{t("about.title")}</Title> */}
 			<AboutInner className="about-inner">
 				<AnimatedDescriptionWrapper
 					animateIn="animate__fadeIn"

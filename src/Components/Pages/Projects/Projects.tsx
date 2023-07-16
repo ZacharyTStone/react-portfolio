@@ -16,9 +16,9 @@ const Projects = () => {
 	return (
 		<>
 			<Main id="Projects">
-				<Title style={{
+				{/* <Title style={{
 					zIndex: 0,
-				}}>{content.mainTitle}</Title>
+				}}>{content.mainTitle}</Title> */}
 				<div className="projects-container">
 					{content.projects.map((project: any) => (
 						<Project project={project} />
