@@ -82,7 +82,7 @@ export const BLOG_CONTENT = {
 
 export const PROJECTS = {
 	English: {
-		mainTitle: "Personal Projects",
+		mainTitle: "Featured Projects",
 
 		projects: [
 			{

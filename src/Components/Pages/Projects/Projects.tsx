@@ -16,9 +16,13 @@ const Projects = () => {
 	return (
 		<>
 			<Main id="Projects">
-				{/* <Title style={{
-					zIndex: 0,
-				}}>{content.mainTitle}</Title> */}
+				<Title
+					style={{
+						zIndex: 0,
+					}}
+				>
+					{content.mainTitle}
+				</Title>
 				<div className="projects-container">
 					{content.projects.map((project: any) => (
 						<Project project={project} />
@@ -29,7 +33,6 @@ const Projects = () => {
 	);
 };
 
-
 const Main = styled.div`
 	text-align: center;
 	width: 100%;
@@ -39,7 +42,6 @@ const Main = styled.div`
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-
 
 	.projects-container {
 		width: 100%;
