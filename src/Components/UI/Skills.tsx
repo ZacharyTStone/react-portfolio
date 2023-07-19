@@ -250,7 +250,7 @@ const Skills = () => {
 					{/* <div className="github">
 						<GithubContributions username="ZacharyTStone" />
 					</div> */}
-					<GithubStats>
+					{/* <GithubStats>
 						<Title
 							style={{
 								marginBottom: "0px",
@@ -273,7 +273,7 @@ const Skills = () => {
 								objectFit: "contain",
 							}}
 						/>
-					</GithubStats>
+					</GithubStats> */}
 					<div className="skills-container">
 						<ButtonContainer>
 							{SKILL_OPTIONS.map((skill: any) => (
