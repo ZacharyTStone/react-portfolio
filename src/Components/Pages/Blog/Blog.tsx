@@ -4,7 +4,7 @@ import { AnimationOnScroll } from "react-animation-on-scroll";
 import { useTranslation } from "react-i18next";
 import { useMediaQuery } from "react-responsive";
 import styled from "styled-components";
-import { BLOG_CONTENT } from "../../../utils/constants";
+import { BLOG_CONTENT, MOBILE_BREAKPOINT } from "../../../utils/constants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -16,7 +16,7 @@ const Blog: React.FC = () => {
 	const { i18n } = useTranslation();
 	const [activeSlide, setActiveSlide] = useState<number>(0);
 
-	const isMobile: boolean = useMediaQuery({ query: "(max-width: 768px)" });
+	const isMobile: boolean = useMediaQuery({ query: MOBILE_BREAKPOINT });
 
 	let content: any = BLOG_CONTENT;
 
@@ -71,8 +71,6 @@ const Blog: React.FC = () => {
 	);
 };
 
-
-
 const Main = styled.div<{ isMobile: boolean }>`
 	background-color: transparent;
 	padding-bottom: 50px;
@@ -109,8 +107,6 @@ const Main = styled.div<{ isMobile: boolean }>`
 			margin: 60px auto;
 			padding-bottom: 60px;
 		}
-
-		
 	}
 
 	#Blog {

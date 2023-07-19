@@ -70,6 +70,7 @@ const AboutDiv = styled.div`
 	@media (max-width: 1000px) {
 		width: 90%;
 		padding: 10px;
+	}
 `;
 
 const AboutInner = styled.div`
@@ -85,8 +86,6 @@ const AboutInner = styled.div`
 		padding: 10px;
 	}
 `;
-
-
 
 const AnimatedDescriptionWrapper = styled(AnimationOnScroll)`
 	padding-bottom: 1rem;

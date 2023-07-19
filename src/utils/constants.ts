@@ -288,4 +288,23 @@ export const PROJECTS = {
 	},
 };
 
-export 	const OVERLAY_COLORS: string[] = ["#3CCF48", "#3FD977", "#43C396", "#3FD9CE"];
+export const OVERLAY_COLORS: string[] = [
+	"#3CCF48",
+	"#3FD977",
+	"#43C396",
+	"#3FD9CE",
+];
+
+export const MOBILE_BREAKPOINT: string = "(max-width: 600px)";
+export const LARGE_MOBILE_BREAKPOINT: string = "(max-width: 800px)";
+export const TABLET_BREAKPOINT: string = "(max-width: 1000px)";
+export const DESKTOP_BREAKPOINT: string = "(max-width: 1200px)";
+export const LARGE_DESKTOP_BREAKPOINT: string = "(max-width: 1400px)";
+export const EXTRA_LARGE_DESKTOP_BREAKPOINT: string = "(max-width: 1600px)";
+
+export const MOBILE = 600;
+export const LARGE_MOBILE = 800;
+export const TABLET = 1000;
+export const DESKTOP = 1200;
+export const LARGE_DESKTOP = 1400;
+export const EXTRA_LARGE_DESKTOP = 1600;

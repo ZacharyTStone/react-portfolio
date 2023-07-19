@@ -1,10 +1,10 @@
-import * as React from "react";
+import React, { useState } from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import { IconContext } from "react-icons";
 import { GithubContributions } from "react-github-graph";
 import Dot from "../../images/ring-pointer.png";
-import {Title} from "../UI/StyledComponents";
+import { Title } from "../UI/StyledComponents";
 
 import { FaReact, FaBootstrap, FaNodeJs } from "react-icons/fa";
 import {
@@ -36,17 +36,35 @@ import { BsUiChecks } from "react-icons/bs";
 import { IoMdPaper } from "react-icons/io";
 import { DiHeroku, DiCss3Full } from "react-icons/di";
 
+// probably should be an object
+interface Skill {
+	0: JSX.Element;
+	1: string;
+	2: string;
+}
+
+// enum for the skill types
+
+type SkillType =
+	| "frontendFrameworks"
+	| "frontendTools"
+	| "backend"
+	| "server"
+	| "other";
+
 const Skills = () => {
 	const { t } = useTranslation();
 
-	const FRAMEWORKS = [
+	// we have these here not in the constants file because of the icons
+
+	const FRAMEWORKS: Skill[] = [
 		[<FaReact />, "React (CRA)", "https://reactjs.org/"],
 		[<RiGatsbyFill />, "Gatsby", "https://www.gatsbyjs.org/"],
 		[<RiVuejsFill />, "Vue", "https://vuejs.org/"],
 		[<TbBrandNextjs />, "Next.js", "https://nextjs.org/"],
 	];
 
-	const TOOLS = [
+	const TOOLS: Skill[] = [
 		[
 			<AiFillHtml5 />,
 			"HTML",
@@ -78,7 +96,7 @@ const Skills = () => {
 		[<SiRedux />, "Redux", "https://redux.js.org/"],
 	];
 
-	const Backend = [
+	const Backend: Skill[] = [
 		[<FaNodeJs />, "Node", "https://nodejs.org/en/"],
 		[<AiOutlineApi />, "REST", "https://restfulapi.net/"],
 		[<GrGraphQl />, "GraphQL", "https://graphql.org/"],
@@ -87,20 +105,20 @@ const Skills = () => {
 		[<SiHasura />, "Hasura", "https://hasura.io/"],
 	];
 
-	const Server = [
+	const Server: Skill[] = [
 		[<DiHeroku />, "Heroku", "https://www.heroku.com/"],
 		[<SiNetlify />, "Netlify", "https://www.netlify.com/"],
 		[<SiVercel />, "Vercel", "https://vercel.com/"],
 	];
 
-	const Other = [
+	const Other: Skill[] = [
 		[<SiJira />, "Jira", "https://www.atlassian.com/software/jira"],
 		[<AiFillGithub />, "Github", "https ://github.com/"],
 		[<SiTwilio />, "Twilio", "https://www.twilio.com/"],
 		[<TbCloudDataConnection />, "Ably Web Sockets", "https://www.ably.io/"],
 		[<AiFillWechat />, "Chat GPT", "https://chat.openai.com/chat"],
 	];
-	const SKILL_OPTIONS = [
+	const SKILL_OPTIONS: SkillType[] = [
 		"frontendFrameworks",
 		"frontendTools",
 		"backend",
@@ -108,9 +126,8 @@ const Skills = () => {
 		"other",
 	];
 
-	const [selectedSkill, setSelectedSkill] = React.useState(
-		"frontendFrameworks"
-	);
+	const [selectedSkill, setSelectedSkill] =
+		useState<SkillType>("frontendTools");
 
 	return (
 		<>
@@ -141,22 +158,21 @@ const Skills = () => {
 								alignItems: "center",
 							}}
 						>
-							
-								<a
-									href="https://docs.google.com/document/d/1r5U9UF6FJc0zr_L98dpIwj9Xe0-0CtoVfoux4nxD-g8/edit?usp=sharing"
-									target="_blank"
-									id="resume-link"
-									rel="noopener noreferrer"
-									style={{
-										color: "var(--primary-color)",
-										textDecoration: "none",
-										marginTop: "20px",
-										marginBottom: "20px",
-										marginRight: "20px",
-										display: "flex",
-									}}
-								>
-										<div style={{ display: "flex", alignItems: "center" }}>
+							<a
+								href="https://docs.google.com/document/d/1r5U9UF6FJc0zr_L98dpIwj9Xe0-0CtoVfoux4nxD-g8/edit?usp=sharing"
+								target="_blank"
+								id="resume-link"
+								rel="noopener noreferrer"
+								style={{
+									color: "var(--primary-color)",
+									textDecoration: "none",
+									marginTop: "20px",
+									marginBottom: "20px",
+									marginRight: "20px",
+									display: "flex",
+								}}
+							>
+								<div style={{ display: "flex", alignItems: "center" }}>
 									<IoMdPaper size={"1.5rem"} color="var(--secondary-color)" />
 									<span
 										className="about-description resume-link-text"
@@ -167,8 +183,8 @@ const Skills = () => {
 									>
 										{t("skills.resume")}
 									</span>
-									</div>
-								</a>
+								</div>
+							</a>
 							<>
 								<a
 									href="https://docs.google.com/document/d/1SFRXMNP7yeWrZRcPUAJX-_R28WVdn3w3V7w7fxJnn0w/edit?usp=sharing"
@@ -184,17 +200,17 @@ const Skills = () => {
 										display: "flex",
 									}}
 								>
-										<div style={{ display: "flex", alignItems: "center" }}>
-									<IoMdPaper size={"1.5rem"} color="var(--secondary-color)" />
-									<span
-										className="about-description resume-link-text"
-										style={{
-											marginLeft: "10px",
-											color: "var(--off-white)",
-										}}
-									>
-										{t("skills.japaneseResume")}
-									</span>
+									<div style={{ display: "flex", alignItems: "center" }}>
+										<IoMdPaper size={"1.5rem"} color="var(--secondary-color)" />
+										<span
+											className="about-description resume-link-text"
+											style={{
+												marginLeft: "10px",
+												color: "var(--off-white)",
+											}}
+										>
+											{t("skills.japaneseResume")}
+										</span>
 									</div>
 								</a>
 							</>
@@ -212,17 +228,20 @@ const Skills = () => {
 										display: "flex",
 									}}
 								>
-										<div style={{ display: "flex", alignItems: "center" }}>
-									<BsUiChecks color="var(--secondary-color)" size={"1.5rem"} />
-									<span
-										className="about-description resume-link-text"
-										style={{
-											marginLeft: "0.5rem",
-											color: "var(--off-white)",
-										}}
-									>
-										{t("skills.certifications")}
-									</span>
+									<div style={{ display: "flex", alignItems: "center" }}>
+										<BsUiChecks
+											color="var(--secondary-color)"
+											size={"1.5rem"}
+										/>
+										<span
+											className="about-description resume-link-text"
+											style={{
+												marginLeft: "0.5rem",
+												color: "var(--off-white)",
+											}}
+										>
+											{t("skills.certifications")}
+										</span>
 									</div>
 								</a>
 							</>
@@ -232,24 +251,28 @@ const Skills = () => {
 						<GithubContributions username="ZacharyTStone" />
 					</div> */}
 					<GithubStats>
-						<Title style={{
-							marginBottom: "0px",
-							background: "transparent",
-							fontSize: "2rem",
-						}}>
+						<Title
+							style={{
+								marginBottom: "0px",
+								background: "transparent",
+								fontSize: "2rem",
+							}}
+						>
 							{t("skills.githubStats")}
 						</Title>
-					<img  src="https://github-readme-streak-stats.herokuapp.com/?user=ZacharyTStone&" alt="zachinjapan" className="github-stats-img"  
-					 style={{
-						width: "100% !important",
-						minWidth: "100% !important",
-						maxWidth: "100% !important",
-						
-						// contain img
-						objectFit: "contain",
-						
-					 }}
-					/>
+						<img
+							src="https://github-readme-streak-stats.herokuapp.com/?user=ZacharyTStone&"
+							alt="zachinjapan"
+							className="github-stats-img"
+							style={{
+								width: "100% !important",
+								minWidth: "100% !important",
+								maxWidth: "100% !important",
+
+								// contain img
+								objectFit: "contain",
+							}}
+						/>
 					</GithubStats>
 					<div className="skills-container">
 						<ButtonContainer>
@@ -392,43 +415,39 @@ const GithubStats = styled.div`
 	margin-top: 20px;
 	margin-bottom: 40px;
 
-
 	.github-stats-img {
-      width : "100%" !important;
-	  height: "auto";
+		width: "100%" !important;
+		height: "auto";
 
-	  // semi transparent
-	  opacity: 0.6;
+		// semi transparent
+		opacity: 0.6;
 	}
 `;
 
-
-
 const SkillIconsDiv = styled.div`
-  min-height: 240px;
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 10px;
-  width: 100%;
+	min-height: 240px;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	grid-gap: 10px;
+	width: 100%;
 
-  @media (max-width: 1500px) {
-    grid-gap: 5px;
-    grid-template-columns: repeat(4, 1fr);
-  }
+	@media (max-width: 1500px) {
+		grid-gap: 5px;
+		grid-template-columns: repeat(4, 1fr);
+	}
 
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
+	@media (max-width: 1200px) {
+		grid-template-columns: repeat(3, 1fr);
+	}
 
-  @media (max-width: 900px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+	@media (max-width: 900px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
 
-  @media (max-width: 600px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
+	@media (max-width: 600px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
 `;
-
 
 // tablet do repeat of 4
 
@@ -446,8 +465,6 @@ const ButtonContainer = styled.div`
 		grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
 	}
 `;
-
-
 
 const SkillTypeButton = styled.button`
 	border: 2px solid var(--secondary-color);
@@ -525,8 +542,6 @@ const SkillsDiv = styled.div`
 		margin-bottom: 10px;
 		justify-content: center;
 	}
-
-
 
 	.skill-icon {
 		display: flex;
