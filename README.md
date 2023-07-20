@@ -1,13 +1,13 @@
 </br>
 <p align="center">
-    <img src="https://img.shields.io/github/languages/count/zachinjapan/react-portfolio?style=plastic" alt="Languages" />
-    <img src="https://img.shields.io/github/languages/top/zachinjapan/react-portfolio?style=plastic&labelColor=yellow" alt="Top Language" />
-    <img src="https://img.shields.io/github/languages/code-size/zachinjapan/react-portfolio?style=plastic" alt="Code Size" />
-    <img src="https://img.shields.io/github/repo-size/zachinjapan/react-portfolio?style=plastic" alt="Repo Size" />   
-    <img src="https://img.shields.io/tokei/lines/github/zachinjapan/react-portfolio?style=plastic" alt="Total Lines" />
-    <img src="https://img.shields.io/github/last-commit/zachinjapan/react-portfolio?style=plastic" alt="Last Commit" />  
-    <img src="https://img.shields.io/github/issues/zachinjapan/react-portfolio?style=plastic" alt="Issues" />  
-    <img src="https://img.shields.io/github/followers/zachinjapan?style=social" alt="Followers" />  
+    <img src="https://img.shields.io/github/languages/count/ZacharyTStone/react-portfolio?style=plastic" alt="Languages" />
+    <img src="https://img.shields.io/github/languages/top/ZacharyTStone/react-portfolio?style=plastic&labelColor=yellow" alt="Top Language" />
+    <img src="https://img.shields.io/github/languages/code-size/ZacharyTStone/react-portfolio?style=plastic" alt="Code Size" />
+    <img src="https://img.shields.io/github/repo-size/ZacharyTStone/react-portfolio?style=plastic" alt="Repo Size" />   
+    <img src="https://img.shields.io/tokei/lines/github/ZacharyTStone/react-portfolio?style=plastic" alt="Total Lines" />
+    <img src="https://img.shields.io/github/last-commit/ZacharyTStone/react-portfolio?style=plastic" alt="Last Commit" />  
+    <img src="https://img.shields.io/github/issues/ZacharyTStone/react-portfolio?style=plastic" alt="Issues" />  
+    <img src="https://img.shields.io/github/followers/ZacharyTStone?style=social" alt="Followers" />  
 </p>
 
 # Portfolio
@@ -40,7 +40,7 @@ I do minor updates when I can, often with my morning coffee. ☕
 ## Links
 
 - GH-Pages demo site link: (https://zstone.dev)
-- Github Repository URL: (https://github.com/zachinjapan/react-portfolio)
+- Github Repository URL: (https://github.com/ZacharyTStone/react-portfolio)
 
 ## Technologies Used
 
@@ -62,7 +62,7 @@ Fork, request, or contact me.
 
 ## Questions
 
-[![GitHub](https://img.shields.io/badge/My%20GitHub-Click%20Me!-blueviolet?style=plastic&logo=GitHub)](https://github.com/zachinjapan)
+[![GitHub](https://img.shields.io/badge/My%20GitHub-Click%20Me!-blueviolet?style=plastic&logo=GitHub)](https://github.com/ZacharyTStone)
 [![LinkedIn](https://img.shields.io/badge/My%20LinkedIn-Click%20Me!-grey?style=plastic&logo=LinkedIn&labelColor=blue)](https://www.linkedin.com/in/zach-stone-45b649211/)
 
 このプロジェクトに関するご質問は、Zach.Stone.Developer@gmail.com までお気軽にご連絡ください。
