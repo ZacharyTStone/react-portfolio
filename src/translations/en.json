@@ -31,14 +31,15 @@
 			"certifications": "Certifications",
 			"frontendFrameworks": "Frontend Frameworks",
 			"frontendTools": "Frontend Tools",
-			"backend" : "Backend",
+			"backend": "Backend",
 			"server": "Server",
 			"other": "Other",
 			"githubStats": "GitHub Stats"
 		},
 		"footer": {
 			"thanks": "Thanks for visiting!",
-			"contact": "Let's connect!"
+			"contact": "Let's connect!",
+			"tech": "Source Code"
 		},
 		"intro": {
 			"enableAudio": "Click the checkbox to enable audio",
