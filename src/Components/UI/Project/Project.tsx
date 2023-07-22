@@ -31,6 +31,7 @@ const customStyles = {
 		border: "solid 5px var(--secondary-color)",
 		borderRadius: "10px",
 		maxWidth: "90vw",
+		maxHeight: "90vh",
 		background: "transparent",
 		padding: "10px",
 	},

@@ -19,6 +19,8 @@ const Projects = () => {
 				<Title
 					style={{
 						zIndex: 0,
+						background: "transparent",
+						backdropFilter: "none",
 					}}
 				>
 					{content.mainTitle}
@@ -38,7 +40,7 @@ const Main = styled.div`
 	width: 100%;
 	user-select: none;
 
-	// background: transparent;
+	background-color: transparent;
 	display: flex;
 	flex-direction: column;
 	align-items: center;

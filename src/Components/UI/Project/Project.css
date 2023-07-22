@@ -27,9 +27,7 @@
 	height: 250px;
 	cursor: url("../../../images/ring-pointer.png"), 4 4, pointer !important;
 }
-.card-content {
-    max-height: 90vh;
-}
+
 .card-title-div {
 	position: absolute;
 	top: -40px;
@@ -99,6 +97,14 @@
 	margin-bottom: -25px;
 }
 
+.icon-div {
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+
 
 @media (min-width: 1301px) {
 	#MUI-Card {
@@ -132,13 +138,6 @@
 
 	.project-description {
 		font-size: 1.25rem;
-	}
-
-	.icon-div {
-		width: 100%;
-		display: flex;
-		flex-direction: row;
-		justify-content: space-evenly;
 	}
 
 	.card-content-text {

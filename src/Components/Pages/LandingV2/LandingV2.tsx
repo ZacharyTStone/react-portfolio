@@ -11,7 +11,7 @@ const LandingV2 = () => {
   const { t, i18n } = useTranslation();
 
   return (
-    <Landing className="animate__fadeIn animate__fadeOut">
+    <Landing>
       <MUINav />
       <ContentWrapper className="content">
         <LandingTile>
@@ -74,7 +74,6 @@ const Word = styled.p`
   font-weight: 400;
   margin: 0rem;
   text-transform: uppercase;
-  transition: opacity 250ms ease;
   opacity: 0.7;
   text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white, 1px 1px 0 var(--off-white);
   color: black;

@@ -90,7 +90,7 @@ function App(): JSX.Element {
 // we do this so that the app can load while the user is accepting the app and viewing the loading animation
 const Main = styled.div<{ showApp: boolean }>`
 	opacity: 0;
-	transition: opacity 0.5s linear;
+	transition: opacity 0.3s ease;
 
 	${({ showApp }) =>
 		showApp &&
