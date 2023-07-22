@@ -27,7 +27,9 @@
 	height: 250px;
 	cursor: url("../../../images/ring-pointer.png"), 4 4, pointer !important;
 }
-
+.card-content {
+    max-height: 90vh;
+}
 .card-title-div {
 	position: absolute;
 	top: -40px;
@@ -96,6 +98,7 @@
 	font-size: 3rem;
 	margin-bottom: -25px;
 }
+
 
 @media (min-width: 1301px) {
 	#MUI-Card {
