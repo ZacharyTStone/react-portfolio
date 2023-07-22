@@ -17,7 +17,7 @@
 		"about": {
 			"title": "About Me",
 			"description1": "I'm a software engineer with professional experience in front-end web development.",
-			"description2": "My primary skill set includes React.js, Node.js, TypeScript, and GraphQL. I also have experience with other technologies like Vue and Gatsby JS.",
+			"description2": "My primary skill set includes React JS, Node JS, TypeScript, REST and GraphQL.",
 			"description3a": "I'm currently working as a front-end software engineer at ",
 			"description3b": ".",
 			"currentCompany": "Rapptr Labs",
