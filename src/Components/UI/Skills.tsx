@@ -159,7 +159,7 @@ const Skills = () => {
 							}}
 						>
 							<a
-								href="https://docs.google.com/document/d/1r5U9UF6FJc0zr_L98dpIwj9Xe0-0CtoVfoux4nxD-g8/edit?usp=sharing"
+								href="https://drive.google.com/file/d/1WrIeOGQ86a2U0DSC8ay4g1NtUr9Ieygs/view?usp=sharing"
 								target="_blank"
 								id="resume-link"
 								rel="noopener noreferrer"
