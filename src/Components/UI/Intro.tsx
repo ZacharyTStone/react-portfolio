@@ -31,7 +31,9 @@ const Intro = () => {
             onChange={handleAudioChange}
           />
         </CenteredDiv>
+        <CenteredDiv>
         <Button onClick={handleAcceptApp}>{t("intro.accept")}</Button>
+        </CenteredDiv>
       </Content>
     </Container>
   );
@@ -52,7 +54,7 @@ const Content = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
 `;
 
 const StyledInput = styled.input`
@@ -128,8 +130,6 @@ const IntroTitle = styled(motion.h1)`
   transition: opacity 250ms ease;
   opacity: 0.5;
   color: black;
-  overflow-wrap: break-word;
-  word-break: break-word;
   max-width: 100%;
   text-align: center;
 `;
@@ -144,6 +144,7 @@ const SubTitle = styled(motion.h5)`
   overflow-wrap: break-word;
   word-break: break-word;
   max-width: 100%;
+  text-wrap: wrap !important;
 `;
 
 const Container = styled(motion.div)`
@@ -158,7 +159,7 @@ const Container = styled(motion.div)`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  gap: 16px;
+  gap: 32px;
   background-color: var(--black);
 
   .word {
