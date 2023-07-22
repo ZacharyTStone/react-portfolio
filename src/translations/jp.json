@@ -32,14 +32,15 @@
 			"certifications": "資格",
 			"frontendFrameworks": "フロントエンドフレームワーク",
 			"frontendTools": "フロントエンドツール",
-			"backend" : "バックエンド",
+			"backend": "バックエンド",
 			"server": "サーバー",
 			"other": "その他",
 			"githubStats": "GitHubの統計"
 		},
 		"footer": {
 			"thanks": "ウェブサイトをご覧いただきありがとうございます。",
-			"contact": "ぜひ繋がりましょう！"
+			"contact": "ぜひ繋がりましょう！",
+			"tech": "ソースコード"
 		},
 		"intro": {
 			"enableAudio": "オーディオを有効にするにはチェックボックスをクリックしてください",

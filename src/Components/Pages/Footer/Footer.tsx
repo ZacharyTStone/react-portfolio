@@ -4,6 +4,7 @@ import styled from "styled-components";
 import { useMediaQuery } from "react-responsive";
 import { useTranslation } from "react-i18next";
 import SocialLinksHorizontal from "../../UI/SocialLinksHorizontal";
+import { AiFillGithub } from "react-icons/ai";
 
 const Footer = () => {
 	const { t } = useTranslation();
@@ -19,19 +20,39 @@ const Footer = () => {
 						</MobileContainer>
 					) : (
 						<DesktopContainer>
-							<BsArrowLeft
-								color="var(--secondary-color)"
-								size="1.5rem"
-								style={{ marginRight: "16px" }}
-							/>
-							<span>
-								{t("footer.thanks")}
-								<span
-									style={{ color: "var(--secondary-color)", marginLeft: "8px" }}
-								>
-									{t("footer.contact")}
+							<TextDiv>
+								<BsArrowLeft
+									color="var(--secondary-color)"
+									size="1.5rem"
+									style={{ marginRight: "16px" }}
+								/>
+								<span>
+									{t("footer.thanks")}
+									<span
+										style={{
+											color: "var(--secondary-color)",
+											marginLeft: "8px",
+										}}
+									>
+										{t("footer.contact")}
+									</span>
 								</span>
-							</span>
+							</TextDiv>
+							<TextDiv>
+								<span>{t("footer.tech")}</span>
+								<a
+									href="https://github.com/ZacharyTStone/react-portfolio"
+									target="_blank"
+									rel="noreferrer"
+								>
+									<AiFillGithub
+										size="30px"
+										style={{
+											marginTop: "8px",
+										}}
+									/>
+								</a>
+							</TextDiv>
 						</DesktopContainer>
 					)}
 				</FooterText>
@@ -70,6 +91,16 @@ const FooterText = styled.div<{ isTabletOrMobile: boolean }>`
 	padding: ${(props) => (props.isTabletOrMobile ? "10px" : "none")};
 `;
 
+const TextDiv = styled.div`
+	display: flex;
+	align-items: center;
+	background-color: rgba(0, 0, 0, 0.2);
+	backdrop-filter: blur(10px);
+	border-radius: 10px;
+	padding: 10px;
+	gap: 8px;
+`;
+
 const MobileContainer = styled.div`
 	background-color: rgba(0, 0, 0, 0.2);
 	backdrop-filter: blur(10px);
@@ -84,12 +115,10 @@ const MobileContainer = styled.div`
 const DesktopContainer = styled.div`
 	margin-left: 74px;
 	display: flex;
-	align-items: center;
-	background-color: rgba(0, 0, 0, 0.2);
-	backdrop-filter: blur(10px);
-	border-radius: 10px;
+	transform: translateY(8px);
+	width: 100%;
 	padding: 10px;
-	transform: translateY(-11px);
+	justify-content: space-between;
 `;
 
 export default Footer;
