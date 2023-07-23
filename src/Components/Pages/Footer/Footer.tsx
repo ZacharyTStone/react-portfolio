@@ -44,6 +44,10 @@ const Footer = () => {
 									href="https://github.com/ZacharyTStone/react-portfolio"
 									target="_blank"
 									rel="noreferrer"
+									style={{
+										textDecoration: "none",
+										color: "var(--secondary-color)",
+									}}
 								>
 									<AiFillGithub
 										size="30px"

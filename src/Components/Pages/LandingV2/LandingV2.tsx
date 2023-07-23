@@ -69,7 +69,7 @@ const Line = styled.div`
 `;
 
 const Word = styled.p`
-  font-size: clamp(1.8rem, 5vw, 5rem);
+  font-size: clamp(1.8rem, 4vw, 5rem);
   font-family: "Rubik", sans-serif;
   font-weight: 400;
   margin: 0rem;
