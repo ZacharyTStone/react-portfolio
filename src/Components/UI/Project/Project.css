@@ -25,7 +25,7 @@
 #card-media {
 	width: 100%;
 	height: 250px;
-	cursor: url("../../../images/ring-pointer.png"), 4 4, pointer !important;
+	cursor: url("../../../images/ring-pointer-green.png"), 4 4, pointer !important;
 }
 
 .card-title-div {
@@ -84,7 +84,7 @@
 	}
 
 	#card-media:hover {
-		cursor: url("../../../images/ring-pointer.png"), 4 4, pointer !important;
+		cursor: url("../../../images/ring-pointer-green.png"), 4 4, pointer !important;
 	}
 
 	.card-content-text {
@@ -104,8 +104,6 @@
 	justify-content: space-evenly;
 }
 
-
-
 @media (min-width: 1301px) {
 	#MUI-Card {
 		margin-left: 0px !important;
@@ -122,7 +120,7 @@
 		width: 100%;
 		height: 525px;
 		image-rendering: pixelated;
-		cursor: url("../../../images/ring-pointer.png"), 4 4, pointer !important;
+		cursor: url("../../../images/ring-pointer-green.png"), 4 4, pointer !important;
 	}
 
 	.card-title {
@@ -163,7 +161,7 @@
 		#card-media {
 			width: 1000px !important;
 			max-width: 100% !important;
-			cursor: url("../../../images/ring-pointer.png"), 4 4, pointer !important;
+			cursor: url("../../../images/ring-pointer-green.png"), 4 4, pointer !important;
 		}
 	}
 }

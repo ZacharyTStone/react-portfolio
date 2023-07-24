@@ -74,7 +74,7 @@ const AboutDiv = styled.div`
 `;
 
 const AboutInner = styled.div`
-	width: 50%;
+	width: 40vw;
 	backdrop-filter: blur(5px) !important;
 	-webkit-backdrop-filter: blur(10px) !important;
 	padding: 30px;
