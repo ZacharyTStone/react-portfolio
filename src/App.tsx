@@ -43,7 +43,7 @@ function App(): JSX.Element {
 
 	// this is esitimated time for the loading animation to finish
 	// could be improved by using a callback from the animation but this is good enough for now
-	const loadingAnimationTime = 4750;
+	const loadingAnimationTime = 5000;
 
 	// Show app loading animation after accepting app
 	useEffect(() => {
