@@ -159,7 +159,7 @@ const ThreeComponent = React.memo(() => {
 		};
 	}, [init]);
 
-	return <div ref={containerRef} />;
+	return <div ref={containerRef} className="fade-in-on-mount" />;
 });
 
 export default ThreeComponent;

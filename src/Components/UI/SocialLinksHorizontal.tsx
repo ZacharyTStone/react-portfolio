@@ -4,6 +4,21 @@ import { AiTwotoneMail } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import styled from "styled-components";
 
+const socialLinksData = [
+	{
+		href: "https://www.linkedin.com/in/ZacharyStone42",
+		icon: <BsLinkedin className="social-link-img" />,
+	},
+	{
+		href: "https://github.com/ZacharyTStone",
+		icon: <AiOutlineGithub className="social-link-img" />,
+	},
+	{
+		href: "mailto:Zach.Stone.Developer@gmail.com",
+		icon: <AiTwotoneMail className="social-link-img" />,
+	},
+];
+
 const SocialLinksHorizontal = () => {
 	return (
 		<IconContext.Provider
@@ -14,30 +29,11 @@ const SocialLinksHorizontal = () => {
 			}}
 		>
 			<Main className="social-links">
-				<a
-					href="https://www.linkedin.com/in/ZacharyStone42"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="social-link"
-				>
-					<BsLinkedin className="social-link-img" />
-				</a>
-				<a
-					href="https://github.com/ZacharyTStone"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="social-link"
-				>
-					<AiOutlineGithub className="social-link-img" />
-				</a>
-				<a
-					href="mailto:Zach.Stone.Developer@gmail.com"
-					target="_blank"
-					rel="noopener noreferrer"
-					className="social-link"
-				>
-					<AiTwotoneMail className="social-link-img" />
-				</a>
+				{socialLinksData.map((linkData, index) => (
+					<SocialLink key={index} href={linkData.href}>
+						{linkData.icon}
+					</SocialLink>
+				))}
 			</Main>
 		</IconContext.Provider>
 	);
@@ -57,11 +53,21 @@ const Main = styled.div`
 		}
 	}
 	@media (max-width: 600px) {
-		.social-links {
-			width: 100%;
+		width: 100%;
+	}
+`;
+
+const SocialLink = styled.a`
+	&.social-link {
+		color: var(--secondary-color);
+		text-decoration: none;
+		margin: 0;
+		padding: 0;
+
+		&:hover .social-link-img {
+			transform: scale(1.2);
 		}
 	}
-
-
 `;
+
 export default SocialLinksHorizontal;

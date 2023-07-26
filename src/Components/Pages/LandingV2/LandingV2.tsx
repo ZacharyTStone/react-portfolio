@@ -13,7 +13,7 @@ const LandingV2 = () => {
 	return (
 		<Landing>
 			<MUINav />
-			<ContentWrapper className="content">
+			<ContentWrapper className="content fade-in-on-mount">
 				<LandingTile>
 					<>
 						<Line>

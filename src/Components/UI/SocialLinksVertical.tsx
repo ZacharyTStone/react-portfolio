@@ -1,9 +1,27 @@
+import React from "react";
 import styled from "styled-components";
-
 import { BsLinkedin } from "react-icons/bs";
 import { AiOutlineGithub } from "react-icons/ai";
 import { AiTwotoneMail } from "react-icons/ai";
 import { IconContext } from "react-icons";
+
+const socialLinksData = [
+	{
+		href: "https://github.com/ZacharyTStone",
+		icon: <AiOutlineGithub className="social-link-img" />,
+		text: "Github",
+	},
+	{
+		href: "mailto:Zach.Stone.Developer@gmail.com",
+		icon: <AiTwotoneMail className="social-link-img" />,
+		text: "Email",
+	},
+	{
+		href: "https://www.linkedin.com/in/ZacharyStone42",
+		icon: <BsLinkedin className="social-link-img" />,
+		text: "LinkedIn",
+	},
+];
 
 const SocialLink = ({
 	href,
@@ -15,14 +33,14 @@ const SocialLink = ({
 	text: string;
 }) => {
 	return (
-		<div style={{ position: "relative" }} className="social-link">
+		<SocialLinkWrapper>
 			<a href={href} target="_blank" rel="noopener noreferrer">
 				{icon}
-				<div className="social-link-text">
-					<span className="social-link-text-span">{text}</span>
-				</div>
+				<SocialLinkText>
+					<span>{text}</span>
+				</SocialLinkText>
 			</a>
-		</div>
+		</SocialLinkWrapper>
 	);
 };
 
@@ -35,30 +53,18 @@ const SocialLinksVertical = () => {
 				size: "30px",
 			}}
 		>
-			<Wrapper>
+			<SocialLinksVerticalWrapper>
 				<div className="social-links-vertical animate__animated animate__fadeInLeft">
-					<SocialLink
-						href="https://github.com/ZacharyTStone"
-						icon={<AiOutlineGithub className="social-link-img" />}
-						text="Github"
-					/>
-					<SocialLink
-						href="mailto:Zach.Stone.Developer@gmail.com"
-						icon={<AiTwotoneMail className="social-link-img" />}
-						text="Email"
-					/>
-					<SocialLink
-						href="https://www.linkedin.com/in/ZacharyStone42"
-						icon={<BsLinkedin className="social-link-img" />}
-						text="LinkedIn"
-					/>
+					{socialLinksData.map(({ href, icon, text }, index) => (
+						<SocialLink key={index} href={href} icon={icon} text={text} />
+					))}
 				</div>
-			</Wrapper>
+			</SocialLinksVerticalWrapper>
 		</IconContext.Provider>
 	);
 };
 
-const Wrapper = styled.div`
+const SocialLinksVerticalWrapper = styled.div`
 	.social-links-vertical {
 		position: fixed;
 		left: 0;
@@ -71,49 +77,11 @@ const Wrapper = styled.div`
 		height: fit-content;
 		border-radius: 20px;
 		z-index: 100;
-	}
 
-	.social-links-vertical a {
-		padding: 10px;
-		color: var(--secondary-color);
-	}
-
-	.social-links-vertical .social-link-img:hover {
-		color: var(--secondary-color) !important;
-	}
-
-	.social-links-vertical a:hover .social-link-text {
-		color: var(--secondary-color) !important;
-	}
-
-	.social-link-text {
-		display: none;
-		position: absolute;
-		left: 50px;
-		bottom: 20px;
-		width: 75px;
-		height: 20px;
-		background-color: var(--black);
-		border-radius: 0 0 20px 20px;
-		color: var(--secondary-color);
-		font-size: 0.8rem;
-		text-align: center;
-		padding-top: 5px;
-	}
-
-	@media (max-width: 1000px) {
-		.social-link-text {
-			left: -10px;
-			bottom: -25px;
+		a {
+			padding: 10px;
+			color: var(--secondary-color);
 		}
-	}
-
-	.social-link {
-		font-size: 1.5rem;
-		text-decoration: none !important;
-		text-align: end;
-		color: var(--secondary-color) !important;
-		padding-bottom: 15px;
 	}
 
 	@media (max-width: 1200px) {
@@ -128,9 +96,42 @@ const Wrapper = styled.div`
 			margin-top: 20px;
 		}
 	}
+`;
 
-	.social-link-img:hover {
+const SocialLinkWrapper = styled.div`
+	position: relative;
+	font-size: 1.5rem;
+	text-decoration: none !important;
+	text-align: end;
+	color: var(--secondary-color) !important;
+	padding-bottom: 15px;
+
+	&:hover .social-link-img {
 		transform: scale(1.2);
+	}
+`;
+
+const SocialLinkText = styled.div`
+	display: none;
+	position: absolute;
+	left: 50px;
+	bottom: 20px;
+	width: 75px;
+	height: 20px;
+	background-color: var(--black);
+	border-radius: 0 0 20px 20px;
+	color: var(--secondary-color);
+	font-size: 0.8rem;
+	text-align: center;
+	padding-top: 5px;
+
+	${SocialLinkWrapper}:hover & {
+		color: var(--secondary-color) !important;
+	}
+
+	@media (max-width: 1000px) {
+		left: -10px;
+		bottom: -25px;
 	}
 `;
 

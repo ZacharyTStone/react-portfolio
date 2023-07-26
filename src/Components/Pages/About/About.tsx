@@ -104,8 +104,6 @@ const AboutLink = styled.a`
 	color: var(--secondary-color);
 `;
 
-const AnimatedSkills = styled(AnimationOnScroll)`
-	/* Styles for animated skills component, if necessary */
-`;
+const AnimatedSkills = styled(AnimationOnScroll)``;
 
 export default About;

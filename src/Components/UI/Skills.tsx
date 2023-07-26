@@ -247,33 +247,7 @@ const Skills = () => {
 							</>
 						</div>
 					</div>
-					{/* <div className="github">
-						<GithubContributions username="ZacharyTStone" />
-					</div> */}
-					{/* <GithubStats>
-						<Title
-							style={{
-								marginBottom: "0px",
-								background: "transparent",
-								fontSize: "2rem",
-							}}
-						>
-							{t("skills.githubStats")}
-						</Title>
-						<img
-							src="https://github-readme-streak-stats.herokuapp.com/?user=ZacharyTStone&"
-							alt="zachinjapan"
-							className="github-stats-img"
-							style={{
-								width: "100% !important",
-								minWidth: "100% !important",
-								maxWidth: "100% !important",
 
-								// contain img
-								objectFit: "contain",
-							}}
-						/>
-					</GithubStats> */}
 					<div className="skills-container">
 						<ButtonContainer>
 							{SKILL_OPTIONS.map((skill: any) => (

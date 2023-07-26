@@ -1,6 +1,5 @@
 import styled from "styled-components";
 
-
 export const Title = styled.h1`
 	margin-top: 0px;
 	margin-bottom: 75px;
@@ -18,5 +17,5 @@ export const Title = styled.h1`
 	-webkit-backdrop-filter: blur(10px);
 	border-radius: 10px;
 	padding: 20px;
-	text-wrap: balance;
+	word-wrap: balance;
 `;

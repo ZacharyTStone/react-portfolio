@@ -58,7 +58,7 @@ function App(): JSX.Element {
 
 	return (
 		<div className="App">
-			<div className={`${showApp && isMobile ? "mobile-background" : ""}`} />
+			{showApp && isMobile && <div className="mobile-background" />}
 			<ToastContainer />
 			{!acceptApp && <Intro />}
 			<>
@@ -90,13 +90,14 @@ function App(): JSX.Element {
 // we do this so that the app can load while the user is accepting the app and viewing the loading animation
 const Main = styled.div<{ showApp: boolean }>`
 	opacity: 0;
-	transition: opacity 0.3s ease;
+	transition: opacity 2s ease-in-out;
 
 	${({ showApp }) =>
 		showApp &&
 		`
     opacity: 1;
     visibility: visible;
+		
   `}
 `;
 
