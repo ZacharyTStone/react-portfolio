@@ -18,6 +18,8 @@ export default function Index() {
 		getRandomColor(baseColor)
 	);
 
+	const containerAnimation = useAnimation(); // New animation state
+
 	useEffect(() => {
 		const divSequence = async (number: number) => {
 			const currentAnimation = divAnimations[number - 1];
@@ -89,20 +91,28 @@ export default function Index() {
 			});
 		};
 
-		divSequence(1);
-		divSequence(2);
-		divSequence(3);
-		divSequence(4);
+		const startAnimations = async () => {
+			await Promise.all(
+				divAnimations.map((_, index) => divSequence(index + 1))
+			);
+
+			// Animation 7: Fade Out Animation
+			await containerAnimation.start({
+				opacity: 0,
+				transition: { duration: 0.5 },
+			});
+		};
+
+		startAnimations();
 	}, []);
 
 	useLockScroll();
 
 	return (
-		<Container className="fade-in-on-mount">
+		<Container className="fade-in-on-mount" animate={containerAnimation}>
 			<OverlaySvg
 				xmlns="http://www.w3.org/2000/svg"
 				// should be a rectangle
-
 				width="100%"
 				height="100%"
 				viewBox="0 0 100 100"
@@ -149,21 +159,21 @@ export default function Index() {
 	);
 }
 
-export const Container = styled(motion.div)`
+export const Container = styled(motion.div)<{ animate?: any }>`
 	z-index: 999;
 	position: fixed;
 	bottom: 0;
 	left: 0;
-
 	width: 100vw;
 	height: 100vh;
-	width: 100svw;
-	height: 100svh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
 	background-color: "var(--secondary-color)";
+
+	/* Add animate prop to control opacity */
+	opacity: ${(props) => props?.animate?.opacity ?? 1};
 `;
 
 const OverlaySvg = styled.svg`
@@ -180,6 +190,7 @@ const OverlayLine = styled(motion.path)`
 	stroke-width: 2;
 	fill: none;
 `;
+
 export const LogoContainer = styled(motion.div)`
 	position: absolute;
 	display: flex;

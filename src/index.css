@@ -21,7 +21,6 @@ body {
 	cursor: url("./images/cursor-ring.png") 4 4, default !important;
 }
 
-
 h1,
 h2,
 h3,
@@ -38,9 +37,8 @@ h2,
 h3,
 h4,
 h5,
-h6
-{
-text-wrap: balance;
+h6 {
+	text-wrap: balance;
 }
 
 iframe,
@@ -54,12 +52,9 @@ svg:hover {
 	color: var(--secondary-color) !important;
 }
 
-
 html {
 	scroll-behavior: smooth !important;
 }
-
-
 
 .fade-in-on-mount {
 	animation: fadeIn ease 1.5s;
@@ -67,4 +62,12 @@ html {
 	-moz-animation: fadeIn ease 1.5s;
 	-o-animation: fadeIn ease 1.5s;
 	-ms-animation: fadeIn ease 1.5s;
+}
+
+.fade-out-on-unmount {
+	animation: fadeOut ease 1.5s;
+	-webkit-animation: fadeOut ease 1.5s;
+	-moz-animation: fadeOut ease 1.5s;
+	-o-animation: fadeOut ease 1.5s;
+	-ms-animation: fadeOut ease 1.5s;
 }
