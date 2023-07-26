@@ -29,43 +29,41 @@ export default function Index() {
 			await currentAnimation.start({ scale: 2 });
 			await currentAnimation.start({ scale: 1 });
 
-			// Animation 2: Random Move Animation 1
-			await currentAnimation.start({
-				x: (Math.random() * 50 - 60) * (Math.random() > 0.5 ? 1 : -1),
-				y: (Math.random() * 100 - 50) * (Math.random() > 0.5 ? 1 : -1),
-				transition: {
-					duration: 0.75,
-					ease: "easeInOut",
-				},
-			});
+			// // Animation 2: Random Move Animation 1
+			// await currentAnimation.start({
+			// 	x: (Math.random() * 50 - 60) * (Math.random() > 0.5 ? 1 : -1),
+			// 	y: (Math.random() * 100 - 50) * (Math.random() > 0.5 ? 1 : -1),
+			// 	transition: {
+			// 		duration: 0.75,
+			// 		ease: "easeInOut",
+			// 	},
+			// });
 
-			// Animation 3: Random Move Animation 2
-			await currentAnimation.start({
-				x: (Math.random() * 50 - 60) * (Math.random() > 0.5 ? 1 : -1),
-				y: (Math.random() * 100 - 50) * (Math.random() > 0.5 ? 1 : -1),
-				transition: {
-					duration: 0.75,
-					ease: "easeInOut",
-				},
-			});
+			// // Animation 3: Random Move Animation 2
+			// await currentAnimation.start({
+			// 	x: (Math.random() * 50 - 60) * (Math.random() > 0.5 ? 1 : -1),
+			// 	y: (Math.random() * 100 - 50) * (Math.random() > 0.5 ? 1 : -1),
+			// 	transition: {
+			// 		duration: 0.75,
+			// 		ease: "easeInOut",
+			// 	},
+			// });
 
 			// Animation 4: Horizontal Move Animation
 			await currentAnimation.start({
 				x:
 					number === 1
-						? -14
+						? -75
 						: number === 2
-						? -6
+						? -25
 						: number === 3
-						? 0
+						? 25
 						: number === 4
-						? 6
-						: number === 5
-						? 14
+						? 75
 						: 0,
 				y: 0,
 				transition: {
-					duration: 0.5,
+					duration: 1,
 					ease: "easeInOut",
 				},
 			});
@@ -76,7 +74,7 @@ export default function Index() {
 				x: 0,
 				y: 0,
 				transition: {
-					duration: 0.5,
+					duration: 2,
 					ease: "easeInOut",
 				},
 			});
