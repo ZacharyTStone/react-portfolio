@@ -4,7 +4,8 @@ import ambient from "./ambient2.mp3";
 import { useAppContext } from "../context/appContext";
 
 const BackgroundAudio = () => {
-	const { useAudio } = useAppContext();
+	const { useAudio, showApp } = useAppContext();
+
 	const audioRef = useRef<HTMLAudioElement>(null);
 
 	useEffect(() => {
@@ -13,7 +14,7 @@ const BackgroundAudio = () => {
 		} else if (audioRef.current) {
 			audioRef.current.pause();
 		}
-	}, [useAudio]);
+	}, [useAudio, showApp]);
 
 	return (
 		<div>
