@@ -24,7 +24,9 @@ const LandingV2 = () => {
 							</Word>
 						</Line>
 						<Line>
-							<Word id="special-1">{t("landing.name")}</Word>
+							<Word className="glowing-text" id="special-1">
+								{t("landing.name")}
+							</Word>
 						</Line>
 						<Line>
 							<Word>{t("landing.description1")}</Word>
@@ -62,6 +64,7 @@ const ContentWrapper = styled.div`
 	#special-1 {
 		opacity: 1 !important;
 		color: var(--off-white) !important;
+		text-shadow: 0 0 20px rgba(255, 255, 255, 0.8) !important;
 	}
 `;
 

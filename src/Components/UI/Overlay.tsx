@@ -5,8 +5,10 @@ import { motion } from "framer-motion";
 import { useLockScroll } from "../../utils/hooks";
 import { getRandomColor } from "../../utils/misc";
 import { OVERLAY_COLORS } from "../../utils/constants";
+import { useAppContext } from "../../context/appContext";
 
 export default function Index() {
+	const { showApp, setShowApp } = useAppContext();
 	const divAnimations = [
 		useAnimation(),
 		useAnimation(),
@@ -80,13 +82,18 @@ export default function Index() {
 			});
 
 			// Animation 6: Shrink Animation
-			await currentAnimation.start({
-				scale: 0,
-				transition: {
-					duration: 0.7 + Math.random() * 0.3,
-					ease: "easeInOut",
-				},
-			});
+			// await currentAnimation.start({
+			// 	scale: 0,
+			// 	transition: {
+			// 		duration: 0.7 + Math.random() * 0.3,
+			// 		ease: "easeInOut",
+			// 	},
+			// });
+
+			setTimeout(() => {
+				// show app
+				setShowApp(true);
+			}, 1000);
 		};
 
 		const startAnimations = async () => {

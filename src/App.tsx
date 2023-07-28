@@ -41,21 +41,6 @@ function App(): JSX.Element {
 
 	const isMobile = useMediaQuery({ query: MOBILE_BREAKPOINT });
 
-	// this is esitimated time for the loading animation to finish
-	// could be improved by using a callback from the animation but this is good enough for now
-	const loadingAnimationTime = 5000;
-
-	// Show app loading animation after accepting app
-	useEffect(() => {
-		if (!acceptApp) {
-			return;
-		}
-
-		setTimeout(() => {
-			setShowApp(true);
-		}, loadingAnimationTime);
-	}, [acceptApp]);
-
 	return (
 		<div className="App">
 			{showApp && isMobile && <div className="mobile-background" />}
