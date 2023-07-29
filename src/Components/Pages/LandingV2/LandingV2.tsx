@@ -5,7 +5,7 @@ import SocialLinksVertical from "../../UI/SocialLinksVertical";
 import "animate.css";
 import { createGreeting } from "../../../utils/misc";
 import { AiOutlineDown } from "react-icons/ai";
-import { Link } from "react-scroll";
+
 const LandingV2 = () => {
 	const { t, i18n } = useTranslation();
 
