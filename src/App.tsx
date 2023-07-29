@@ -9,8 +9,7 @@ import { useAppContext } from "./context/appContext";
 import BackgroundAudio from "./audio/BackgroundAudio";
 import Intro from "./Components/UI/Intro";
 import AudioOnClick from "./audio/AudioOnClick";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
 import { MOBILE_BREAKPOINT } from "./utils/constants";
 
 // Lazy-loaded components to help initial load time
@@ -44,7 +43,7 @@ function App(): JSX.Element {
 	return (
 		<div className="App">
 			{showApp && isMobile && <div className="mobile-background" />}
-			<ToastContainer />
+
 			{!acceptApp && <Intro />}
 			<>
 				{acceptApp && !showApp && <Overlay />}

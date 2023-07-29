@@ -1,16 +1,13 @@
-import React from "react";
 import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import MUINav from "../../UI/Navbar/MUINav";
 import SocialLinksVertical from "../../UI/SocialLinksVertical";
 import "animate.css";
-import "react-toastify/dist/ReactToastify.css";
 import { createGreeting } from "../../../utils/misc";
 import { AiOutlineDown } from "react-icons/ai";
-import { useAppContext } from "../../../context/appContext";
+import { Link } from "react-scroll";
 const LandingV2 = () => {
 	const { t, i18n } = useTranslation();
-	const { showApp } = useAppContext();
 
 	return (
 		<Landing>
