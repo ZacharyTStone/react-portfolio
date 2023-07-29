@@ -41,7 +41,7 @@ const LandingV2 = () => {
 			<div
 				className="down-icon-container"
 				onClick={() => {
-					// scroll so #About is into view smoothly
+				
 					document
 						.querySelector("#About")
 						?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -117,7 +117,7 @@ const Line = styled.div`
 `;
 
 const Word = styled.p`
-	font-size: clamp(2rem, 8vw, 5rem);
+	font-size: clamp(2rem, 8vw, 5.5rem);
 	font-family: "Rubik", sans-serif;
 	font-weight: 400;
 	margin: 0rem;
@@ -139,9 +139,9 @@ const LandingTile = styled.h3`
 	margin: 50px;
 	font-size: 3rem;
 	padding-bottom: 61px;
-	background: rgba(0, 0, 0, 0.09);
-	backdrop-filter: blur(5px);
-	-webkit-backdrop-filter: blur(5px);
+	background: rgba(0, 0, 0, 0.06);
+	backdrop-filter: blur(2px);
+	-webkit-backdrop-filter: blur(2px);
 	border-radius: 20px;
 	padding: 20px;
 	width: fit-content;

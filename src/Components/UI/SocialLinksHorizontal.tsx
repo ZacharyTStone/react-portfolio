@@ -3,6 +3,7 @@ import { AiOutlineGithub } from "react-icons/ai";
 import { AiTwotoneMail } from "react-icons/ai";
 import { IconContext } from "react-icons";
 import styled from "styled-components";
+import { useAppContext } from "../../context/appContext";
 
 const socialLinksData = [
 	{
@@ -20,6 +21,7 @@ const socialLinksData = [
 ];
 
 const SocialLinksHorizontal = () => {
+	const { showApp } = useAppContext();
 	return (
 		<IconContext.Provider
 			value={{
@@ -28,7 +30,7 @@ const SocialLinksHorizontal = () => {
 				size: "40px",
 			}}
 		>
-			<Main className="social-links">
+			<Main className={`social-links ${showApp ? 'animate__animated animate__fadeInLeft' :''}`}>
 				{socialLinksData.map((linkData, index) => (
 					<SocialLink key={index} href={linkData.href}>
 						{linkData.icon}

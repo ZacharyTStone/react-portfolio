@@ -32,7 +32,7 @@ const ThreeComponent = React.memo(() => {
 	);
 
 	const starGeometry = useMemo(
-		() => new THREE.SphereGeometry(0.25, 24, 24),
+		() => new THREE.SphereGeometry(0.35, 34, 34),
 		[]
 	);
 
@@ -81,7 +81,7 @@ const ThreeComponent = React.memo(() => {
 
 			const [x, y, z] = Array(3)
 				.fill()
-				.map(() => THREE.MathUtils.randFloatSpread(250));
+				.map(() => THREE.MathUtils.randFloatSpread(300));
 
 			star.position.set(x, y, z);
 			scene.add(star);

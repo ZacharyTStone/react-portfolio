@@ -107,7 +107,6 @@ function Project({ project }: ProjectProps) {
 				contentLabel="Project Modal"
 			>
 				<ProjectModalContent
-					modalIsOpen={modalIsOpen}
 					project={project}
 					setIsOpen={setIsOpen}
 				/>

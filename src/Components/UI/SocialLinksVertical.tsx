@@ -4,6 +4,7 @@ import { BsLinkedin } from "react-icons/bs";
 import { AiOutlineGithub } from "react-icons/ai";
 import { AiTwotoneMail } from "react-icons/ai";
 import { IconContext } from "react-icons";
+import { useAppContext } from "../../context/appContext";
 
 const socialLinksData = [
 	{
@@ -45,6 +46,8 @@ const SocialLink = ({
 };
 
 const SocialLinksVertical = () => {
+
+	const {showApp} = useAppContext();
 	return (
 		<IconContext.Provider
 			value={{
@@ -54,7 +57,8 @@ const SocialLinksVertical = () => {
 			}}
 		>
 			<SocialLinksVerticalWrapper>
-				<div className="social-links-vertical animate__animated animate__fadeInLeft">
+				<div className={`social-links-vertical ${showApp ? 'animate__animated animate__fadeInLeft' :''}`}
+				>
 					{socialLinksData.map(({ href, icon, text }, index) => (
 						<SocialLink key={index} href={href} icon={icon} text={text} />
 					))}

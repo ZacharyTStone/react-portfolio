@@ -1,4 +1,4 @@
-import { Modal } from "@mui/material";
+
 import CardContent from "@mui/material/CardContent";
 import CardActions from "@mui/material/CardActions";
 import IconButton from "@mui/material/IconButton";
@@ -15,18 +15,38 @@ import { useAppContext } from "../../../../context/appContext";
 import { useState } from "react";
 import { Button } from "@mui/material";
 import { ProjectProps } from "../Project";
+import { AiOutlineLoading } from "react-icons/ai";
 
-interface CustomModalStyles {
-	overlay: React.CSSProperties;
-	content: React.CSSProperties;
+
+const LoadingSpinner = () => {
+
+
+
+	return (
+		<LoadingDiv>
+			<AiOutlineLoading
+				color="var(--secondary-color)"
+				size={50}
+				className="loading-icon"
+				// spin the loading icon
+				style={{
+					animation: "spin 2s linear infinite",
+				}}
+
+
+
+			/>
+		</LoadingDiv>
+	);
 }
 
+
 const ProjectModalContent = ({
-	modalIsOpen,
+
 	setIsOpen,
 	project,
 }: {
-	modalIsOpen: boolean;
+
 	setIsOpen: (isOpen: boolean) => void;
 	project: ProjectProps["project"];
 }) => {
@@ -37,7 +57,7 @@ const ProjectModalContent = ({
 	// not currently used but could be used to show a loading spinner
 	const [isLoading, setIsLoading] = useState(true);
 
-	const { useAudio, setAudioPreference } = useAppContext();
+	const { setAudioPreference } = useAppContext();
 
 	function closeModal() {
 		setIsOpen(false);
@@ -53,16 +73,30 @@ const ProjectModalContent = ({
 	}));
 	return (
 		<>
+		
 			<Card id="card-modal" style={{ backgroundColor: "transparent" }}>
+			
 				<div
 					className="card-content"
 					style={{
 						overflow: "auto",
 					}}
 				>
+					
 					{project.youtube ? (
-						<div>
-							{project.youtube && (
+						<div style={{
+							position: "relative",
+							width: "100%",
+							height: "100%"
+						}}>
+							{project.youtube && (	
+								<>
+								{isLoading &&	(
+								<LoadingDiv>
+									<LoadingSpinner />
+								</LoadingDiv>
+							)}
+								
 								<iframe
 									id="card-media"
 									width="100%"
@@ -72,14 +106,19 @@ const ProjectModalContent = ({
 									frameBorder="0"
 									allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
 									allowFullScreen
-									className="forced-ring-cursor"
+									className={`forced-ring-cursor ${isLoading ? "hidden" : ""}`}
 									style={{
 										cursor: "url(../../images/cursor-pointer.png), auto",
 										display: "block",
 									}}
 									onLoad={handleOnLoad}
+									
 								/>
+								</>
 							)}
+
+			
+							
 						</div>
 					) : (
 						<CardMedia
@@ -93,6 +132,7 @@ const ProjectModalContent = ({
 					)}
 
 					<CardContent className="card-content-text">
+				
 						<Typography variant="body2" color="var(--off-white)">
 							<Description>{project.description}</Description>
 						</Typography>
@@ -208,6 +248,14 @@ const ProjectModalContent = ({
 		</>
 	);
 };
+
+
+const LoadingDiv = styled.div`
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+`;
 
 const IconButtonText = styled.h5`
 	font-size: 1.2rem;
