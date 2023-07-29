@@ -29,4 +29,17 @@ canvas {
 	background-position: center;
 	position: fixed;
 	overflow: show;
+	animation: fadeIn 4s ease-in-out;
+
+	@keyframes fadeIn {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+
+
+
 }
