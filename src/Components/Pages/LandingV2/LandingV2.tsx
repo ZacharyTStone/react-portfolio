@@ -14,34 +14,20 @@ const LandingV2 = () => {
 			<MUINav />
 			<ContentWrapper className="content fade-in-on-mount">
 				<LandingTile>
-					<>
-						<Line>
-							<Word>
-								{`${t(createGreeting())}${
-									i18n.language === "en" ? " I'm " : " "
-								}`}
-							</Word>
-						</Line>
-						<Line>
-							<Word className="glowing-text" id="special-1">
-								{t("landing.name")}
-							</Word>
-						</Line>
-						<Line>
-							<Word>{t("landing.description1")}</Word>
-						</Line>
-
-						<Line>
-							<Word>{t("landing.description2")}</Word>
-						</Line>
-					</>
+					<Line>
+						<Word className="glowing-text" id="special-1">
+							{t("landing.name")}
+						</Word>
+					</Line>
+					<Line>
+						<Word>{t("landing.title")}</Word>
+					</Line>
 				</LandingTile>
 				<SocialLinksVertical />
 			</ContentWrapper>
 			<div
 				className="down-icon-container"
 				onClick={() => {
-				
 					document
 						.querySelector("#About")
 						?.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -113,7 +99,6 @@ const ContentWrapper = styled.div`
 
 const Line = styled.div`
 	display: flex;
-	justify-content: space-between;
 `;
 
 const Word = styled.p`
@@ -137,14 +122,18 @@ const LandingTile = styled.h3`
 	text-align: center;
 	user-select: none;
 	margin: 50px;
-	font-size: 3rem;
+
 	padding-bottom: 61px;
-	background: rgba(0, 0, 0, 0.06);
+	background: rgba(0, 0, 0, 0.2);
 	backdrop-filter: blur(2px);
 	-webkit-backdrop-filter: blur(2px);
 	border-radius: 20px;
 	padding: 20px;
 	width: fit-content;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 20px;
 
 	@media (max-width: 768px) {
 		background: rgba(0, 0, 0, 0.3);

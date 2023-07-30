@@ -4,9 +4,10 @@
 			"morning": "Good morning.",
 			"afternoon": "Good afternoon.",
 			"evening": "Good evening.",
-			"name": "Zach Stone,",
+			"name": "Zach Stone",
 			"description1": "and I build",
-			"description2": " web applications."
+			"description2": " web applications.",
+			"title": "Software Engineer"
 		},
 		"nav": {
 			"home": "Home",
@@ -16,8 +17,8 @@
 		},
 		"about": {
 			"title": "About Me",
-			"description1": "I'm a software engineer with professional experience in front-end web development.",
-			"description2": "My primary skill set includes React JS, Node JS, TypeScript, REST and GraphQL.",
+			"description1": " 👋 I'm an American software engineer focusing on web develeopement.",
+			"description2": "I have gained experience working with various frameworks, languages, and concepts through both personal and professional projects. I constantly strive to improve and refine my skills.",
 			"description3a": "I'm currently working as a front-end software engineer at ",
 			"description3b": ".",
 			"currentCompany": "Rapptr Labs",

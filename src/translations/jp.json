@@ -4,9 +4,10 @@
 			"morning": "おはようございます。",
 			"afternoon": "こんにちは。",
 			"evening": "こんばんは。",
-			"name": "ザッカリー•ストーン",
+			"name": "ザック•ストーン",
 			"description1": "と申します。",
-			"description2": "ソフトエンジニアです。"
+			"description2": "ソフトエンジニアです。",
+			"title": "ソフトエンジニア"
 		},
 		"nav": {
 			"home": "ホーム",
@@ -16,8 +17,8 @@
 		},
 		"about": {
 			"title": "自己紹介",
-			"description1": "ウェブ開発に集中しているソフトウェアエンジニアです。",
-			"description2": "主なスキルは、React JS、Node JS、TypeScript、REST、GraphQLです。",
+			"description1": "ウェブ開発に集中しているのアメリカ人のソフトウェアエンジニアです。",
+			"description2": "私は個人的なプロジェクトや職業上の経験を通じて、様々なフレームワーク、言語、概念と共に仕事をする経験を積んできました。常にスキルを向上させ、磨き上げることを心掛けています。",
 			"description3a": "現在、",
 			"description3b": "でフロントエンドソフトウェアエンジニアとして働いています。",
 			"currentCompany": "Rapptr Labs",

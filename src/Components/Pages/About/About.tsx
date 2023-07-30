@@ -4,6 +4,7 @@ import { useTranslation } from "react-i18next";
 import styled from "styled-components";
 import Skills from "../../UI/Skills";
 import { Title } from "../../UI/StyledComponents";
+import { createGreeting } from "../../../utils/misc";
 
 const About = () => {
 	const { t } = useTranslation();
@@ -18,7 +19,10 @@ const About = () => {
 					offset={200}
 					duration={3}
 				>
-					<AnimatedDescription>{t("about.description1")}</AnimatedDescription>
+					<AnimatedDescription>
+						{`${t(createGreeting())}`}
+						{t("about.description1")}
+					</AnimatedDescription>
 					<AnimatedDescription>{t("about.description2")}</AnimatedDescription>
 					<AnimatedDescription>
 						{t("about.description3a")}
@@ -81,7 +85,7 @@ const AboutInner = styled.div`
 	border-radius: 20px;
 	background: rgba(0, 0, 0, 0.5);
 
-	@media (max-width: 1000px) {
+	@media (max-width: 1400px) {
 		width: 100%;
 		padding: 10px;
 	}
