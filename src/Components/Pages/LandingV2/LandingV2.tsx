@@ -128,7 +128,7 @@ const LandingTile = styled.h3`
 	backdrop-filter: blur(2px);
 	-webkit-backdrop-filter: blur(2px);
 	border-radius: 20px;
-	padding: 20px;
+	padding: 40px;
 	width: fit-content;
 	display: flex;
 	flex-direction: column;
@@ -137,7 +137,7 @@ const LandingTile = styled.h3`
 
 	@media (max-width: 768px) {
 		background: rgba(0, 0, 0, 0.3);
-		padding: 5px;
+		padding: 10px;
 	}
 
 	@media (max-width: 1024px) {
