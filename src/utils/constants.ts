@@ -82,7 +82,7 @@ export const BLOG_CONTENT = {
 
 export const PROJECTS = {
 	English: {
-		mainTitle: "Featured Projects",
+		mainTitle: "Personal Projects",
 
 		projects: [
 			{
@@ -186,7 +186,7 @@ export const PROJECTS = {
 		],
 	},
 	Japanese: {
-		mainTitle: "プロジェクト",
+		mainTitle: "個人プロジェクト",
 		projects: [
 			{
 				title: "マイ・アニメ・コレクション",
