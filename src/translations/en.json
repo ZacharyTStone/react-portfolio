@@ -4,7 +4,7 @@
 			"morning": "Good morning.",
 			"afternoon": "Good afternoon.",
 			"evening": "Good evening.",
-			"name": "Zach Stone",
+			"name": "To Cross an Ocean You Must Be Willing to Lose Sight of the Shore.",
 			"description1": "and I build",
 			"description2": " web applications.",
 			"title": "Software Engineer"
@@ -17,8 +17,8 @@
 		},
 		"about": {
 			"title": "About Me",
-			"description1": " I'm an American software engineer focusing on web developement.",
-			"description2": "Throughout my work on both personal and professional projects, I have gained experience with a wide range of Javascript frameworks and web technologies.",
+			"description1": " My name is Zach Stone and I am a software engineer from the United States with expertise in web development. ",
+			"description2": "I dedicate myself entirely to any goal I set. This trait has enabled me to teach myself Japanese and programming. As a software engineer, I have worked on business applications used by companies in the United States and beyond.",
 			"description3a": "I'm currently working as a front-end software engineer at ",
 			"description3b": ".",
 			"currentCompany": "Rapptr Labs",

@@ -14,14 +14,14 @@ const LandingV2 = () => {
 			<MUINav />
 			<ContentWrapper className="content fade-in-on-mount">
 				<LandingTile>
-					<Line>
+					{/* <Line> */}
 						<Word className="glowing-text" id="special-1">
 							{t("landing.name")}
 						</Word>
-					</Line>
-					<Line>
+					{/* </Line> */}
+					{/* <Line>
 						<Word>{t("landing.title")}</Word>
-					</Line>
+					</Line> */}
 				</LandingTile>
 				<SocialLinksVertical />
 			</ContentWrapper>
@@ -111,7 +111,7 @@ const Word = styled.p`
 	text-shadow: -1px -1px 0 white, 1px -1px 0 white, -1px 1px 0 white,
 		1px 1px 0 var(--off-white);
 	color: black;
-	white-space: nowrap;
+	white-space: balance;
 `;
 
 const LandingTile = styled.h3`
@@ -122,22 +122,22 @@ const LandingTile = styled.h3`
 	text-align: center;
 	user-select: none;
 	margin: 50px;
-
 	padding-bottom: 61px;
-	background: rgba(0, 0, 0, 0.2);
-	backdrop-filter: blur(2px);
-	-webkit-backdrop-filter: blur(2px);
+	background: rgba(0, 0, 0, 0.1);
+	backdrop-filter: blur(5px);
+	-webkit-backdrop-filter: blur(5px);
 	border-radius: 20px;
-	padding: 40px;
+	padding: 10px;
 	width: fit-content;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	gap: 20px;
 
+
 	@media (max-width: 768px) {
 		background: rgba(0, 0, 0, 0.3);
-		padding: 10px;
+		
 	}
 
 	@media (max-width: 1024px) {
