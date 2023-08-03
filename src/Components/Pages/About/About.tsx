@@ -62,7 +62,7 @@ const AboutDiv = styled.div`
 	flex-direction: column;
 	align-items: center;
 	color: var(--off-white);
-	overflow: hidden;
+
 	user-select: none;
 	margin-bottom: 100px;
 
@@ -73,7 +73,7 @@ const AboutDiv = styled.div`
 
 	@media (max-width: 1000px) {
 		width: 90%;
-		padding: 10px;
+	
 	}
 `;
 
@@ -85,9 +85,10 @@ const AboutInner = styled.div`
 	border-radius: 20px;
 	background: rgba(0, 0, 0, 0.5);
 
+	padding: 20px;
+
 	@media (max-width: 1400px) {
 		width: 100%;
-		padding: 10px;
 	}
 `;
 

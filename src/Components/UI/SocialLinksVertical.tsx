@@ -69,6 +69,10 @@ const SocialLinksVertical = () => {
 };
 
 const SocialLinksVerticalWrapper = styled.div`
+
+    display: flex;
+    justify-content: center;
+
 	.social-links-vertical {
 		position: fixed;
 		left: 0;

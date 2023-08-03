@@ -3,7 +3,6 @@ import styled from "styled-components";
 import MUINav from "../../UI/Navbar/MUINav";
 import SocialLinksVertical from "../../UI/SocialLinksVertical";
 import "animate.css";
-import { createGreeting } from "../../../utils/misc";
 import { AiOutlineDown } from "react-icons/ai";
 
 const LandingV2 = () => {
@@ -14,14 +13,9 @@ const LandingV2 = () => {
 			<MUINav />
 			<ContentWrapper className="content fade-in-on-mount">
 				<LandingTile>
-					{/* <Line> */}
 						<Word className="glowing-text" id="special-1">
-							{t("landing.name")}
+							{t("landing.phrase")}
 						</Word>
-					{/* </Line> */}
-					{/* <Line>
-						<Word>{t("landing.title")}</Word>
-					</Line> */}
 				</LandingTile>
 				<SocialLinksVertical />
 			</ContentWrapper>
@@ -97,13 +91,11 @@ const ContentWrapper = styled.div`
 	}
 `;
 
-const Line = styled.div`
-	display: flex;
-`;
+
 
 const Word = styled.p`
 	font-size: clamp(2rem, 8vw, 5.5rem);
-	font-family: "Rubik", sans-serif;
+	font-family: "Playfair Display", serif;
 	font-weight: 400;
 	margin: 0rem;
 	text-transform: uppercase;
