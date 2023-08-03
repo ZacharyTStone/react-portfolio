@@ -5,7 +5,7 @@ import { SET_AUDIO_PREFERENCE, SET_ACCEPT_APP, SET_SHOW_APP } from "./actions";
 const initialState = {
 	useAudio: false,
 	acceptApp: false,
-	showApp: true,
+	showApp: false,
 };
 
 const AppContext = React.createContext();
