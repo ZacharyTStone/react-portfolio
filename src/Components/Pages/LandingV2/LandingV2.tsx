@@ -14,7 +14,7 @@ const LandingV2 = () => {
 			<ContentWrapper className="content fade-in-on-mount">
 				<LandingTile>
 						<Word className="glowing-text" id="special-1">
-							{t("landing.phrase")}
+							"{t("landing.phrase")}"
 						</Word>
 				</LandingTile>
 				<SocialLinksVertical />
