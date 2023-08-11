@@ -67,12 +67,12 @@ const lineBorderAnimation = useAnimation();
 			
 
 			   // Start the line border animation
-			   await lineBorderAnimation.start({
-				 pathLength: 1,
-				 opacity: 1,
-				 transition: { duration: 2 },
-			   });
-			   
+			//    await lineBorderAnimation.start({
+			// 	 pathLength: 1,
+			// 	 opacity: 1,
+			// 	 transition: { duration: 2 },
+			//    });
+
 			   	// Animation 7: Fade Out Animation
 			await containerAnimation.start({
 				opacity: 0,
