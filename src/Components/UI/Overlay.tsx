@@ -8,7 +8,9 @@ import { OVERLAY_COLORS } from "../../utils/constants";
 import { useAppContext } from "../../context/appContext";
 
 export default function Index() {
-	const { showApp, setShowApp } = useAppContext();
+	// At the top of your component file
+const lineBorderAnimation = useAnimation();
+	const {  setShowApp } = useAppContext();
 	const divAnimations = [
 		useAnimation(),
 		useAnimation(),
@@ -31,25 +33,6 @@ export default function Index() {
 			await currentAnimation.start({ scale: 2 });
 			await currentAnimation.start({ scale: 1 });
 
-			// // Animation 2: Random Move Animation 1
-			// await currentAnimation.start({
-			// 	x: (Math.random() * 50 - 60) * (Math.random() > 0.5 ? 1 : -1),
-			// 	y: (Math.random() * 100 - 50) * (Math.random() > 0.5 ? 1 : -1),
-			// 	transition: {
-			// 		duration: 0.75,
-			// 		ease: "easeInOut",
-			// 	},
-			// });
-
-			// // Animation 3: Random Move Animation 2
-			// await currentAnimation.start({
-			// 	x: (Math.random() * 50 - 60) * (Math.random() > 0.5 ? 1 : -1),
-			// 	y: (Math.random() * 100 - 50) * (Math.random() > 0.5 ? 1 : -1),
-			// 	transition: {
-			// 		duration: 0.75,
-			// 		ease: "easeInOut",
-			// 	},
-			// });
 
 			// Animation 4: Horizontal Move Animation
 			await currentAnimation.start({
@@ -81,31 +64,36 @@ export default function Index() {
 				},
 			});
 
-			// Animation 6: Shrink Animation
-			// await currentAnimation.start({
-			// 	scale: 0,
-			// 	transition: {
-			// 		duration: 0.7 + Math.random() * 0.3,
-			// 		ease: "easeInOut",
-			// 	},
-			// });
+			
 
-			setTimeout(() => {
-				// show app
-				setShowApp(true);
-			}, 1000);
-		};
+			   // Start the line border animation
+			   await lineBorderAnimation.start({
+				 pathLength: 1,
+				 opacity: 1,
+				 transition: { duration: 2 },
+			   });
+			   
+			   	// Animation 7: Fade Out Animation
+			await containerAnimation.start({
+				opacity: 0,
+				transition: { duration: 0.5 },
+			});
+		   
+			   setTimeout(() => {
+				 // show app
+				 setShowApp(true);
+			   }, 1000);
+			 };
+
+		
+		
 
 		const startAnimations = async () => {
 			await Promise.all(
 				divAnimations.map((_, index) => divSequence(index + 1))
 			);
 
-			// Animation 7: Fade Out Animation
-			await containerAnimation.start({
-				opacity: 0,
-				transition: { duration: 0.5 },
-			});
+		
 		};
 
 		startAnimations();
@@ -123,13 +111,13 @@ export default function Index() {
 				viewBox="0 0 100 100"
 				preserveAspectRatio="none"
 			>
-				<OverlayLine
-					initial={{ pathLength: 0, opacity: 0.3 }}
-					animate={{ pathLength: 1, opacity: 1 }}
-					transition={{ duration: 4 }}
-					// go around the viewport clockwise from top left to top right to bottom right to bottom left
-					d="M 0 0 L 100 0 L 100 100 L 0 100 Z"
-				/>
+			<OverlayLine
+  initial={{ pathLength: 0, opacity: 0.3 }}
+  animate={lineBorderAnimation} // Use the new animation control state
+  transition={{ duration: 4 }}
+  d="M 0 0 L 100 0 L 100 100 L 0 100 Z"
+/>
+
 			</OverlaySvg>
 			{divAnimations.map((animation, index) => (
 				<LogoContainer
