@@ -44,9 +44,10 @@ function App(): JSX.Element {
 		<div className="App">
 			{showApp && isMobile && <div className="mobile-background" />}
 
-			{!acceptApp && <Intro />}
+			{!isMobile && !acceptApp && <Intro />}
 			<>
-				{acceptApp && !showApp && <Overlay />}
+				{
+				(isMobile || acceptApp) && !showApp && <Overlay />}
 				<Main showApp={showApp}>
 					{!isMobile && (
 						<>

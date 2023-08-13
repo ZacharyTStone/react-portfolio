@@ -13,11 +13,15 @@ import Dot from "../../../images/ring-pointer.png";
 import { useAppContext } from "../../../context/appContext";
 import { Box, Menu } from "@mui/material";
 import { AiOutlineMenu } from "react-icons/ai";
+import { useMediaQuery } from "react-responsive";
+import { MOBILE_BREAKPOINT } from "../../../utils/constants";
 
 const NavBar = () => {
-  const { useAudio, setAudioPreference, enableParticles, setEnableParticles } =
+  const { useAudio, setAudioPreference} =
     useAppContext();
   const { i18n, t } = useTranslation();
+
+  const isMobile = useMediaQuery({ query: MOBILE_BREAKPOINT });
 
   const links = [
     {
@@ -139,8 +143,9 @@ const NavBar = () => {
               </a>
             ))}
           </DesktopLinks>
-
+            
           <FlagDiv>
+          {!isMobile && ( 
             <div onClick={() => setAudioPreference(!useAudio)}>
               {useAudio ? (
                 <MdPauseCircleFilled className="flag" />
@@ -148,6 +153,7 @@ const NavBar = () => {
                 <MdPlayCircleFilled className="flag" />
               )}
             </div>
+          )}
             <div className="flag-div nav-button" onClick={handleLanguageChange}>
               {i18n.language === "en" ? (
                 <div className="flag-div">
