@@ -15,21 +15,13 @@ const LandingV2 = () => {
 			<MUINav />
 			<ContentWrapper className="content fade-in-on-mount">
 				<LandingTile>
-					  {isMobile ? (
-						<>
+					  
 						<Word className="glowing-text" id="special-1">
 							{t("landing.name")}
 						</Word>
 						<Word className="glowing-text" id="special-1">
 								{t("landing.title")}
 						</Word>
-						</>
-					  ) : (
-
-						<Word className="glowing-text" id="special-1">
-							"{t("landing.phrase")}"
-						</Word>
-					  )}
 				</LandingTile>
 				<SocialLinksVertical />
 			</ContentWrapper>
@@ -133,7 +125,7 @@ const LandingTile = styled.h3`
 	backdrop-filter: blur(5px);
 	-webkit-backdrop-filter: blur(5px);
 	border-radius: 20px;
-	padding: 10px;
+	padding: 25px;
 	width: fit-content;
 	display: flex;
 	flex-direction: column;
