@@ -9,7 +9,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation, Scrollbar, A11y, EffectCoverflow } from "swiper";
-import Dot from "../../../images/ring-pointer.png";
+import Dot from "../../../images/ring-pointer-green.png";
 import { Title } from "../../UI/StyledComponents";
 
 const Blog: React.FC = () => {

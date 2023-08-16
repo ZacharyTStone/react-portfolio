@@ -8,9 +8,6 @@
 	--black: rgb(12, 12, 14);
 }
 
-* {
-	cursor: url("./images/ring-pointer.png"), 4, 4 auto !important;
-}
 
 body {
 	margin: 0;
@@ -45,7 +42,11 @@ iframe,
 button,
 input,
 a {
-	cursor: url("./images/ring-pointer.png"), auto !important;
+	cursor: url("./images/ring-pointer.png"), auto;
+}
+
+#card-media {
+	cursor: url("./images/ring-pointer-green.png"), auto;
 }
 
 svg:hover {

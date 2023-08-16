@@ -6,8 +6,6 @@ import { IconContext } from "react-icons";
 import { RiGatsbyFill } from "react-icons/ri";
 import { RiVuejsFill } from "react-icons/ri";
 import styled from "styled-components";
-import Dot from "../../../../images/cursor-ring.png";
-import { useAppContext } from "../../../../context/appContext";
 import { Parallax, Background } from "react-parallax";
 import "../../Project/Project.css";
 import { useMediaQuery } from "react-responsive";

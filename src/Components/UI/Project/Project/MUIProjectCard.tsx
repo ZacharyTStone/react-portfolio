@@ -1,14 +1,12 @@
 import React, { useEffect, useRef, useState } from "react";
 import Card from "@mui/material/Card";
-import CardMedia from "@mui/material/CardMedia";
 import { FaReact } from "react-icons/fa";
 import { IconContext } from "react-icons";
 import { RiGatsbyFill } from "react-icons/ri";
 import { RiVuejsFill } from "react-icons/ri";
 import styled from "styled-components";
-import Dot from "../../../../images/cursor-ring.png";
-import { useAppContext } from "../../../../context/appContext";
-import { Parallax, Background } from "react-parallax";
+
+import { Parallax } from "react-parallax";
 import "../../Project/Project.css";
 import { useMediaQuery } from "react-responsive";
 
