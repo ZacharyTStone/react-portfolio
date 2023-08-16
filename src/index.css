@@ -9,6 +9,9 @@
 }
 
 
+
+
+
 body {
 	margin: 0;
 	font-family: "Roboto", sans-serif;
@@ -41,6 +44,7 @@ h6 {
 iframe,
 button,
 input,
+img,
 a {
 	cursor: url("./images/ring-pointer.png"), auto;
 }
