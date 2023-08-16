@@ -135,7 +135,8 @@ const LandingTile = styled.h3`
 
 	@media (max-width: 768px) {
 		background: rgba(0, 0, 0, 0.3);
-		
+		padding: 10px;
+	
 	}
 
 	@media (max-width: 1024px) {
