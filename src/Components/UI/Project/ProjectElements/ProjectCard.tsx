@@ -63,17 +63,10 @@ export default function MUIProjectCard(props: MUIProjectCardProps) {
 				<div
 					className={`card-title-div ${
 						isVisible ? "fade-in" : "fade-in-hidden"
-					} ${"dark-mode"} ${
-						isGoldProject && highlightGoldProjects ? "gold-title" : ""
-					}`}
+					} ${"dark-mode"}`}
 					ref={titleRef}
 				>
-					<h1
-						className={`card-title
-					 	${isGoldProject && highlightGoldProjects ? "gold-title" : ""}`}
-					>
-						{props.title}
-					</h1>
+					<h1 className={`card-title`}>{props.title}</h1>
 				</div>
 				<Parallax
 					bgImage={props.image}
