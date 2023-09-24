@@ -25,7 +25,6 @@
 #card-media {
 	width: 100%;
 	height: 250px;
-
 }
 
 .card-title-div {
@@ -57,7 +56,6 @@
 	margin-top: 20px;
 	margin-bottom: 40px;
 }
-
 
 @keyframes spin {
 	0% {
@@ -93,8 +91,6 @@
 		color: var(--secondary-color);
 	}
 
-
-
 	.card-content-text {
 		border: none !important;
 	}
@@ -128,7 +124,6 @@
 		width: 100%;
 		height: 525px;
 		image-rendering: pixelated;
-
 	}
 
 	.card-title {
@@ -173,7 +168,6 @@
 		#card-media {
 			width: 1000px !important;
 			max-width: 100% !important;
-		
 		}
 	}
 }
@@ -189,4 +183,13 @@
 
 .fade-in-hidden {
 	opacity: 0;
+}
+
+.gold-title {
+	color: #f4c83b;
+	text-decoration: underline #f4c83b solid;
+}
+
+.gold-border {
+	border: 5px solid #f4c83b;
 }

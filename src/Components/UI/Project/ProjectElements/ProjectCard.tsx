@@ -28,7 +28,7 @@ export default function MUIProjectCard(props: MUIProjectCardProps) {
 		props?.github?.slice(props?.github?.lastIndexOf("/") + 1) ===
 		"my-anime-collection";
 
-	const highlightGoldProjects = false;
+	const highlightGoldProjects = true;
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -68,7 +68,12 @@ export default function MUIProjectCard(props: MUIProjectCardProps) {
 					}`}
 					ref={titleRef}
 				>
-					<h1 className="card-title">{props.title}</h1>
+					<h1
+						className={`card-title
+					 	${isGoldProject && highlightGoldProjects ? "gold-title" : ""}`}
+					>
+						{props.title}
+					</h1>
 				</div>
 				<Parallax
 					bgImage={props.image}
@@ -87,7 +92,7 @@ export default function MUIProjectCard(props: MUIProjectCardProps) {
 					<div
 						id="card-media"
 						className={
-							isGoldProject && highlightGoldProjects ? "gold-project" : ""
+							isGoldProject && highlightGoldProjects ? "gold-border" : ""
 						}
 					/>
 				</Parallax>
