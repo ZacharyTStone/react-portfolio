@@ -184,12 +184,3 @@
 .fade-in-hidden {
 	opacity: 0;
 }
-
-.gold-title {
-	color: #f4c83b;
-	text-decoration: underline #f4c83b solid;
-}
-
-.gold-border {
-	border: 5px solid #f4c83b;
-}

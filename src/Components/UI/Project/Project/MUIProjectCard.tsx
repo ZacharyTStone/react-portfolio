@@ -24,12 +24,6 @@ export default function MUIProjectCard(props: MUIProjectCardProps) {
 
 	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
 
-	const isGoldProject =
-		props?.github?.slice(props?.github?.lastIndexOf("/") + 1) ===
-		"my-anime-collection";
-
-	const highlightGoldProjects = false;
-
 	useEffect(() => {
 		const observer = new IntersectionObserver(
 			(entries) => {
@@ -82,12 +76,7 @@ export default function MUIProjectCard(props: MUIProjectCardProps) {
 						width: "100%",
 					}}
 				>
-					<div
-						id="card-media"
-						className={
-							isGoldProject && highlightGoldProjects ? "gold-project" : ""
-						}
-					/>
+					<div id="card-media" />
 				</Parallax>
 
 				<div
@@ -105,29 +94,11 @@ export default function MUIProjectCard(props: MUIProjectCardProps) {
 						}}
 					>
 						{!!props?.tags && props.tags[0] === "React" ? (
-							<FaReact
-								color={
-									isGoldProject && highlightGoldProjects
-										? "gold"
-										: "var(--secondary-color)"
-								}
-							/>
+							<FaReact color={"var(--secondary-color)"} />
 						) : !!props?.tags && props.tags[0] === "Vue" ? (
-							<RiVuejsFill
-								color={
-									isGoldProject && highlightGoldProjects
-										? "gold"
-										: "var(--secondary-color)"
-								}
-							/>
+							<RiVuejsFill color={"var(--secondary-color)"} />
 						) : !!props?.tags && props.tags[0] === "Gatsby" ? (
-							<RiGatsbyFill
-								color={
-									isGoldProject && highlightGoldProjects
-										? "gold"
-										: "var(--secondary-color)"
-								}
-							/>
+							<RiGatsbyFill color={"var(--secondary-color)"} />
 						) : null}
 					</IconContext.Provider>
 				</div>

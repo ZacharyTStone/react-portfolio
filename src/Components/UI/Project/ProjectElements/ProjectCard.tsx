@@ -9,6 +9,8 @@ import styled from "styled-components";
 import { Parallax, Background } from "react-parallax";
 import "../../Project/Project.css";
 import { useMediaQuery } from "react-responsive";
+import RunningImg from "../../RunningImg";
+import narutoRun from "../../../../images/narutoRun.gif";
 
 interface MUIProjectCardProps {
 	link?: string;
@@ -23,12 +25,11 @@ export default function MUIProjectCard(props: MUIProjectCardProps) {
 	const titleRef = useRef<HTMLDivElement>(null);
 
 	const isMobile = useMediaQuery({ query: "(max-width: 600px)" });
+	const isDesktop = useMediaQuery({ query: "(min-width: 1200px)" });
 
-	const isGoldProject =
+	const isAnimeProject =
 		props?.github?.slice(props?.github?.lastIndexOf("/") + 1) ===
 		"my-anime-collection";
-
-	const highlightGoldProjects = true;
 
 	useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -65,6 +66,9 @@ export default function MUIProjectCard(props: MUIProjectCardProps) {
 						isVisible ? "fade-in" : "fade-in-hidden"
 					} ${"dark-mode"}`}
 					ref={titleRef}
+					style={{
+						overflow: "hidden",
+					}}
 				>
 					<h1 className={`card-title`}>{props.title}</h1>
 				</div>
@@ -82,12 +86,18 @@ export default function MUIProjectCard(props: MUIProjectCardProps) {
 						width: "100%",
 					}}
 				>
-					<div
-						id="card-media"
-						className={
-							isGoldProject && highlightGoldProjects ? "gold-border" : ""
-						}
-					/>
+					<div id="card-media" />
+					{isAnimeProject && isDesktop && (
+						<div
+							style={{
+								display: "absolute",
+								bottom: "0%",
+								left: "-100px",
+							}}
+						>
+							<RunningImg img={narutoRun} />
+						</div>
+					)}
 				</Parallax>
 
 				<div
@@ -105,29 +115,11 @@ export default function MUIProjectCard(props: MUIProjectCardProps) {
 						}}
 					>
 						{!!props?.tags && props.tags[0] === "React" ? (
-							<FaReact
-								color={
-									isGoldProject && highlightGoldProjects
-										? "gold"
-										: "var(--secondary-color)"
-								}
-							/>
+							<FaReact color={"var(--secondary-color)"} />
 						) : !!props?.tags && props.tags[0] === "Vue" ? (
-							<RiVuejsFill
-								color={
-									isGoldProject && highlightGoldProjects
-										? "gold"
-										: "var(--secondary-color)"
-								}
-							/>
+							<RiVuejsFill color={"var(--secondary-color)"} />
 						) : !!props?.tags && props.tags[0] === "Gatsby" ? (
-							<RiGatsbyFill
-								color={
-									isGoldProject && highlightGoldProjects
-										? "gold"
-										: "var(--secondary-color)"
-								}
-							/>
+							<RiGatsbyFill color={"var(--secondary-color)"} />
 						) : null}
 					</IconContext.Provider>
 				</div>
