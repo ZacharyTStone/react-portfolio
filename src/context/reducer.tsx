@@ -1,6 +1,5 @@
 import { SET_AUDIO_PREFERENCE, SET_ACCEPT_APP, SET_SHOW_APP } from "./actions";
 
-
 const reducer = (
 	state: any,
 	action: {
@@ -9,11 +8,6 @@ const reducer = (
 	}
 ) => {
 	if (action.type === SET_AUDIO_PREFERENCE) {
-		// update the audio preference in local storage
-		// localStorage.setItem("audioPreference", action.payload);
-
-		// update the audio preference in the state
-
 		return { ...state, useAudio: action.payload };
 	}
 

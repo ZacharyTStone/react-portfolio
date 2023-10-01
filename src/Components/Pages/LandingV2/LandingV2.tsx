@@ -5,23 +5,22 @@ import SocialLinksVertical from "../../UI/SocialLinksVertical";
 import "animate.css";
 import { AiOutlineDown } from "react-icons/ai";
 import { useMediaQuery } from "react-responsive";
-import { MOBILE_BREAKPOINT } from "../../../utils/constants";
+
+import { useAppContext } from "../../../context/appContext";
 const LandingV2 = () => {
 	const { t, i18n } = useTranslation();
-	const isMobile = useMediaQuery({ query: MOBILE_BREAKPOINT });
 
 	return (
 		<Landing>
 			<MUINav />
 			<ContentWrapper className="content fade-in-on-mount">
 				<LandingTile>
-					  
-						<Word className="glowing-text" id="special-1">
-							{t("landing.name")}
-						</Word>
-						<Word className="glowing-text" id="special-1">
-								{t("landing.title")}
-						</Word>
+					<Word className="glowing-text" id="special-1">
+						{t("landing.name")}
+					</Word>
+					<Word className="glowing-text" id="special-1">
+						{t("landing.title")}
+					</Word>
 				</LandingTile>
 				<SocialLinksVertical />
 			</ContentWrapper>
@@ -97,8 +96,6 @@ const ContentWrapper = styled.div`
 	}
 `;
 
-
-
 const Word = styled.p`
 	font-size: clamp(2rem, 8vw, 5.5rem);
 	font-family: "Playfair Display", serif;
@@ -132,11 +129,9 @@ const LandingTile = styled.h3`
 	align-items: center;
 	gap: 20px;
 
-
 	@media (max-width: 768px) {
 		background: rgba(0, 0, 0, 0.3);
 		padding: 10px;
-	
 	}
 
 	@media (max-width: 1024px) {

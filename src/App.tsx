@@ -28,7 +28,7 @@ const ThreeJS = React.lazy(() => import("./Components/UI/ThreeJsBackground"));
 inject();
 
 function App(): JSX.Element {
-	const { acceptApp, showApp, setShowApp } = useAppContext();
+	const { acceptApp, showApp } = useAppContext();
 
 	// Log a message to the console for you to see :)
 	useEffect(() => {
@@ -46,8 +46,7 @@ function App(): JSX.Element {
 
 			{!isMobile && !acceptApp && <Intro />}
 			<>
-				{
-				(isMobile || acceptApp) && !showApp && <Overlay />}
+				{(isMobile || acceptApp) && !showApp && <Overlay />}
 				<Main showApp={showApp}>
 					{!isMobile && (
 						<>
