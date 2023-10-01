@@ -23,7 +23,7 @@ const About = () => {
 						{`${t(createGreeting())}`}
 						{t("about.description1")}
 					</AnimatedDescription>
-					<AnimatedDescription>{t("about.description2")}</AnimatedDescription>
+
 					<AnimatedDescription>
 						{t("about.description3a")}
 						<AboutLink
@@ -35,6 +35,7 @@ const About = () => {
 						</AboutLink>
 						{t("about.description3b")}
 					</AnimatedDescription>
+					<AnimatedDescription>{t("about.description2")}</AnimatedDescription>
 					<AnimatedDescription style={{ wordBreak: "break-word" }}>
 						{t("about.description4")}
 					</AnimatedDescription>
@@ -73,7 +74,6 @@ const AboutDiv = styled.div`
 
 	@media (max-width: 1000px) {
 		width: 90%;
-	
 	}
 `;
 
