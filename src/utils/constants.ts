@@ -214,7 +214,7 @@ export const PROJECTS = {
 				title: "ザック・イン・ジャパン",
 				description: "私のテクノロジーブログです。",
 				image: blog,
-				link: "https://zachinjapan.gatsbyjs.io",
+				link: "https://zachinjapan.com",
 				linkText: "ウェブサイト",
 				github: "https://github.com/zachinjapan/my-gatsby-blog",
 				tech: "技術",
